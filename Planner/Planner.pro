@@ -10,12 +10,15 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    teacheradding.cpp \
     teachermain.cpp
 
 HEADERS += \
+    teacheradding.h \
     teachermain.h
 
 FORMS += \
+    teacheradding.ui \
     teachermain.ui
 
 # Default rules for deployment.
