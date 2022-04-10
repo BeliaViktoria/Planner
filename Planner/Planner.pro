@@ -10,14 +10,17 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    subjectsmain.cpp \
     teacheradding.cpp \
     teachermain.cpp
 
 HEADERS += \
+    subjectsmain.h \
     teacheradding.h \
     teachermain.h
 
 FORMS += \
+    subjectsmain.ui \
     teacheradding.ui \
     teachermain.ui
 
