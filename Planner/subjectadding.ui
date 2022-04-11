@@ -82,7 +82,7 @@ color:black;</string>
       <x>20</x>
       <y>230</y>
       <width>371</width>
-      <height>121</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -93,7 +93,7 @@ color:black;</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>400</y>
+      <y>390</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -110,7 +110,7 @@ background-color: rgb(255, 0, 0)</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>400</y>
+      <y>390</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -128,7 +128,7 @@ background-color:rgb(255, 255, 0)
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>400</y>
+      <y>390</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -145,7 +145,7 @@ background-color: rgb(0, 170, 0)</string>
     <property name="geometry">
      <rect>
       <x>220</x>
-      <y>400</y>
+      <y>390</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -162,7 +162,7 @@ background-color:rgb(85, 0, 255)</string>
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>400</y>
+      <y>390</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -180,7 +180,7 @@ background-color:rgb(255, 85, 255)
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>400</y>
+      <y>390</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -197,7 +197,7 @@ background-color:rgb(255, 255, 255)</string>
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>440</y>
+      <y>430</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -214,7 +214,7 @@ background-color: rgb(255, 170, 0)</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>440</y>
+      <y>430</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -231,7 +231,7 @@ background-color: rgb(85, 255, 0)</string>
     <property name="geometry">
      <rect>
       <x>185</x>
-      <y>440</y>
+      <y>430</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -249,7 +249,7 @@ background-color: rgb(85, 170, 255)
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>440</y>
+      <y>430</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -266,7 +266,7 @@ background-color: rgb(170, 85, 255)</string>
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>440</y>
+      <y>430</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -280,13 +280,13 @@ background-color: rgb(203, 102, 0)</string>
     </property>
    </widget>
   </widget>
-  <widget class="QLabel" name="label_AddSubject">
+  <widget class="QLabel" name="label_AddingSubject">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>120</x>
      <y>40</y>
-     <width>191</width>
-     <height>31</height>
+     <width>211</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -360,7 +360,7 @@ background-color:rgb(219, 226, 239);</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>380</y>
+     <y>370</y>
      <width>121</width>
      <height>31</height>
     </rect>
