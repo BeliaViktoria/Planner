@@ -22,7 +22,7 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(64, 115, 175);</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit_Fathername">
+  <widget class="QLineEdit" name="lineEdit_Deadline">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -44,7 +44,7 @@ color:black;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_Surname">
+  <widget class="QLabel" name="label_Name">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -62,7 +62,7 @@ background-color:rgb(219, 226, 239);</string>
     <string>Name:</string>
    </property>
   </widget>
-  <widget class="QWidget" name="widget_AddingTeacher" native="true">
+  <widget class="QWidget" name="widget_AddingTask" native="true">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -78,7 +78,7 @@ border-style: solid;
 border-width: 1px;
 border-color: rgb(18, 46, 79);</string>
    </property>
-   <widget class="QPushButton" name="pushButton_Add_2">
+   <widget class="QPushButton" name="pushButton_Add">
     <property name="geometry">
      <rect>
       <x>19</x>
@@ -100,7 +100,7 @@ color:white;</string>
      <string>Add </string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget_Teachers">
+   <widget class="QListWidget" name="listWidget_Subjects">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -114,7 +114,7 @@ color:white;</string>
     </property>
    </widget>
   </widget>
-  <widget class="QLabel" name="label_AddingTeacher">
+  <widget class="QLabel" name="label_AddingTask">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -132,7 +132,7 @@ background-color:rgb(219, 226, 239);</string>
     <string>Adding task</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_Surname">
+  <widget class="QLineEdit" name="lineEdit_Name">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -154,7 +154,7 @@ color:black;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_Name">
+  <widget class="QLineEdit" name="lineEdit_Subject">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -176,7 +176,7 @@ color:black;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_Phone">
+  <widget class="QLabel" name="label_MaxGrade">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -194,7 +194,7 @@ background-color:rgb(219, 226, 239);</string>
     <string>Max grade:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_Name">
+  <widget class="QLabel" name="label_Subject">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -212,7 +212,7 @@ background-color:rgb(219, 226, 239);</string>
     <string>Subject:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_Fathername">
+  <widget class="QLabel" name="label_Deadline">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -230,7 +230,7 @@ background-color:rgb(219, 226, 239);</string>
     <string>Deadline:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_EmailAddress">
+  <widget class="QLineEdit" name="lineEdit_MaxGrade">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -252,16 +252,16 @@ color:black;</string>
     <string/>
    </property>
   </widget>
-  <zorder>widget_AddingTeacher</zorder>
-  <zorder>label_Surname</zorder>
-  <zorder>label_AddingTeacher</zorder>
-  <zorder>lineEdit_Surname</zorder>
-  <zorder>label_Phone</zorder>
+  <zorder>widget_AddingTask</zorder>
   <zorder>label_Name</zorder>
-  <zorder>label_Fathername</zorder>
+  <zorder>label_AddingTask</zorder>
   <zorder>lineEdit_Name</zorder>
-  <zorder>lineEdit_Fathername</zorder>
-  <zorder>lineEdit_EmailAddress</zorder>
+  <zorder>label_MaxGrade</zorder>
+  <zorder>label_Subject</zorder>
+  <zorder>label_Deadline</zorder>
+  <zorder>lineEdit_Subject</zorder>
+  <zorder>lineEdit_Deadline</zorder>
+  <zorder>lineEdit_MaxGrade</zorder>
  </widget>
  <resources/>
  <connections/>
