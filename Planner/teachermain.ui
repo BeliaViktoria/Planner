@@ -22,7 +22,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="widget_Menu" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -34,7 +34,7 @@
    <property name="styleSheet">
     <string notr="true">background-color:rgb(64, 115, 175);</string>
    </property>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="label_Menu">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -51,7 +51,7 @@ font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
      <string>Menu</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_Overview">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -73,7 +73,7 @@ border-color:rgb(18, 46, 79);</string>
      <string>Overview</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_Timetable">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -95,7 +95,7 @@ border-color:rgb(18, 46, 79);</string>
      <string>Timetable</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="pushButton_Subjects">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -117,7 +117,7 @@ border-color:rgb(18, 46, 79);</string>
      <string>Subjects</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="pushButton_Teachers">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -139,7 +139,7 @@ border-color:rgb(18, 46, 79);</string>
      <string>Teachers</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="pushButton_Grades">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -161,7 +161,7 @@ border-color:rgb(18, 46, 79);</string>
      <string>Grades</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="pushButton_Settings">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -183,15 +183,15 @@ border-color:rgb(18, 46, 79);</string>
      <string>Settings</string>
     </property>
    </widget>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_7</zorder>
-   <zorder>label_2</zorder>
+   <zorder>pushButton_Overview</zorder>
+   <zorder>pushButton_Timetable</zorder>
+   <zorder>pushButton_Subjects</zorder>
+   <zorder>pushButton_Teachers</zorder>
+   <zorder>pushButton_Grades</zorder>
+   <zorder>pushButton_Settings</zorder>
+   <zorder>label_Menu</zorder>
   </widget>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="QListWidget" name="listWidget_Teachers">
    <property name="geometry">
     <rect>
      <x>289</x>
@@ -215,7 +215,7 @@ border-color:rgb(64, 115, 175);</string>
     </property>
    </item>
   </widget>
-  <widget class="QWidget" name="widget_2" native="true">
+  <widget class="QWidget" name="widget_Teachers" native="true">
    <property name="geometry">
     <rect>
      <x>269</x>
@@ -227,7 +227,7 @@ border-color:rgb(64, 115, 175);</string>
    <property name="styleSheet">
     <string notr="true">background-color:rgb(219, 226, 239);</string>
    </property>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_Teachers">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -244,7 +244,7 @@ font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
      <string>Teachers</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_Add">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -269,9 +269,9 @@ border-width: 1px;
     </property>
    </widget>
   </widget>
-  <zorder>widget_2</zorder>
-  <zorder>widget</zorder>
-  <zorder>listWidget</zorder>
+  <zorder>widget_Teachers</zorder>
+  <zorder>widget_Menu</zorder>
+  <zorder>listWidget_Teachers</zorder>
  </widget>
  <resources/>
  <connections/>
