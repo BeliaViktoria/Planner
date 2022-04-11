@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    agendaadding.cpp \
     agendamain.cpp \
     main.cpp \
     subjectadding.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
     teachermain.cpp
 
 HEADERS += \
+    agendaadding.h \
     agendamain.h \
     subjectadding.h \
     subjectsmain.h \
@@ -24,6 +26,7 @@ HEADERS += \
     teachermain.h
 
 FORMS += \
+    agendaadding.ui \
     agendamain.ui \
     subjectadding.ui \
     subjectsmain.ui \
