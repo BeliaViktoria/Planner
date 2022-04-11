@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TeacherMain</class>
- <widget class="QWidget" name="TeacherMain">
+ <class>AgendaMain</class>
+ <widget class="QWidget" name="AgendaMain">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,17 +10,8 @@
     <height>650</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>1000</width>
-    <height>650</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Planner</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true"/>
+   <string>Form</string>
   </property>
   <widget class="QWidget" name="widget_Menu" native="true">
    <property name="geometry">
@@ -32,7 +23,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(64, 115, 175);</string>
+    <string notr="true">background-color: rgb(65, 115, 176);
+</string>
    </property>
    <widget class="QLabel" name="label_Menu">
     <property name="geometry">
@@ -183,51 +175,20 @@ border-color:rgb(18, 46, 79);</string>
      <string>Settings</string>
     </property>
    </widget>
-   <zorder>pushButton_Overview</zorder>
-   <zorder>pushButton_Timetable</zorder>
-   <zorder>pushButton_Subjects</zorder>
-   <zorder>pushButton_Teachers</zorder>
-   <zorder>pushButton_Grades</zorder>
-   <zorder>pushButton_Settings</zorder>
-   <zorder>label_Menu</zorder>
   </widget>
-  <widget class="QListWidget" name="listWidget_Teachers">
+  <widget class="QWidget" name="widget_Subjects" native="true">
    <property name="geometry">
     <rect>
-     <x>289</x>
-     <y>69</y>
-     <width>631</width>
-     <height>571</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;Gentium Book Basic&quot;;
-color: black;
-background-color: rgb(255, 255, 255);
-border-radius: 15px;
-border-style: solid;
-border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Belia Viktoriia Oleksiivna</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QWidget" name="widget_Teachers" native="true">
-   <property name="geometry">
-    <rect>
-     <x>269</x>
+     <x>270</x>
      <y>0</y>
      <width>731</width>
      <height>650</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(219, 226, 239);</string>
+    <string notr="true">background-color: rgb(218, 226, 241)</string>
    </property>
-   <widget class="QLabel" name="label_Teachers">
+   <widget class="QLabel" name="label_Subjects">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -241,8 +202,32 @@ border-color:rgb(64, 115, 175);</string>
 font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
     </property>
     <property name="text">
-     <string>Teachers</string>
+     <string>Agenda</string>
     </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_Subjects">
+    <property name="geometry">
+     <rect>
+      <x>18</x>
+      <y>69</y>
+      <width>631</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Gentium Book Basic&quot;;
+color: black;
+background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(64, 115, 175);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Belia Viktoriia Oleksiivna</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="pushButton_Add">
     <property name="geometry">
@@ -269,9 +254,6 @@ border-width: 1px;
     </property>
    </widget>
   </widget>
-  <zorder>widget_Teachers</zorder>
-  <zorder>widget_Menu</zorder>
-  <zorder>listWidget_Teachers</zorder>
  </widget>
  <resources/>
  <connections/>
