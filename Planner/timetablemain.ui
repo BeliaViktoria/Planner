@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TimetableMain</class>
+ <widget class="QWidget" name="TimetableMain">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="widget_Menu" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>191</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(64, 115, 175);</string>
+   </property>
+   <widget class="QLabel" name="label_Menu">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Menu</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Overview">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+    <property name="text">
+     <string>Overview</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Timetable">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+    <property name="text">
+     <string>Timetable</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Subjects">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+    <property name="text">
+     <string>Subjects</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Teachers">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+    <property name="text">
+     <string>Teachers</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Grades">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>360</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+    <property name="text">
+     <string>Grades</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Settings">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>595</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+    <property name="text">
+     <string>Settings</string>
+    </property>
+   </widget>
+   <zorder>pushButton_Overview</zorder>
+   <zorder>pushButton_Timetable</zorder>
+   <zorder>pushButton_Subjects</zorder>
+   <zorder>pushButton_Teachers</zorder>
+   <zorder>pushButton_Grades</zorder>
+   <zorder>pushButton_Settings</zorder>
+   <zorder>label_Menu</zorder>
+  </widget>
+  <widget class="QWidget" name="widget_Timetable" native="true">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>0</y>
+     <width>811</width>
+     <height>650</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(219, 226, 239);</string>
+   </property>
+   <widget class="QLabel" name="label_Timetable">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Timetable</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_Timetable">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>79</y>
+      <width>771</width>
+      <height>365</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;Gentium Book Basic&quot;;
+color: black;
+background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(64, 115, 175);</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <row>
+     <property name="text">
+      <string>1</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>2</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>3</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>4</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>5</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>6</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>7</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>8</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Monday</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Tuesday</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Wednesday</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Thursday</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Friday</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Saturday</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <item row="2" column="1">
+     <property name="text">
+      <string>Programming on c++</string>
+     </property>
+     <property name="background">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </property>
+    </item>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_Time_1">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>455</y>
+      <width>271</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;Gentium Book Basic&quot;;
+color: black;
+background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(64, 115, 175);</string>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <row>
+     <property name="text">
+      <string>1</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>2</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>3</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>4</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>start time</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>end time</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_Time_2">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>455</y>
+      <width>271</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 11pt &quot;Gentium Book Basic&quot;;
+color: black;
+background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(64, 115, 175);</string>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <row>
+     <property name="text">
+      <string>5</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>6</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>7</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>8</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>start time</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>end time</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </column>
+   </widget>
+   <widget class="QWidget" name="widget_Overview" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>455</y>
+      <width>221</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(64, 115, 175);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Now">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>470</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: red;
+font: 75 14pt &quot;Gentium Book Basic&quot;;
+background-color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>Now:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_WhatNow">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>500</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 14pt &quot;Gentium Book Basic&quot;;
+background-color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>Nothing</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Then">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>560</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: blue;
+font: 75 14pt &quot;Gentium Book Basic&quot;;
+background-color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>Then:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_WhatThen">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>590</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 14pt &quot;Gentium Book Basic&quot;;
+background-color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string>Nothing</string>
+    </property>
+   </widget>
+   <zorder>label_Timetable</zorder>
+   <zorder>tableWidget_Timetable</zorder>
+   <zorder>tableWidget_Time_1</zorder>
+   <zorder>tableWidget_Time_2</zorder>
+   <zorder>widget_Overview</zorder>
+   <zorder>label_WhatNow</zorder>
+   <zorder>label_Now</zorder>
+   <zorder>label_Then</zorder>
+   <zorder>label_WhatThen</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
