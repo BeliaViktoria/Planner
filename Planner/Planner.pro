@@ -9,32 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    agendaadding.cpp \
-    agendamain.cpp \
     main.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
     teacheradding.cpp \
-    teachermain.cpp \
-    timetablemain.cpp
+    teachermain.cpp
 
 HEADERS += \
-    agendaadding.h \
-    agendamain.h \
     subjectadding.h \
     subjectsmain.h \
     teacheradding.h \
-    teachermain.h \
-    timetablemain.h
+    teachermain.h
 
 FORMS += \
-    agendaadding.ui \
-    agendamain.ui \
     subjectadding.ui \
     subjectsmain.ui \
     teacheradding.ui \
-    teachermain.ui \
-    timetablemain.ui
+    teachermain.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

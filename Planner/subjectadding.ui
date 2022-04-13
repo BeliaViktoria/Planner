@@ -279,20 +279,6 @@ background-color: rgb(203, 102, 0)</string>
      <string/>
     </property>
    </widget>
-   <zorder>pushButton_Add</zorder>
-   <zorder>listWidget_Teachers</zorder>
-   <zorder>pushButton_Red</zorder>
-   <zorder>pushButton_Yellow</zorder>
-   <zorder>pushButton_Green</zorder>
-   <zorder>pushButton_Blue</zorder>
-   <zorder>pushButton_Pink</zorder>
-   <zorder>pushButton_White</zorder>
-   <zorder>pushButton_Orange</zorder>
-   <zorder>pushButton_LightGreen</zorder>
-   <zorder>pushButton_LightBlue</zorder>
-   <zorder>pushButton_Purple</zorder>
-   <zorder>pushButton_Brown</zorder>
-   <zorder>lineEdit_Teacher</zorder>
   </widget>
   <widget class="QLabel" name="label_AddingSubject">
    <property name="geometry">
