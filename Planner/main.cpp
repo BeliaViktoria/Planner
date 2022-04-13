@@ -1,11 +1,11 @@
-#include "timetablemain.h"
+#include "subjectsmain.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    TimetableMain w;
+    SubjectsMain w;
     w.show();
     return a.exec();
 }
