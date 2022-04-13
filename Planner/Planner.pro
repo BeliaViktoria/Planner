@@ -15,7 +15,8 @@ SOURCES += \
     subjectadding.cpp \
     subjectsmain.cpp \
     teacheradding.cpp \
-    teachermain.cpp
+    teachermain.cpp \
+    timetablemain.cpp
 
 HEADERS += \
     agendaadding.h \
@@ -23,7 +24,8 @@ HEADERS += \
     subjectadding.h \
     subjectsmain.h \
     teacheradding.h \
-    teachermain.h
+    teachermain.h \
+    timetablemain.h
 
 FORMS += \
     agendaadding.ui \
@@ -31,7 +33,8 @@ FORMS += \
     subjectadding.ui \
     subjectsmain.ui \
     teacheradding.ui \
-    teachermain.ui
+    teachermain.ui \
+    timetablemain.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
