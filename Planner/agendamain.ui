@@ -191,7 +191,7 @@ border-color:rgb(18, 46, 79);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>220</y>
+      <y>290</y>
       <width>145</width>
       <height>41</height>
      </rect>
@@ -213,7 +213,7 @@ border-color:rgb(18, 46, 79);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>290</y>
+      <y>360</y>
       <width>145</width>
       <height>41</height>
      </rect>
@@ -235,7 +235,7 @@ border-color:rgb(18, 46, 79);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>360</y>
+      <y>430</y>
       <width>145</width>
       <height>41</height>
      </rect>
@@ -275,6 +275,28 @@ border-color:rgb(18, 46, 79);</string>
      <string>Settings</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_Calendar">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+    <property name="text">
+     <string>Calendar</string>
+    </property>
+   </widget>
    <zorder>pushButton_Overview</zorder>
    <zorder>pushButton_Timetable</zorder>
    <zorder>pushButton_Subjects</zorder>
@@ -282,6 +304,7 @@ border-color:rgb(18, 46, 79);</string>
    <zorder>pushButton_Grades</zorder>
    <zorder>pushButton_Settings</zorder>
    <zorder>label_Menu</zorder>
+   <zorder>pushButton_Calendar</zorder>
   </widget>
  </widget>
  <resources/>
