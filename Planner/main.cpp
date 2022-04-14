@@ -1,11 +1,11 @@
-#include "subjectsmain.h"
+#include "calendar.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    SubjectsMain w;
+    Calendar w;
     w.show();
     return a.exec();
 }
