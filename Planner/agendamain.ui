@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TeacherMain</class>
- <widget class="QWidget" name="TeacherMain">
+ <class>AgendaMain</class>
+ <widget class="QWidget" name="AgendaMain">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,55 +10,22 @@
     <height>650</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>1000</width>
-    <height>650</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Planner</string>
+   <string>Form</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true"/>
-  </property>
-  <widget class="QListWidget" name="listWidget_Teachers">
+  <widget class="QWidget" name="widget_Subjects" native="true">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>79</y>
-     <width>681</width>
-     <height>555</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;Gentium Book Basic&quot;;
-color: black;
-background-color: rgb(255, 255, 255);
-border-radius: 15px;
-border-style: solid;
-border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
-   </property>
-   <item>
-    <property name="text">
-     <string>Belia Viktoriia Oleksiivna</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QWidget" name="widget_Teachers" native="true">
-   <property name="geometry">
-    <rect>
-     <x>189</x>
+     <x>190</x>
      <y>0</y>
      <width>811</width>
      <height>650</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(219, 226, 239);</string>
+    <string notr="true">background-color: rgb(218, 226, 241)</string>
    </property>
-   <widget class="QLabel" name="label_Teachers">
+   <widget class="QLabel" name="label_Agenda">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -72,8 +39,32 @@ border-color:rgb(64, 115, 175);</string>
 font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
     </property>
     <property name="text">
-     <string>Teachers</string>
+     <string>Agenda</string>
     </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_Tasks">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>79</y>
+      <width>681</width>
+      <height>555</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Gentium Book Basic&quot;;
+color: black;
+background-color: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(64, 115, 175);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Create progect Planner</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="pushButton_Add">
     <property name="geometry">
@@ -97,6 +88,23 @@ border-width: 1px;
     </property>
     <property name="text">
      <string>+</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_ShowFinished">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>50</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(0, 0, 0);
+font: 11pt &quot;Gentium Book Basic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Show finished</string>
     </property>
    </widget>
   </widget>
@@ -269,9 +277,6 @@ border-color:rgb(18, 46, 79);</string>
    <zorder>pushButton_Settings</zorder>
    <zorder>label_Menu</zorder>
   </widget>
-  <zorder>widget_Teachers</zorder>
-  <zorder>listWidget_Teachers</zorder>
-  <zorder>widget_Menu</zorder>
  </widget>
  <resources/>
  <connections/>
