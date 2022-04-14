@@ -1,11 +1,11 @@
-#include "timetablemain.h"
+#include "calendar.h"
 
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    TimetableMain w;
+    Calendar w;
     w.show();
     return a.exec();
 }

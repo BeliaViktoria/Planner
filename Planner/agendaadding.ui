@@ -22,28 +22,6 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(64, 115, 175);</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit_Deadline">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>370</y>
-     <width>371</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgb(255, 255, 255);
-border-radius:15px;
-border-style: solid;
-border-width: 1px;
-border-color: rgb(18, 46, 79);
-font: 14pt &quot;Gentium Book Basic&quot;;
-color:black;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_Name">
    <property name="geometry">
     <rect>
@@ -252,6 +230,28 @@ color:black;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_Deadline">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>370</y>
+     <width>371</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>widget_AddingTask</zorder>
   <zorder>label_Name</zorder>
   <zorder>label_AddingTask</zorder>
@@ -260,8 +260,8 @@ color:black;</string>
   <zorder>label_Subject</zorder>
   <zorder>label_Deadline</zorder>
   <zorder>lineEdit_Subject</zorder>
-  <zorder>lineEdit_Deadline</zorder>
   <zorder>lineEdit_MaxGrade</zorder>
+  <zorder>pushButton_Deadline</zorder>
  </widget>
  <resources/>
  <connections/>

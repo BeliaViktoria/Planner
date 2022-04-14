@@ -11,32 +11,38 @@ CONFIG += c++11
 SOURCES += \
     agendaadding.cpp \
     agendamain.cpp \
+    calendar.cpp \
     clock.cpp \
     main.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
     teacheradding.cpp \
     teachermain.cpp \
+    timetableitemsadding.cpp \
     timetablemain.cpp
 
 HEADERS += \
     agendaadding.h \
     agendamain.h \
+    calendar.h \
     clock.h \
     subjectadding.h \
     subjectsmain.h \
     teacheradding.h \
     teachermain.h \
+    timetableitemsadding.h \
     timetablemain.h
 
 FORMS += \
     agendaadding.ui \
     agendamain.ui \
+    calendar.ui \
     clock.ui \
     subjectadding.ui \
     subjectsmain.ui \
     teacheradding.ui \
     teachermain.ui \
+    timetableitemsadding.ui \
     timetablemain.ui
 
 # Default rules for deployment.

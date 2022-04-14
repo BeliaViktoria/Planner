@@ -27,11 +27,11 @@
    </property>
    <property name="styleSheet">
     <string notr="true">background-color:rgb(255, 255, 255);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 12pt &quot;Gentium Book Basic&quot;;
 color:black;</string>
    </property>
    <property name="text">
-    <string>&lt;-</string>
+    <string>back</string>
    </property>
   </widget>
   <widget class="QWidget" name="widget_AddingTeacher" native="true">
@@ -380,6 +380,24 @@ color:black;</string>
      <string>23</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_Next">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>410</y>
+     <width>51</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+font: 75 12pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+   <property name="text">
+    <string>next</string>
+   </property>
   </widget>
  </widget>
  <resources/>
