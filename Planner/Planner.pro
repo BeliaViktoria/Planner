@@ -12,6 +12,7 @@ SOURCES += \
     agendaadding.cpp \
     agendamain.cpp \
     calendar.cpp \
+    calendarmain.cpp \
     clock.cpp \
     main.cpp \
     subjectadding.cpp \
@@ -25,6 +26,7 @@ HEADERS += \
     agendaadding.h \
     agendamain.h \
     calendar.h \
+    calendarmain.h \
     clock.h \
     subjectadding.h \
     subjectsmain.h \
@@ -37,6 +39,7 @@ FORMS += \
     agendaadding.ui \
     agendamain.ui \
     calendar.ui \
+    calendarmain.ui \
     clock.ui \
     subjectadding.ui \
     subjectsmain.ui \
