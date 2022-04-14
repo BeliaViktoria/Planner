@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     agendaadding.cpp \
     agendamain.cpp \
+    clock.cpp \
     main.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     agendaadding.h \
     agendamain.h \
+    clock.h \
     subjectadding.h \
     subjectsmain.h \
     teacheradding.h \
@@ -30,6 +32,7 @@ HEADERS += \
 FORMS += \
     agendaadding.ui \
     agendamain.ui \
+    clock.ui \
     subjectadding.ui \
     subjectsmain.ui \
     teacheradding.ui \

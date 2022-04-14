@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Clock</class>
+ <widget class="QWidget" name="Clock">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(64, 115, 175);</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_Back">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>51</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+   <property name="text">
+    <string>&lt;-</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_AddingTeacher" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>411</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(219, 226, 239);
+border-radius:205px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_Add">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>490</y>
+      <width>371</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(18, 46, 79);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 20pt &quot;Gentium Book Basic&quot;;
+color:white;</string>
+    </property>
+    <property name="text">
+     <string>Add </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_0">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>10</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>24</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_AM">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>180</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 12pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>a. m.</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_PM">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>210</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 12pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>p. m.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>360</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>18</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>21</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>190</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>15</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_1">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>50</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>13</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>110</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>14</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>270</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>16</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>330</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>17</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>270</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>20</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>330</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>19</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_10">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>22</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_11">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>50</y>
+      <width>51</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:20px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 16pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string>23</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
