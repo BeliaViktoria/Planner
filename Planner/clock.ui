@@ -34,7 +34,7 @@ color:black;</string>
     <string>back</string>
    </property>
   </widget>
-  <widget class="QWidget" name="widget_AddingTeacher" native="true">
+  <widget class="QWidget" name="widget_Clock" native="true">
    <property name="geometry">
     <rect>
      <x>20</x>

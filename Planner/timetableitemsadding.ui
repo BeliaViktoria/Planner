@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TimetableItemsAdding</class>
+ <widget class="QWidget" name="TimetableItemsAdding">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(64, 115, 175);</string>
+  </property>
+  <widget class="QWidget" name="widget_AddingPlan" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>411</width>
+     <height>615</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(219, 226, 239);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_Add">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>560</y>
+      <width>371</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(18, 46, 79);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 75 20pt &quot;Gentium Book Basic&quot;;
+color:white;</string>
+    </property>
+    <property name="text">
+     <string>Add </string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget_Teachers">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>350</y>
+      <width>371</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Numerator">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>520</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;
+</string>
+    </property>
+    <property name="text">
+     <string>numerator</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Denominator">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>521</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;
+</string>
+    </property>
+    <property name="text">
+     <string>denominator</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_AddingPlan">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>30</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Gentium Book Basic&quot;;
+color:black;
+background-color:rgb(219, 226, 239);</string>
+   </property>
+   <property name="text">
+    <string>Adding plan</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget_Subjects">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>140</y>
+     <width>371</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Subject">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>70</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;
+background-color:rgb(219, 226, 239);</string>
+   </property>
+   <property name="text">
+    <string>Subject:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Subject">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>100</y>
+     <width>371</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Room">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>230</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;
+background-color:rgb(219, 226, 239);</string>
+   </property>
+   <property name="text">
+    <string>Room:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Room">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>260</y>
+     <width>371</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Teacher">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>300</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;
+background-color:rgb(219, 226, 239);</string>
+   </property>
+   <property name="text">
+    <string>Teacher:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Teacher">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>330</y>
+     <width>371</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Link">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>460</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;
+background-color:rgb(219, 226, 239);</string>
+   </property>
+   <property name="text">
+    <string>Link:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_Link">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>490</y>
+     <width>371</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
