@@ -27,7 +27,8 @@ SOURCES += \
     teacheradding.cpp \
     teachermain.cpp \
     timetableitemsadding.cpp \
-    timetablemain.cpp
+    timetablemain.cpp \
+    welcomemain.cpp
 
 HEADERS += \
     addgradedialog.h \
@@ -47,7 +48,8 @@ HEADERS += \
     teacheradding.h \
     teachermain.h \
     timetableitemsadding.h \
-    timetablemain.h
+    timetablemain.h \
+    welcomemain.h
 
 FORMS += \
     addgradedialog.ui \
@@ -67,7 +69,8 @@ FORMS += \
     teacheradding.ui \
     teachermain.ui \
     timetableitemsadding.ui \
-    timetablemain.ui
+    timetablemain.ui \
+    welcomemain.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
