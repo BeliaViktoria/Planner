@@ -75,7 +75,7 @@ font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
      <string>Teachers</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_Add">
+   <widget class="QPushButton" name="pushButton_AddTeacher">
     <property name="geometry">
      <rect>
       <x>730</x>
