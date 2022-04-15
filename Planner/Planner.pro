@@ -21,6 +21,7 @@ SOURCES += \
     gradesmain.cpp \
     main.cpp \
     overviewmain.cpp \
+    settingsmain.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
     teacheradding.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     gradesadding.h \
     gradesmain.h \
     overviewmain.h \
+    settingsmain.h \
     subjectadding.h \
     subjectsmain.h \
     teacheradding.h \
@@ -59,6 +61,7 @@ FORMS += \
     gradesadding.ui \
     gradesmain.ui \
     overviewmain.ui \
+    settingsmain.ui \
     subjectadding.ui \
     subjectsmain.ui \
     teacheradding.ui \
