@@ -14,6 +14,8 @@ SOURCES += \
     calendar.cpp \
     calendarmain.cpp \
     clock.cpp \
+    editdeletemarkasdomedialog.cpp \
+    editordeletedialog.cpp \
     gradesadding.cpp \
     gradesmain.cpp \
     main.cpp \
@@ -31,6 +33,8 @@ HEADERS += \
     calendar.h \
     calendarmain.h \
     clock.h \
+    editdeletemarkasdomedialog.h \
+    editordeletedialog.h \
     gradesadding.h \
     gradesmain.h \
     overviewmain.h \
@@ -47,6 +51,8 @@ FORMS += \
     calendar.ui \
     calendarmain.ui \
     clock.ui \
+    editdeletemarkasdomedialog.ui \
+    editordeletedialog.ui \
     gradesadding.ui \
     gradesmain.ui \
     overviewmain.ui \
