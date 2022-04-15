@@ -28,7 +28,8 @@ SOURCES += \
     teachermain.cpp \
     timetableitemsadding.cpp \
     timetablemain.cpp \
-    welcomemain.cpp
+    welcomemain.cpp \
+    windowsmanager.cpp
 
 HEADERS += \
     addgradedialog.h \
@@ -49,7 +50,8 @@ HEADERS += \
     teachermain.h \
     timetableitemsadding.h \
     timetablemain.h \
-    welcomemain.h
+    welcomemain.h \
+    windowsmanager.h
 
 FORMS += \
     addgradedialog.ui \

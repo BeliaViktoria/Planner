@@ -15,6 +15,12 @@ public:
     explicit WelcomeMain(QWidget *parent = nullptr);
     ~WelcomeMain();
 
+signals:
+    void OpenOverview();
+
+private slots:
+    void on_pushButton_Save_clicked();
+
 private:
     Ui::WelcomeMain *ui;
 };

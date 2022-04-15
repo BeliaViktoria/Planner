@@ -12,3 +12,9 @@ WelcomeMain::~WelcomeMain()
 {
     delete ui;
 }
+
+void WelcomeMain::on_pushButton_Save_clicked()
+{
+    emit OpenOverview();
+}
+
