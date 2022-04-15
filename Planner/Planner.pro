@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addgradedialog.cpp \
     agendaadding.cpp \
     agendamain.cpp \
     calendar.cpp \
@@ -20,14 +21,17 @@ SOURCES += \
     gradesmain.cpp \
     main.cpp \
     overviewmain.cpp \
+    settingsmain.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
     teacheradding.cpp \
     teachermain.cpp \
     timetableitemsadding.cpp \
-    timetablemain.cpp
+    timetablemain.cpp \
+    welcomemain.cpp
 
 HEADERS += \
+    addgradedialog.h \
     agendaadding.h \
     agendamain.h \
     calendar.h \
@@ -38,14 +42,17 @@ HEADERS += \
     gradesadding.h \
     gradesmain.h \
     overviewmain.h \
+    settingsmain.h \
     subjectadding.h \
     subjectsmain.h \
     teacheradding.h \
     teachermain.h \
     timetableitemsadding.h \
-    timetablemain.h
+    timetablemain.h \
+    welcomemain.h
 
 FORMS += \
+    addgradedialog.ui \
     agendaadding.ui \
     agendamain.ui \
     calendar.ui \
@@ -56,12 +63,14 @@ FORMS += \
     gradesadding.ui \
     gradesmain.ui \
     overviewmain.ui \
+    settingsmain.ui \
     subjectadding.ui \
     subjectsmain.ui \
     teacheradding.ui \
     teachermain.ui \
     timetableitemsadding.ui \
-    timetablemain.ui
+    timetablemain.ui \
+    welcomemain.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
