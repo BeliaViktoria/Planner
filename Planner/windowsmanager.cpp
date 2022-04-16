@@ -21,7 +21,7 @@
 
 WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr)
 {
-    open_Welcome_window();
+    open_Welcome();
 }
 
 WindowsManager::~WindowsManager()
@@ -29,7 +29,19 @@ WindowsManager::~WindowsManager()
 
 }
 
-void WindowsManager::closeMainWindow()
+void WindowsManager::set_MenuConections()
+{
+    connect(mainWindow.get(), SIGNAL(OpenOverview()), this, SLOT(open_OverviewMain()));
+    connect(mainWindow.get(), SIGNAL(OpenTimetable()), this, SLOT(open_TimetableMain()));
+    connect(mainWindow.get(), SIGNAL(OpenCalendar()), this, SLOT(open_CalendarMain()));
+    connect(mainWindow.get(), SIGNAL(OpenAgenda()), this, SLOT(open_AgendaMain()));
+    connect(mainWindow.get(), SIGNAL(OpenSubjects()), this, SLOT(open_SubjectsMain()));
+    connect(mainWindow.get(), SIGNAL(OpenTeachers()), this, SLOT(open_TeachersMain()));
+    connect(mainWindow.get(), SIGNAL(OpenGrades()), this, SLOT(open_GradesMain()));
+    connect(mainWindow.get(), SIGNAL(OpenSettings()), this, SLOT(open_SettingsMain()));
+}
+
+void WindowsManager::close_MainWindow()
 {
     if(mainWindow)
     {
@@ -37,150 +49,151 @@ void WindowsManager::closeMainWindow()
     }
 }
 
-void WindowsManager::closeMinorWindow()
+void WindowsManager::close_MinorWindow()
 {
     if(minorWindow)
     {
         minorWindow->close();
+        minorWindow.reset(nullptr);
     }
 }
 
-void WindowsManager::open_Welcome_window()
+void WindowsManager::open_Welcome()
 {
-    closeMainWindow();
+    close_MainWindow();
     mainWindow.reset(new WelcomeMain());
-    connect(mainWindow.get(), SIGNAL(OpenOverview()), this, SLOT(open_OverviewMain_window()));
+    connect(mainWindow.get(), SIGNAL(OpenOverview()), this, SLOT(open_OverviewMain()));
     mainWindow->show();
 }
 
-void WindowsManager::open_OverviewMain_window()
+void WindowsManager::open_OverviewMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new OverviewMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_TimetableMain_window()
+void WindowsManager::open_TimetableMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new TimetableMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_TimetableItemAdding_window()
+void WindowsManager::open_TimetableItemAdding()
 {
     minorWindow.reset(new TimetableItemsAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_CalendarMain_window()
+void WindowsManager::open_CalendarMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new OverviewMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_AgendaMain_window()
+void WindowsManager::open_AgendaMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new AgendaMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_AgendaAdding_window()
+void WindowsManager::open_AgendaAdding()
 {
     minorWindow.reset(new AgendaAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_SubjectsMain_window()
+void WindowsManager::open_SubjectsMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new SubjectsMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_SubjectAdding_window()
+void WindowsManager::open_SubjectAdding()
 {
     minorWindow.reset(new SubjectAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_TeachersMain_window()
+void WindowsManager::open_TeachersMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new TeacherMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_TeacherAdding_window()
+void WindowsManager::open_TeacherAdding()
 {
     minorWindow.reset(new TeacherAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_GradesMain_window()
+void WindowsManager::open_GradesMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new GradesMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_GradeAdding_window()
+void WindowsManager::open_GradeAdding()
 {
     minorWindow.reset(new GradesAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_SettingsMain_window()
+void WindowsManager::open_SettingsMain()
 {
-    closeMainWindow();
-    closeMinorWindow();
+    close_MainWindow();
     mainWindow.reset(new SettingsMain());
+    set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_Calendar_window()
+void WindowsManager::open_Calendar()
 {
     minorWindow.reset(new Calendar());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_Clock_window()
+void WindowsManager::open_Clock()
 {
     minorWindow.reset(new Clock());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_EditOrDelete_dialog()
+void WindowsManager::open_EditOrDelete()
 {
     minorWindow.reset(new EditOrDeleteDialog());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_EditDeleteOrMarkAsDone_dialog()
+void WindowsManager::open_EditDeleteOrMarkAsDone()
 {
     minorWindow.reset(new EditDeleteMarkAsDomeDialog());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     minorWindow->show();
 }
 
-void WindowsManager::open_SaveGrade_dialog()
+void WindowsManager::open_SaveGrade()
 {
     minorWindow.reset(new AddGradeDialog());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);

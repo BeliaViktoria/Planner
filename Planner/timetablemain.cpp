@@ -38,3 +38,43 @@ TimetableMain::~TimetableMain()
 {
     delete ui;
 }
+
+void TimetableMain::on_pushButton_Timetable_clicked()
+{
+    emit OpenTimetable();
+}
+
+void TimetableMain::on_pushButton_Calendar_clicked()
+{
+    emit OpenCalendar();
+}
+
+void TimetableMain::on_pushButton_Agenda_clicked()
+{
+    emit OpenAgenda();
+}
+
+void TimetableMain::on_pushButton_Subjects_clicked()
+{
+    emit OpenSubjects();
+}
+
+void TimetableMain::on_pushButton_Teachers_clicked()
+{
+    emit OpenTeachers();
+}
+
+void TimetableMain::on_pushButton_Grades_clicked()
+{
+    emit OpenGrades();
+}
+
+void TimetableMain::on_pushButton_Settings_clicked()
+{
+    emit OpenSettings();
+}
+
+void TimetableMain::on_pushButton_Overview_clicked()
+{
+    emit OpenOverview();
+}
