@@ -24,6 +24,7 @@ signals:
     void OpenTeachers();
     void OpenGrades();
     void OpenSettings();
+    void OpenWelcome();
 
 private slots:
     void on_pushButton_Timetable_clicked();
@@ -34,6 +35,7 @@ private slots:
     void on_pushButton_Grades_clicked();
     void on_pushButton_Settings_clicked();
     void on_pushButton_Overview_clicked();
+    void on_pushButton_StartNewTerm_clicked();
 
 private:
     Ui::SettingsMain *ui;

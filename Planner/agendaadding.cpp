@@ -12,3 +12,9 @@ AgendaAdding::~AgendaAdding()
 {
     delete ui;
 }
+
+void AgendaAdding::on_pushButton_Deadline_clicked()
+{
+    emit OpenPickUpDate();
+}
+

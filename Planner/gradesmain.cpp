@@ -52,3 +52,15 @@ void GradesMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+
+void GradesMain::on_pushButton_AddGrade_clicked()
+{
+    emit OpenGradeAdding();
+}
+
+
+void GradesMain::on_listWidget_Grades_itemClicked(QListWidgetItem *item)
+{
+    emit OpenEditOrDelete();
+}
+

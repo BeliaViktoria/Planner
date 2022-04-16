@@ -15,6 +15,12 @@ public:
     explicit AgendaAdding(QWidget *parent = nullptr);
     ~AgendaAdding();
 
+signals:
+    void OpenPickUpDate();
+
+private slots:
+    void on_pushButton_Deadline_clicked();
+
 private:
     Ui::AgendaAdding *ui;
 };

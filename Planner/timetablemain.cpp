@@ -78,3 +78,18 @@ void TimetableMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+void TimetableMain::on_tableWidget_Timetable_cellClicked(int row, int column)
+{
+    emit OpenPlanAdding();
+}
+
+void TimetableMain::on_tableWidget_Time_1_cellClicked(int row, int column)
+{
+    emit OpenClock();
+}
+
+void TimetableMain::on_tableWidget_Time_2_cellClicked(int row, int column)
+{
+    emit OpenClock();
+}
+

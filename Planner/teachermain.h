@@ -2,6 +2,7 @@
 #define TEACHERMAIN_H
 
 #include <QWidget>
+#include <QListWidgetItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TeacherMain; }
@@ -24,6 +25,8 @@ signals:
     void OpenTeachers();
     void OpenGrades();
     void OpenSettings();
+    void OpenTeacherAdding();
+    void OpenEditOrDelete();
 
 private slots:
     void on_pushButton_Timetable_clicked();
@@ -34,6 +37,8 @@ private slots:
     void on_pushButton_Grades_clicked();
     void on_pushButton_Settings_clicked();
     void on_pushButton_Overview_clicked();
+    void on_pushButton_AddTeacher_clicked();
+    void on_listWidget_Teachers_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::TeacherMain *ui;

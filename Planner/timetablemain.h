@@ -24,6 +24,8 @@ signals:
     void OpenTeachers();
     void OpenGrades();
     void OpenSettings();
+    void OpenPlanAdding();
+    void OpenClock();
 
 private slots:
     void on_pushButton_Timetable_clicked();
@@ -34,6 +36,9 @@ private slots:
     void on_pushButton_Grades_clicked();
     void on_pushButton_Settings_clicked();
     void on_pushButton_Overview_clicked();
+    void on_tableWidget_Timetable_cellClicked(int row, int column);
+    void on_tableWidget_Time_1_cellClicked(int row, int column);
+    void on_tableWidget_Time_2_cellClicked(int row, int column);
 
 private:
     Ui::TimetableMain *ui;

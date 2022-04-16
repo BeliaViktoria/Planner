@@ -52,3 +52,14 @@ void SubjectsMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+
+void SubjectsMain::on_pushButton_AddSubject_clicked()
+{
+    emit OpenSubjectAdding();
+}
+
+void SubjectsMain::on_listWidget_Subjects_itemClicked(QListWidgetItem *item)
+{
+    emit OpenEditOrDelete();
+}
+

@@ -15,6 +15,12 @@ public:
     explicit GradesAdding(QWidget *parent = nullptr);
     ~GradesAdding();
 
+signals:
+    void OpenPickUpDate();
+
+private slots:
+    void on_pushButton_Date_clicked();
+
 private:
     Ui::GradesAdding *ui;
 };

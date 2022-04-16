@@ -18,8 +18,9 @@
 #include "editordeletedialog.h"
 #include "editdeletemarkasdomedialog.h"
 #include "addgradedialog.h"
+#include "areyousure.h"
 
-WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr)
+WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr), dialogWindow(nullptr)
 {
     open_Welcome();
 }
@@ -58,6 +59,15 @@ void WindowsManager::close_MinorWindow()
     }
 }
 
+void WindowsManager::close_DialogWindow()
+{
+    if(dialogWindow)
+    {
+        dialogWindow->close();
+    }
+}
+
+
 void WindowsManager::open_Welcome()
 {
     close_MainWindow();
@@ -78,6 +88,8 @@ void WindowsManager::open_TimetableMain()
 {
     close_MainWindow();
     mainWindow.reset(new TimetableMain());
+    connect(mainWindow.get(), SIGNAL(OpenPlanAdding()), this, SLOT(open_TimetableItemAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenClock()), this, SLOT(open_Clock()));
     set_MenuConections();
     mainWindow->show();
 }
@@ -92,7 +104,7 @@ void WindowsManager::open_TimetableItemAdding()
 void WindowsManager::open_CalendarMain()
 {
     close_MainWindow();
-    mainWindow.reset(new OverviewMain());
+    mainWindow.reset(new CalendarMain());
     set_MenuConections();
     mainWindow->show();
 }
@@ -102,6 +114,8 @@ void WindowsManager::open_AgendaMain()
     close_MainWindow();
     mainWindow.reset(new AgendaMain());
     set_MenuConections();
+    connect(mainWindow.get(), SIGNAL(OpenAgendaAdding()), this, SLOT(open_AgendaAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenEditDeleteOrMarkAsDone()), this, SLOT(open_EditDeleteOrMarkAsDone()));
     mainWindow->show();
 }
 
@@ -109,6 +123,7 @@ void WindowsManager::open_AgendaAdding()
 {
     minorWindow.reset(new AgendaAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
     minorWindow->show();
 }
 
@@ -117,6 +132,8 @@ void WindowsManager::open_SubjectsMain()
     close_MainWindow();
     mainWindow.reset(new SubjectsMain());
     set_MenuConections();
+    connect(mainWindow.get(), SIGNAL(OpenSubjectAdding()), this, SLOT(open_SubjectAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
     mainWindow->show();
 }
 
@@ -132,6 +149,8 @@ void WindowsManager::open_TeachersMain()
     close_MainWindow();
     mainWindow.reset(new TeacherMain());
     set_MenuConections();
+    connect(mainWindow.get(), SIGNAL(OpenTeacherAdding()), this, SLOT(open_TeacherAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
     mainWindow->show();
 }
 
@@ -147,6 +166,8 @@ void WindowsManager::open_GradesMain()
     close_MainWindow();
     mainWindow.reset(new GradesMain());
     set_MenuConections();
+    connect(mainWindow.get(), SIGNAL(OpenGradeAdding()), this, SLOT(open_GradeAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
     mainWindow->show();
 }
 
@@ -154,6 +175,7 @@ void WindowsManager::open_GradeAdding()
 {
     minorWindow.reset(new GradesAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
     minorWindow->show();
 }
 
@@ -162,21 +184,22 @@ void WindowsManager::open_SettingsMain()
     close_MainWindow();
     mainWindow.reset(new SettingsMain());
     set_MenuConections();
+    connect(mainWindow.get(), SIGNAL(OpenWelcome()), this, SLOT(open_Welcome()));
     mainWindow->show();
 }
 
 void WindowsManager::open_Calendar()
 {
-    minorWindow.reset(new Calendar());
-    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    minorWindow->show();
+    dialogWindow.reset(new Calendar());
+    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    dialogWindow->show();
 }
 
 void WindowsManager::open_Clock()
 {
-    minorWindow.reset(new Clock());
-    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    minorWindow->show();
+    dialogWindow.reset(new Clock());
+    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    dialogWindow->show();
 }
 
 void WindowsManager::open_EditOrDelete()
@@ -195,8 +218,15 @@ void WindowsManager::open_EditDeleteOrMarkAsDone()
 
 void WindowsManager::open_SaveGrade()
 {
-    minorWindow.reset(new AddGradeDialog());
-    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    minorWindow->show();
+    dialogWindow.reset(new AddGradeDialog());
+    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    dialogWindow->show();
+}
+
+void WindowsManager::open_AreYouSure()
+{
+    dialogWindow.reset(new AreYouSure());
+    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    dialogWindow->show();
 }
 

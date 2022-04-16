@@ -12,6 +12,7 @@ SOURCES += \
     addgradedialog.cpp \
     agendaadding.cpp \
     agendamain.cpp \
+    areyousure.cpp \
     calendar.cpp \
     calendarmain.cpp \
     clock.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     addgradedialog.h \
     agendaadding.h \
     agendamain.h \
+    areyousure.h \
     calendar.h \
     calendarmain.h \
     clock.h \
@@ -57,6 +59,7 @@ FORMS += \
     addgradedialog.ui \
     agendaadding.ui \
     agendamain.ui \
+    areyousure.ui \
     calendar.ui \
     calendarmain.ui \
     clock.ui \

@@ -52,3 +52,14 @@ void TeacherMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+
+void TeacherMain::on_pushButton_AddTeacher_clicked()
+{
+    emit OpenTeacherAdding();
+}
+
+void TeacherMain::on_listWidget_Teachers_itemClicked(QListWidgetItem *item)
+{
+    emit OpenEditOrDelete();
+}
+

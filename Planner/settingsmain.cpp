@@ -52,3 +52,9 @@ void SettingsMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+
+void SettingsMain::on_pushButton_StartNewTerm_clicked()
+{
+    emit OpenWelcome();
+}
+

@@ -2,6 +2,7 @@
 #define AGENDAMAIN_H
 
 #include <QWidget>
+#include <QListWidgetItem>
 
 namespace Ui {
 class AgendaMain;
@@ -24,6 +25,8 @@ signals:
     void OpenTeachers();
     void OpenGrades();
     void OpenSettings();
+    void OpenAgendaAdding();
+    void OpenEditDeleteOrMarkAsDone();
 
 private slots:
     void on_pushButton_Timetable_clicked();
@@ -34,6 +37,8 @@ private slots:
     void on_pushButton_Grades_clicked();
     void on_pushButton_Settings_clicked();
     void on_pushButton_Overview_clicked();
+    void on_pushButton_AddTask_clicked();
+    void on_listWidget_Tasks_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::AgendaMain *ui;

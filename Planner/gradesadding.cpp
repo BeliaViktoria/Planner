@@ -12,3 +12,9 @@ GradesAdding::~GradesAdding()
 {
     delete ui;
 }
+
+void GradesAdding::on_pushButton_Date_clicked()
+{
+    emit OpenPickUpDate();
+}
+

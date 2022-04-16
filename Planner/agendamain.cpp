@@ -52,3 +52,14 @@ void AgendaMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+
+void AgendaMain::on_pushButton_AddTask_clicked()
+{
+    emit OpenAgendaAdding();
+}
+
+void AgendaMain::on_listWidget_Tasks_itemClicked(QListWidgetItem *item)
+{
+    emit OpenEditDeleteOrMarkAsDone();
+}
+

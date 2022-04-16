@@ -18,6 +18,7 @@ private:
 private slots:
     void close_MainWindow();
     void close_MinorWindow();
+    void close_DialogWindow();
 
     void open_Welcome();
     void open_OverviewMain();
@@ -39,10 +40,12 @@ private slots:
     void open_EditOrDelete();
     void open_EditDeleteOrMarkAsDone();
     void open_SaveGrade();
+    void open_AreYouSure();
 
 private:
     std::unique_ptr<QWidget> mainWindow;
     std::unique_ptr<QWidget> minorWindow;
+    std::unique_ptr<QWidget> dialogWindow;
 };
 
 #endif // WINDOWSMANAGER_H
