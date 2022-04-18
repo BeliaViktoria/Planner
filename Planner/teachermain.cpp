@@ -1,11 +1,34 @@
 #include "teachermain.h"
 #include "ui_teachermain.h"
+#include "currentuser.h"
+#include <algorithm>
 
 TeacherMain::TeacherMain(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::TeacherMain)
 {
     ui->setupUi(this);
+    showTeacherList();
+}
+
+void TeacherMain::showTeacherList()
+{
+    ui->listWidget_Teachers->clear();
+    std::vector<Teacher> teachers = CurrentUser::getInstance()->getTeachers();
+    QString itemText = "";
+    for(Teacher item : teachers)
+    {
+        itemText += item.getFullname();
+        if(item.getEmail() != "")
+        {
+            itemText += "\n - " + item.getEmail();
+        }
+        if(item.getPhone() != "")
+        {
+            itemText += "\n - " + item.getPhone();
+        }
+        ui->listWidget_Teachers->addItem(itemText);
+    }
 }
 
 TeacherMain::~TeacherMain()
@@ -61,5 +84,52 @@ void TeacherMain::on_pushButton_AddTeacher_clicked()
 void TeacherMain::on_listWidget_Teachers_itemClicked(QListWidgetItem *item)
 {
     emit OpenEditOrDelete();
+}
+
+void TeacherMain::OpenEditingWindow()
+{
+    auto date = ui->listWidget_Teachers->currentItem()->text().split("\n - ");
+    auto fullname = date[0].split(' ');
+    if(date.length() == 1)
+    {
+        Teacher teacher(fullname[0], fullname[1], fullname[2], "", "");
+        emit OpenTeacherEditing(teacher);
+    }
+    else if(date.length() == 2)
+    {
+        Teacher teacher(fullname[0], fullname[1], fullname[2], "", date[1]);
+        emit OpenTeacherEditing(teacher);
+    }
+    else
+    {
+        Teacher teacher(fullname[0], fullname[1], fullname[2], date[2], date[1]);
+        emit OpenTeacherEditing(teacher);
+    }
+}
+
+void TeacherMain::editTeacher(Teacher teacher)
+{
+    int index = ui->listWidget_Teachers->currentRow();
+    CurrentUser::getInstance()->getTeachers()[index] = teacher;
+    sort(CurrentUser::getInstance()->getTeachers().begin(), CurrentUser::getInstance()->getTeachers().end());
+    showTeacherList();
+}
+
+void TeacherMain::Delete()
+{
+    auto teacherIterator = CurrentUser::getInstance()->getTeachers().begin();
+    for(int i = 0; i < ui->listWidget_Teachers->currentRow(); i++)
+    {
+        ++teacherIterator;
+    }
+    CurrentUser::getInstance()->getTeachers().erase(teacherIterator);
+    showTeacherList();
+}
+
+void TeacherMain::addTeacher(Teacher teacher)
+{
+    CurrentUser::getInstance()->getTeachers().push_back(teacher);
+    sort(CurrentUser::getInstance()->getTeachers().begin(), CurrentUser::getInstance()->getTeachers().end());
+    showTeacherList();
 }
 

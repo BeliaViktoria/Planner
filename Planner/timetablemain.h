@@ -2,6 +2,8 @@
 #define TIMETABLEMAIN_H
 
 #include <QWidget>
+#include <set>
+#include <QListWidgetItem>
 
 namespace Ui {
 class TimetableMain;
@@ -42,6 +44,7 @@ private slots:
 
 private:
     Ui::TimetableMain *ui;
+    std::set<QListWidgetItem> teachers;
 };
 
 #endif // TIMETABLEMAIN_H

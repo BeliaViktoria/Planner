@@ -1,8 +1,8 @@
 #ifndef WINDOWSMANAGER_H
 #define WINDOWSMANAGER_H
 
-#include <QObject>
 #include <QWidget>
+#include "teacher.h"
 
 class WindowsManager : public QObject
 {
@@ -31,6 +31,7 @@ private slots:
     void open_SubjectAdding();
     void open_TeachersMain();
     void open_TeacherAdding();
+    void open_TeacherEditing(Teacher teacher);
     void open_GradesMain();
     void open_GradeAdding();
     void open_SettingsMain();

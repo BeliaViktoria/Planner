@@ -134,7 +134,7 @@ background-color:rgb(219, 226, 239);</string>
     <rect>
      <x>170</x>
      <y>160</y>
-     <width>641</width>
+     <width>651</width>
      <height>61</height>
     </rect>
    </property>
@@ -220,7 +220,7 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>170</x>
      <y>230</y>
-     <width>641</width>
+     <width>651</width>
      <height>111</height>
     </rect>
    </property>
@@ -325,7 +325,7 @@ background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>170</x>
      <y>350</y>
-     <width>641</width>
+     <width>651</width>
      <height>111</height>
     </rect>
    </property>
@@ -431,7 +431,7 @@ border-color:rgb(18, 46, 79);</string>
     <rect>
      <x>170</x>
      <y>470</y>
-     <width>641</width>
+     <width>651</width>
      <height>51</height>
     </rect>
    </property>
@@ -478,7 +478,7 @@ background-color: rgb(255, 255, 255);</string>
    <widget class="QRadioButton" name="radioButton_Denominator">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>450</x>
       <y>0</y>
       <width>191</width>
       <height>41</height>

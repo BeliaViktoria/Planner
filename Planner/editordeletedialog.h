@@ -14,6 +14,14 @@ class EditOrDeleteDialog : public QWidget
 public:
     explicit EditOrDeleteDialog(QWidget *parent = nullptr);
     ~EditOrDeleteDialog();
+signals:
+    void Edit();
+    void Delete();
+
+private slots:
+    void on_pushButton_Edit_clicked();
+
+    void on_pushButton_Delete_clicked();
 
 private:
     Ui::EditOrDeleteDialog *ui;

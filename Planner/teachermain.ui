@@ -52,11 +52,6 @@ border-style: solid;
 border-width: 1px;
 border-color:rgb(64, 115, 175);</string>
    </property>
-   <item>
-    <property name="text">
-     <string>Belia Viktoriia Oleksiivna</string>
-    </property>
-   </item>
   </widget>
   <widget class="QWidget" name="widget_Teachers" native="true">
    <property name="geometry">

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QListWidgetItem>
+#include "teacher.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TeacherMain; }
@@ -16,6 +17,9 @@ public:
     TeacherMain(QWidget *parent = nullptr);
     ~TeacherMain();
 
+private:
+    void showTeacherList();
+
 signals:
     void OpenOverview();
     void OpenTimetable();
@@ -26,6 +30,7 @@ signals:
     void OpenGrades();
     void OpenSettings();
     void OpenTeacherAdding();
+    void OpenTeacherEditing(Teacher);
     void OpenEditOrDelete();
 
 private slots:
@@ -39,6 +44,10 @@ private slots:
     void on_pushButton_Overview_clicked();
     void on_pushButton_AddTeacher_clicked();
     void on_listWidget_Teachers_itemClicked(QListWidgetItem *item);
+    void OpenEditingWindow();
+    void editTeacher(Teacher teacher);
+    void Delete();
+    void addTeacher(Teacher teacher);
 
 private:
     Ui::TeacherMain *ui;

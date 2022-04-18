@@ -16,6 +16,7 @@ SOURCES += \
     calendar.cpp \
     calendarmain.cpp \
     clock.cpp \
+    currentuser.cpp \
     editdeletemarkasdomedialog.cpp \
     editordeletedialog.cpp \
     gradesadding.cpp \
@@ -25,11 +26,13 @@ SOURCES += \
     settingsmain.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
+    teacher.cpp \
     teacheradding.cpp \
     teachermain.cpp \
     timetableitemsadding.cpp \
     timetablemain.cpp \
     welcomemain.cpp \
+    whattosave.cpp \
     windowsmanager.cpp
 
 HEADERS += \
@@ -40,6 +43,7 @@ HEADERS += \
     calendar.h \
     calendarmain.h \
     clock.h \
+    currentuser.h \
     editdeletemarkasdomedialog.h \
     editordeletedialog.h \
     gradesadding.h \
@@ -48,11 +52,13 @@ HEADERS += \
     settingsmain.h \
     subjectadding.h \
     subjectsmain.h \
+    teacher.h \
     teacheradding.h \
     teachermain.h \
     timetableitemsadding.h \
     timetablemain.h \
     welcomemain.h \
+    whattosave.h \
     windowsmanager.h
 
 FORMS += \
@@ -75,7 +81,8 @@ FORMS += \
     teachermain.ui \
     timetableitemsadding.ui \
     timetablemain.ui \
-    welcomemain.ui
+    welcomemain.ui \
+    whattosave.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

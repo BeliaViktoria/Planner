@@ -150,6 +150,7 @@ void WindowsManager::open_TeachersMain()
     mainWindow.reset(new TeacherMain());
     set_MenuConections();
     connect(mainWindow.get(), SIGNAL(OpenTeacherAdding()), this, SLOT(open_TeacherAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenTeacherEditing(Teacher)), this, SLOT(open_TeacherEditing(Teacher)));
     connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
     mainWindow->show();
 }
@@ -158,6 +159,15 @@ void WindowsManager::open_TeacherAdding()
 {
     minorWindow.reset(new TeacherAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(Teacher)), mainWindow.get(), SLOT(addTeacher(Teacher)));
+    minorWindow->show();
+}
+
+void WindowsManager::open_TeacherEditing(Teacher teacher)
+{
+    minorWindow.reset(new TeacherAdding(teacher));
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(Teacher)), mainWindow.get(), SLOT(editTeacher(Teacher)));
     minorWindow->show();
 }
 
@@ -206,6 +216,8 @@ void WindowsManager::open_EditOrDelete()
 {
     minorWindow.reset(new EditOrDeleteDialog());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
+    connect(minorWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
     minorWindow->show();
 }
 
@@ -225,8 +237,9 @@ void WindowsManager::open_SaveGrade()
 
 void WindowsManager::open_AreYouSure()
 {
-    dialogWindow.reset(new AreYouSure());
-    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    dialogWindow->show();
+    minorWindow.reset(new AreYouSure());
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Yes()), mainWindow.get(), SLOT(Delete()));
+    minorWindow->show();
 }
 

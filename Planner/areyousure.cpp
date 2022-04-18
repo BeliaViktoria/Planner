@@ -12,3 +12,16 @@ AreYouSure::~AreYouSure()
 {
     delete ui;
 }
+
+void AreYouSure::on_pushButton_Yes_clicked()
+{
+    emit Yes();
+    this->close();
+}
+
+
+void AreYouSure::on_pushButton_No_clicked()
+{
+    this->close();
+}
+
