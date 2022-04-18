@@ -415,7 +415,7 @@ font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
     <property name="styleSheet">
      <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
 color: black;
-background: rgb(255, 255, 255);
+background:rgb(219, 226, 239);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
