@@ -38,7 +38,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>39</y>
+     <y>40</y>
      <width>901</width>
      <height>571</height>
     </rect>
@@ -93,264 +93,6 @@ border-color:rgb(18, 46, 79);</string>
    <zorder>widget_Settings</zorder>
    <zorder>pushButton_Save</zorder>
   </widget>
-  <widget class="QLabel" name="label_ColorTheme">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>170</y>
-     <width>171</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);
-text-decoration: underline;</string>
-   </property>
-   <property name="text">
-    <string>Color theme:</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_Blue">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>170</y>
-     <width>97</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Blue</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_Red">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>170</y>
-     <width>81</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Red</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_Green">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>170</y>
-     <width>101</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Green</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_GradingSystem">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>240</y>
-     <width>211</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);
-text-decoration: underline;</string>
-   </property>
-   <property name="text">
-    <string>Grading system:</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_Average">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>240</y>
-     <width>131</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Average</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_Sum">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>240</y>
-     <width>81</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Sum</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_MaxGrade">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>290</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 18pt &quot;Gentium Book Basic&quot;;
-color: black;
-background:rgb(219, 226, 239);
-border-radius: 15px;
-border-style: solid;
-border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_MaxGrade">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>290</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Max grade:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_StartDate">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>360</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Start date:</string>
-   </property>
-  </widget>
-  <widget class="QDateEdit" name="dateEdit_EndDate">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>410</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 18pt &quot;Gentium Book Basic&quot;;
-color: black;
-background:rgb(219, 226, 239);
-border-radius: 15px;
-border-style: solid;
-border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
-   </property>
-  </widget>
-  <widget class="QDateEdit" name="dateEdit_StartDate">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>360</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 18pt &quot;Gentium Book Basic&quot;;
-color: black;
-background:rgb(219, 226, 239);
-border-radius: 15px;
-border-style: solid;
-border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_EndDate">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>410</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>End date:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_Term">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>360</y>
-     <width>101</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
-background-color: rgb(255, 255, 255);
-text-decoration: underline;</string>
-   </property>
-   <property name="text">
-    <string>Term:</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_Welcome">
    <property name="geometry">
     <rect>
@@ -387,61 +129,378 @@ background-color:rgb(219, 226, 239);</string>
     <string>Please, set up your Planner</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_StartWith">
+  <widget class="QWidget" name="widget_ColorTheme" native="true">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>470</y>
-     <width>151</width>
-     <height>41</height>
+     <x>170</x>
+     <y>160</y>
+     <width>641</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: black;
+    <string notr="true">background-color:white;</string>
+   </property>
+   <widget class="QLabel" name="label_ColorTheme">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
 font: 75 18pt &quot;Gentium Book Basic&quot;;
 background-color: rgb(255, 255, 255);
 text-decoration: underline;</string>
-   </property>
-   <property name="text">
-    <string>Start with:</string>
-   </property>
+    </property>
+    <property name="text">
+     <string>Color theme:</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Blue">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>97</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Blue</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Red">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Red</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Green">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>10</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Green</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QRadioButton" name="radioButton_Numerator">
+  <widget class="QWidget" name="widget_GradingSystem" native="true">
    <property name="geometry">
     <rect>
-     <x>410</x>
-     <y>470</y>
-     <width>171</width>
-     <height>41</height>
+     <x>170</x>
+     <y>230</y>
+     <width>641</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: black;
+    <string notr="true">background-color:white;</string>
+   </property>
+   <widget class="QLabel" name="label_GradingSystem">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);
+text-decoration: underline;</string>
+    </property>
+    <property name="text">
+     <string>Grading system:</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Average">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
 font: 75 18pt &quot;Gentium Book Basic&quot;;
 background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Numerator</string>
-   </property>
+    </property>
+    <property name="text">
+     <string>Average</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Sum">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>10</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Sum</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_MaxGrade">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>60</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gentium Book Basic&quot;;
+color: black;
+background:rgb(219, 226, 239);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_MaxGrade">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>60</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Max grade:</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QRadioButton" name="radioButton_Denominator">
+  <widget class="QWidget" name="widget_Term" native="true">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>470</y>
-     <width>191</width>
-     <height>41</height>
+     <x>170</x>
+     <y>350</y>
+     <width>641</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: black;
+    <string notr="true">background-color:white;</string>
+   </property>
+   <widget class="QLabel" name="label_Term">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);
+text-decoration: underline;</string>
+    </property>
+    <property name="text">
+     <string>Term:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_StartDate">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
 font: 75 18pt &quot;Gentium Book Basic&quot;;
 background-color: rgb(255, 255, 255);</string>
-   </property>
-   <property name="text">
-    <string>Denominator</string>
-   </property>
+    </property>
+    <property name="text">
+     <string>Start date:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_EndDate">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>60</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>End date:</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit_StartDate">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>10</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gentium Book Basic&quot;;
+color: black;
+background:rgb(219, 226, 239);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit_EndDate">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>60</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;Gentium Book Basic&quot;;
+color: black;
+background:rgb(219, 226, 239);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(18, 46, 79);</string>
+    </property>
+   </widget>
   </widget>
+  <widget class="QWidget" name="widget_StartWith" native="true">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>470</y>
+     <width>641</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
+   </property>
+   <widget class="QLabel" name="label_StartWith">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);
+text-decoration: underline;</string>
+    </property>
+    <property name="text">
+     <string>Start with:</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Numerator">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>0</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Numerator</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Denominator">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>0</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 75 18pt &quot;Gentium Book Basic&quot;;
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Denominator</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>widget_Welcome</zorder>
+  <zorder>widget_StartWith</zorder>
+  <zorder>widget_Term</zorder>
+  <zorder>widget_GradingSystem</zorder>
+  <zorder>widget_ColorTheme</zorder>
+  <zorder>label_Welcome</zorder>
+  <zorder>label_SetUp</zorder>
  </widget>
  <resources/>
  <connections/>
