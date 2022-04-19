@@ -1,5 +1,6 @@
 #include "teacheradding.h"
 #include "ui_teacheradding.h"
+#include "currentuser.h"
 
 TeacherAdding::TeacherAdding() :
     QWidget(nullptr),
@@ -34,6 +35,7 @@ void TeacherAdding::hideErrorLabels()
     ui->label_NessesaryField_1->hide();
     ui->label_NessesaryField_2->hide();
     ui->label_NessesaryField_3->hide();
+    ui->label_AlreadyExist->hide();
 }
 
 bool TeacherAdding::checkFields()
@@ -64,6 +66,17 @@ void TeacherAdding::on_pushButton_Add_clicked()
     {
         Teacher teacher(ui->lineEdit_Surname->text(), ui->lineEdit_Name->text(),
                         ui->lineEdit_Fathername->text(), ui->lineEdit_Phone->text(), ui->lineEdit_EmailAddress->text());
+        if(ui->label_AddingTeacher->text() == "Adding teacher")
+        {
+            for(Teacher item:CurrentUser::getInstance()->getTeachers())
+            {
+                if (teacher == item)
+                {
+                    ui->label_AlreadyExist->show();
+                    return;
+                }
+            }
+        }
         emit Save(teacher);
         this->close();
     }

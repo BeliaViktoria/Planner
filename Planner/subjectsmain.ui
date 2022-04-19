@@ -78,11 +78,6 @@ border-style: solid;
 border-width: 1px;
 border-color:rgb(64, 115, 175);</string>
     </property>
-    <item>
-     <property name="text">
-      <string>Programming on c++</string>
-     </property>
-    </item>
    </widget>
    <widget class="QPushButton" name="pushButton_AddSubject">
     <property name="geometry">

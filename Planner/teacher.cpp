@@ -62,7 +62,7 @@ bool Teacher::operator<(Teacher anotherTeacher)
 
 bool Teacher::operator==(Teacher anotherTeacher)
 {
-    if(this->fullname == anotherTeacher.fullname && this->phone == anotherTeacher.phone && this->email == anotherTeacher.email)
+    if(this->fullname == anotherTeacher.fullname)
     {
         return true;
     }
