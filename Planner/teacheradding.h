@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "teacher.h"
+#include <QRegularExpressionValidator>
 
 namespace Ui {
 class TeacherAdding;
@@ -29,6 +30,9 @@ signals:
 
 private:
     Ui::TeacherAdding *ui;
+    QRegularExpressionValidator validatorFullname;
+    QRegularExpressionValidator validatorPhone;
+    QRegularExpressionValidator validatorEmail;
 };
 
 #endif // TEACHERADDING_H

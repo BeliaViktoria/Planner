@@ -1,6 +1,8 @@
 #include "teacheradding.h"
 #include "ui_teacheradding.h"
 #include "currentuser.h"
+#include <QRegularExpression>
+
 
 TeacherAdding::TeacherAdding() :
     QWidget(nullptr),
@@ -8,6 +10,14 @@ TeacherAdding::TeacherAdding() :
 {
     ui->setupUi(this);
     hideErrorLabels();
+    validatorFullname.setRegularExpression(QRegularExpression("[a-zA-Z]+"));
+    validatorEmail.setRegularExpression(QRegularExpression("[a-zA-Z0-9._%-+!#$&/=?^|~]+@[A-Za-z0-9.-]+.[A-Za-z]+"));
+    validatorPhone.setRegularExpression(QRegularExpression("[+][0-9]+"));
+    ui->lineEdit_Surname->setValidator(&validatorFullname);
+    ui->lineEdit_Name->setValidator(&validatorFullname);
+    ui->lineEdit_Fathername->setValidator(&validatorFullname);
+    ui->lineEdit_Phone->setValidator(&validatorPhone);
+    ui->lineEdit_EmailAddress->setValidator(&validatorEmail);
 }
 
 TeacherAdding::TeacherAdding(Teacher teacher) :
