@@ -28,6 +28,7 @@ void TeacherMain::showTeacherList()
             itemText += "\n - " + item.getPhone();
         }
         ui->listWidget_Teachers->addItem(itemText);
+        itemText = "";
     }
 }
 
