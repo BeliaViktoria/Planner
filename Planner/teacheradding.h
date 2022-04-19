@@ -21,6 +21,7 @@ public:
 private:
     bool checkFields();
     void hideErrorLabels();
+    void setValidation();
 
 private slots:
     void on_pushButton_Add_clicked();
