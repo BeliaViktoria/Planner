@@ -17,6 +17,10 @@ public:
     explicit TeacherAdding(Teacher teacher);
     ~TeacherAdding();
 
+private:
+    bool checkFields();
+    void hideErrorLabels();
+
 private slots:
     void on_pushButton_Add_clicked();
 
