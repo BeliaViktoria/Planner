@@ -2,6 +2,8 @@
 #include "ui_subjectadding.h"
 #include "currentuser.h"
 
+#define MAX_TEACHERS_COUNT 3
+
 SubjectAdding::SubjectAdding() :
     QWidget(nullptr),
     ui(new Ui::SubjectAdding)
@@ -85,14 +87,29 @@ void SubjectAdding::setValidation()
 
 void SubjectAdding::showTeachersList()
 {
+
     ui->listWidget_Teachers->clear();
     for(Teacher& item:CurrentUser::getInstance()->getTeachers())
     {
         ui->listWidget_Teachers->addItem(item.getFullname());
     }
+    hideTeachers();
+}
+
+void SubjectAdding::hideTeachers()
+{
     if(ui->label_Teachers->text() != "")
     {
         auto teachersNames = ui->label_Teachers->text().split("; ");
+        if(teachersNames.length() > MAX_TEACHERS_COUNT)
+        {
+            for(int j = 0; j < ui->listWidget_Teachers->count(); j++)
+            {
+                    ui->listWidget_Teachers->item(j)->setHidden(true);
+            }
+            return;
+        }
+
         for(int i = 0; i < teachersNames.length(); i++)
         {
             for(int j = 0; j < ui->listWidget_Teachers->count(); j++)
@@ -216,6 +233,6 @@ void SubjectAdding::on_pushButton_White_clicked()
 void SubjectAdding::on_listWidget_Teachers_itemDoubleClicked(QListWidgetItem *item)
 {
     ui->label_Teachers->setText(ui->label_Teachers->text() + item->text() + "; ");
-    ui->listWidget_Teachers->currentItem()->setHidden(true);
+    hideTeachers();
 }
 

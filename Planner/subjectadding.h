@@ -25,6 +25,7 @@ private:
     void setValidation();
     void setColor();
     void showTeachersList();
+    void hideTeachers();
 
 private slots:
     void on_pushButton_Add_clicked();
