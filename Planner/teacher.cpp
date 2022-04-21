@@ -69,6 +69,24 @@ bool Teacher::operator==(Teacher anotherTeacher)
     return false;
 }
 
+bool Teacher::operator==(QString anotherTeacherName)
+{
+    if(this->fullname == anotherTeacherName)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Teacher::operator!=(QString anotherTeacherName)
+{
+    if(this->fullname != anotherTeacherName)
+    {
+        return true;
+    }
+    return false;
+}
+
 void Teacher::operator=(Teacher anotherTeacher)
 {
     this->fullname = anotherTeacher.fullname;

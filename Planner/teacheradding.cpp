@@ -36,7 +36,7 @@ TeacherAdding::~TeacherAdding()
 
 void TeacherAdding::setValidation()
 {
-    validatorFullname.setRegularExpression(QRegularExpression("[a-zA-Z]+"));
+    validatorFullname.setRegularExpression(QRegularExpression("[a-zA-Z ]+"));
     validatorEmail.setRegularExpression(QRegularExpression("[a-zA-Z0-9._%-+!#$&/=?^|~]+@[A-Za-z0-9.-]+.[A-Za-z]+"));
     validatorPhone.setRegularExpression(QRegularExpression("[+][0-9]+"));
     ui->lineEdit_Surname->setValidator(&validatorFullname);

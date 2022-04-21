@@ -3,7 +3,8 @@
 
 #include <mutex>
 #include <vector>
-#include <teacher.h>
+#include "teacher.h"
+#include "subject.h"
 
 class CurrentUser
 {
@@ -14,11 +15,13 @@ public:
     static CurrentUser* getInstance();
 
     std::vector<Teacher>& getTeachers();
+    std::vector<Subject>& getSubjects();
 
 private:
     CurrentUser();
 
     std::vector<Teacher> teachers;
+    std::vector<Subject> subjects;
 
     static CurrentUser* instance;
     static std::mutex mtx;

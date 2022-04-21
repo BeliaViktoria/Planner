@@ -133,6 +133,7 @@ void WindowsManager::open_SubjectsMain()
     mainWindow.reset(new SubjectsMain());
     set_MenuConections();
     connect(mainWindow.get(), SIGNAL(OpenSubjectAdding()), this, SLOT(open_SubjectAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenSubjectEditing(Subject)), this, SLOT(open_SubjectEditing(Subject)));
     connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
     mainWindow->show();
 }
@@ -141,6 +142,15 @@ void WindowsManager::open_SubjectAdding()
 {
     minorWindow.reset(new SubjectAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(Subject)), mainWindow.get(), SLOT(addSubject(Subject)));
+    minorWindow->show();
+}
+
+void WindowsManager::open_SubjectEditing(Subject subject)
+{
+    minorWindow.reset(new SubjectAdding(subject));
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(Subject)), mainWindow.get(), SLOT(editSubject(Subject)));
     minorWindow->show();
 }
 

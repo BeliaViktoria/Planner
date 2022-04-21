@@ -19,6 +19,8 @@ public:
     bool operator>(Teacher anotherTeacher);
     bool operator<(Teacher anotherTeacher);
     bool operator==(Teacher anotherTeacher);
+    bool operator==(QString anotherTeacherName);
+    bool operator!=(QString anotherTeacherName);
     void operator=(Teacher anotherTeacher);
 
 private:

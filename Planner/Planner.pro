@@ -24,6 +24,7 @@ SOURCES += \
     main.cpp \
     overviewmain.cpp \
     settingsmain.cpp \
+    subject.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
     teacher.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     gradesmain.h \
     overviewmain.h \
     settingsmain.h \
+    subject.h \
     subjectadding.h \
     subjectsmain.h \
     teacher.h \

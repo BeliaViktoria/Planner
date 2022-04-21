@@ -89,23 +89,8 @@ void TeacherMain::on_listWidget_Teachers_itemClicked(QListWidgetItem *item)
 
 void TeacherMain::OpenEditingWindow()
 {
-    auto date = ui->listWidget_Teachers->currentItem()->text().split("\n - ");
-    auto fullname = date[0].split(' ');
-    if(date.length() == 1)
-    {
-        Teacher teacher(fullname[0], fullname[1], fullname[2], "", "");
-        emit OpenTeacherEditing(teacher);
-    }
-    else if(date.length() == 2)
-    {
-        Teacher teacher(fullname[0], fullname[1], fullname[2], "", date[1]);
-        emit OpenTeacherEditing(teacher);
-    }
-    else
-    {
-        Teacher teacher(fullname[0], fullname[1], fullname[2], date[2], date[1]);
-        emit OpenTeacherEditing(teacher);
-    }
+    Teacher teacher = CurrentUser::getInstance()->getTeachers()[ui->listWidget_Teachers->currentRow()];
+    emit OpenTeacherEditing(teacher);
 }
 
 void TeacherMain::editTeacher(Teacher teacher)

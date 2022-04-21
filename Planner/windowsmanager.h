@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "teacher.h"
+#include "subject.h"
 
 class WindowsManager : public QObject
 {
@@ -29,6 +30,7 @@ private slots:
     void open_AgendaAdding();
     void open_SubjectsMain();
     void open_SubjectAdding();
+    void open_SubjectEditing(Subject);
     void open_TeachersMain();
     void open_TeacherAdding();
     void open_TeacherEditing(Teacher teacher);

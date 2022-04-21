@@ -19,3 +19,8 @@ std::vector<Teacher>& CurrentUser::getTeachers()
 {
     return teachers;
 }
+
+std::vector<Subject>& CurrentUser::getSubjects()
+{
+    return subjects;
+}

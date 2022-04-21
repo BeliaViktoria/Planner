@@ -1,16 +1,28 @@
 #include "subjectsmain.h"
 #include "ui_subjectsmain.h"
+#include "currentuser.h"
 
 SubjectsMain::SubjectsMain(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SubjectsMain)
 {
     ui->setupUi(this);
+    showSubjectsList();
 }
 
 SubjectsMain::~SubjectsMain()
 {
     delete ui;
+}
+
+void SubjectsMain::showSubjectsList()
+{
+    ui->listWidget_Subjects->clear();
+    std::vector<Subject> subjects = CurrentUser::getInstance()->getSubjects();
+    for(Subject item : subjects)
+    {
+        ui->listWidget_Subjects->addItem(item.getName());
+    }
 }
 
 void SubjectsMain::on_pushButton_Timetable_clicked()
@@ -63,3 +75,34 @@ void SubjectsMain::on_listWidget_Subjects_itemClicked(QListWidgetItem *item)
     emit OpenEditOrDelete();
 }
 
+void SubjectsMain::OpenEditingWindow()
+{
+    Subject subject = CurrentUser::getInstance()->getSubjects()[ui->listWidget_Subjects->currentRow()];
+    emit OpenSubjectEditing(subject);
+}
+
+void SubjectsMain::editSubject(Subject subject)
+{
+    int index = ui->listWidget_Subjects->currentRow();
+    CurrentUser::getInstance()->getSubjects()[index] = subject;
+    sort(CurrentUser::getInstance()->getSubjects().begin(), CurrentUser::getInstance()->getSubjects().end());
+    showSubjectsList();
+}
+
+void SubjectsMain::Delete()
+{
+    auto subjectIterator = CurrentUser::getInstance()->getSubjects().begin();
+    for(int i = 0; i < ui->listWidget_Subjects->currentRow(); i++)
+    {
+        ++subjectIterator;
+    }
+    CurrentUser::getInstance()->getSubjects().erase(subjectIterator);
+    showSubjectsList();
+}
+
+void SubjectsMain::addSubject(Subject subject)
+{
+    CurrentUser::getInstance()->getSubjects().push_back(subject);
+    sort(CurrentUser::getInstance()->getSubjects().begin(), CurrentUser::getInstance()->getSubjects().end());
+    showSubjectsList();
+}
