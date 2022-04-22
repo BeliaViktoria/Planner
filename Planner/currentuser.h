@@ -5,6 +5,7 @@
 #include <vector>
 #include "teacher.h"
 #include "subject.h"
+#include "grade.h"
 
 class CurrentUser
 {
@@ -16,12 +17,14 @@ public:
 
     std::vector<Teacher>& getTeachers();
     std::vector<Subject>& getSubjects();
+    std::vector<Grade>& getGrades();
 
 private:
     CurrentUser();
 
     std::vector<Teacher> teachers;
     std::vector<Subject> subjects;
+    std::vector<Grade> grades;
 
     static CurrentUser* instance;
     static std::mutex mtx;

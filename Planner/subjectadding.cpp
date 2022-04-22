@@ -81,7 +81,7 @@ void SubjectAdding::hideErrorLabels()
 
 void SubjectAdding::setValidation()
 {
-    validatorName.setRegularExpression(QRegularExpression("[a-zA-Z ]+"));
+    validatorName.setRegularExpression(QRegularExpression("[a-zA-Z0-9._%-+!#$&/=?^|~ ]+"));
     ui->lineEdit_Name->setValidator(&validatorName);
 }
 

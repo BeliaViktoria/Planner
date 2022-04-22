@@ -187,6 +187,7 @@ void WindowsManager::open_GradesMain()
     mainWindow.reset(new GradesMain());
     set_MenuConections();
     connect(mainWindow.get(), SIGNAL(OpenGradeAdding()), this, SLOT(open_GradeAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenGradeEditing(Grade)), this, SLOT(open_GradeEditing(Grade)));
     connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
     mainWindow->show();
 }
@@ -195,6 +196,16 @@ void WindowsManager::open_GradeAdding()
 {
     minorWindow.reset(new GradesAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
+    connect(minorWindow.get(), SIGNAL(Save(Grade)), mainWindow.get(), SLOT(addGrade(Grade)));
+    minorWindow->show();
+}
+
+void WindowsManager::open_GradeEditing(Grade grade)
+{
+    minorWindow.reset(new GradesAdding(grade));
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(Grade)), mainWindow.get(), SLOT(editGrade(Grade)));
     connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
     minorWindow->show();
 }
@@ -212,6 +223,7 @@ void WindowsManager::open_Calendar()
 {
     dialogWindow.reset(new Calendar());
     dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(dialogWindow.get(), SIGNAL(SetDate(QString)), minorWindow.get(), SLOT(setDate(QString)));
     dialogWindow->show();
 }
 

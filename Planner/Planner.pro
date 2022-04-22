@@ -16,9 +16,11 @@ SOURCES += \
     calendar.cpp \
     calendarmain.cpp \
     clock.cpp \
+    color.cpp \
     currentuser.cpp \
     editdeletemarkasdomedialog.cpp \
     editordeletedialog.cpp \
+    grade.cpp \
     gradesadding.cpp \
     gradesmain.cpp \
     main.cpp \
@@ -44,9 +46,11 @@ HEADERS += \
     calendar.h \
     calendarmain.h \
     clock.h \
+    color.h \
     currentuser.h \
     editdeletemarkasdomedialog.h \
     editordeletedialog.h \
+    grade.h \
     gradesadding.h \
     gradesmain.h \
     overviewmain.h \

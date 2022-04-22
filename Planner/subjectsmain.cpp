@@ -19,9 +19,20 @@ void SubjectsMain::showSubjectsList()
 {
     ui->listWidget_Subjects->clear();
     std::vector<Subject> subjects = CurrentUser::getInstance()->getSubjects();
+    QString itemText = "";
     for(Subject item : subjects)
     {
-        ui->listWidget_Subjects->addItem(item.getName());
+        itemText += item.getName() + "\n - Teachers: " + item.getTeachers()[0].getFullname() + ";";
+        if(item.getTeachers()[1].getFullname() != "")
+        {
+            itemText += "\n                      " + item.getTeachers()[1].getFullname() + ";";
+        }
+        if(item.getTeachers()[2].getFullname() != "")
+        {
+            itemText += "\n                      " + item.getTeachers()[2].getFullname() + ";";
+        }
+        ui->listWidget_Subjects->addItem(itemText);
+        itemText = "";
     }
 }
 

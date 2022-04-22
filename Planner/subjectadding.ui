@@ -71,6 +71,9 @@ color:white;</string>
     <property name="text">
      <string>Add </string>
     </property>
+    <property name="shortcut">
+     <string>Return</string>
+    </property>
    </widget>
    <widget class="QListWidget" name="listWidget_Teachers">
     <property name="geometry">

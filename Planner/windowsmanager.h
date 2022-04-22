@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "teacher.h"
 #include "subject.h"
+#include "grade.h"
 
 class WindowsManager : public QObject
 {
@@ -36,6 +37,7 @@ private slots:
     void open_TeacherEditing(Teacher teacher);
     void open_GradesMain();
     void open_GradeAdding();
+    void open_GradeEditing(Grade grade);
     void open_SettingsMain();
     void open_Calendar();
     void open_Clock();

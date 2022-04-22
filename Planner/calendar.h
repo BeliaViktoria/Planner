@@ -15,6 +15,13 @@ public:
     explicit Calendar(QWidget *parent = nullptr);
     ~Calendar();
 
+private slots:
+    void on_calendarWidget_clicked(const QDate &date);
+    void on_pushButton_Add_clicked();
+
+signals:
+    void SetDate(QString);
+
 private:
     Ui::Calendar *ui;
 };

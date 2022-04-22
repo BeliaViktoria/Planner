@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QListWidgetItem>
+#include "grade.h"
 
 namespace Ui {
 class GradesMain;
@@ -16,6 +17,9 @@ public:
     explicit GradesMain(QWidget *parent = nullptr);
     ~GradesMain();
 
+private:
+    void showGradesList();
+
 signals:
     void OpenOverview();
     void OpenTimetable();
@@ -27,6 +31,7 @@ signals:
     void OpenSettings();
     void OpenGradeAdding();
     void OpenEditOrDelete();
+    void OpenGradeEditing(Grade);
 
 private slots:
     void on_pushButton_Timetable_clicked();
@@ -39,6 +44,10 @@ private slots:
     void on_pushButton_Overview_clicked();
     void on_pushButton_AddGrade_clicked();
     void on_listWidget_Grades_itemClicked(QListWidgetItem *item);
+    void OpenEditingWindow();
+    void editGrade(Grade grade);
+    void Delete();
+    void addGrade(Grade grade);
 
 private:
     Ui::GradesMain *ui;

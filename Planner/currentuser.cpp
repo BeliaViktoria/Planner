@@ -24,3 +24,8 @@ std::vector<Subject>& CurrentUser::getSubjects()
 {
     return subjects;
 }
+
+std::vector<Grade>& CurrentUser::getGrades()
+{
+    return grades;
+}
