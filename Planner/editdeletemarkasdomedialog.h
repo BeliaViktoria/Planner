@@ -12,8 +12,18 @@ class EditDeleteMarkAsDomeDialog : public QWidget
     Q_OBJECT
 
 public:
-    explicit EditDeleteMarkAsDomeDialog(QWidget *parent = nullptr);
+    explicit EditDeleteMarkAsDomeDialog(bool taskStatus);
     ~EditDeleteMarkAsDomeDialog();
+
+signals:
+    void Edit();
+    void Delete();
+    void ChangeTaskStatus();
+
+private slots:
+    void on_pushButton_Edit_clicked();
+    void on_pushButton_Delete_clicked();
+    void on_pushButton_MarkAsDone_clicked();
 
 private:
     Ui::EditDeleteMarkAsDomeDialog *ui;

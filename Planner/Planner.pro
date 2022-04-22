@@ -9,7 +9,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    addgradedialog.cpp \
     agendaadding.cpp \
     agendamain.cpp \
     areyousure.cpp \
@@ -29,6 +28,7 @@ SOURCES += \
     subject.cpp \
     subjectadding.cpp \
     subjectsmain.cpp \
+    task.cpp \
     teacher.cpp \
     teacheradding.cpp \
     teachermain.cpp \
@@ -39,7 +39,6 @@ SOURCES += \
     windowsmanager.cpp
 
 HEADERS += \
-    addgradedialog.h \
     agendaadding.h \
     agendamain.h \
     areyousure.h \
@@ -58,6 +57,7 @@ HEADERS += \
     subject.h \
     subjectadding.h \
     subjectsmain.h \
+    task.h \
     teacher.h \
     teacheradding.h \
     teachermain.h \
@@ -68,7 +68,6 @@ HEADERS += \
     windowsmanager.h
 
 FORMS += \
-    addgradedialog.ui \
     agendaadding.ui \
     agendamain.ui \
     areyousure.ui \

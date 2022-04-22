@@ -6,6 +6,7 @@
 #include "teacher.h"
 #include "subject.h"
 #include "grade.h"
+#include "task.h"
 
 class CurrentUser
 {
@@ -18,6 +19,7 @@ public:
     std::vector<Teacher>& getTeachers();
     std::vector<Subject>& getSubjects();
     std::vector<Grade>& getGrades();
+    std::vector<Task>& getAgenda();
 
 private:
     CurrentUser();
@@ -25,6 +27,7 @@ private:
     std::vector<Teacher> teachers;
     std::vector<Subject> subjects;
     std::vector<Grade> grades;
+    std::vector<Task> agenda;
 
     static CurrentUser* instance;
     static std::mutex mtx;

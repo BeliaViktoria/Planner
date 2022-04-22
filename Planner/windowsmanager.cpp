@@ -17,7 +17,6 @@
 #include "clock.h"
 #include "editordeletedialog.h"
 #include "editdeletemarkasdomedialog.h"
-#include "addgradedialog.h"
 #include "areyousure.h"
 
 WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr), dialogWindow(nullptr)
@@ -115,7 +114,8 @@ void WindowsManager::open_AgendaMain()
     mainWindow.reset(new AgendaMain());
     set_MenuConections();
     connect(mainWindow.get(), SIGNAL(OpenAgendaAdding()), this, SLOT(open_AgendaAdding()));
-    connect(mainWindow.get(), SIGNAL(OpenEditDeleteOrMarkAsDone()), this, SLOT(open_EditDeleteOrMarkAsDone()));
+    connect(mainWindow.get(), SIGNAL(OpenEditDeleteOrMarkAsDone(bool)), this, SLOT(open_EditDeleteOrMarkAsDone(bool)));
+    connect(mainWindow.get(), SIGNAL(OpenTaskEditing(Task)), this, SLOT(open_AgendaEditing(Task)));
     mainWindow->show();
 }
 
@@ -124,6 +124,16 @@ void WindowsManager::open_AgendaAdding()
     minorWindow.reset(new AgendaAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
+    connect(minorWindow.get(), SIGNAL(Save(Task)), mainWindow.get(), SLOT(addTask(Task)));
+    minorWindow->show();
+}
+
+void WindowsManager::open_AgendaEditing(Task task)
+{
+    minorWindow.reset(new AgendaAdding(task));
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
+    connect(minorWindow.get(), SIGNAL(Save(Task)), mainWindow.get(), SLOT(editTask(Task)));
     minorWindow->show();
 }
 
@@ -243,18 +253,14 @@ void WindowsManager::open_EditOrDelete()
     minorWindow->show();
 }
 
-void WindowsManager::open_EditDeleteOrMarkAsDone()
+void WindowsManager::open_EditDeleteOrMarkAsDone(bool taskStatus)
 {
-    minorWindow.reset(new EditDeleteMarkAsDomeDialog());
+    minorWindow.reset(new EditDeleteMarkAsDomeDialog(taskStatus));
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
+    connect(minorWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
+    connect(minorWindow.get(), SIGNAL(ChangeTaskStatus()), mainWindow.get(), SLOT(changeTaskStatus()));
     minorWindow->show();
-}
-
-void WindowsManager::open_SaveGrade()
-{
-    dialogWindow.reset(new AddGradeDialog());
-    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    dialogWindow->show();
 }
 
 void WindowsManager::open_AreYouSure()

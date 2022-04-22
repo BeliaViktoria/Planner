@@ -29,3 +29,8 @@ std::vector<Grade>& CurrentUser::getGrades()
 {
     return grades;
 }
+
+std::vector<Task>& CurrentUser::getAgenda()
+{
+    return agenda;
+}

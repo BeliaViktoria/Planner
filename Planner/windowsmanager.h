@@ -5,6 +5,7 @@
 #include "teacher.h"
 #include "subject.h"
 #include "grade.h"
+#include "task.h"
 
 class WindowsManager : public QObject
 {
@@ -29,6 +30,7 @@ private slots:
     void open_CalendarMain();
     void open_AgendaMain();
     void open_AgendaAdding();
+    void open_AgendaEditing(Task task);
     void open_SubjectsMain();
     void open_SubjectAdding();
     void open_SubjectEditing(Subject);
@@ -43,8 +45,7 @@ private slots:
     void open_Clock();
 
     void open_EditOrDelete();
-    void open_EditDeleteOrMarkAsDone();
-    void open_SaveGrade();
+    void open_EditDeleteOrMarkAsDone(bool taskStatus);
     void open_AreYouSure();
 
 private:
