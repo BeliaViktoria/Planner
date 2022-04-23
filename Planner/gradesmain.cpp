@@ -17,13 +17,35 @@ GradesMain::~GradesMain()
     delete ui;
 }
 
+int GradesMain::getGradeIndex()
+{
+    int index = ui->listWidget_Grades->currentRow();
+    int extraRows = 0;
+    for(int i = 0; i < index; i++)
+    {
+        if(ui->listWidget_Grades->item(i)->textAlignment() == Qt::AlignCenter)
+        {
+            extraRows++;
+        }
+    }
+    return index - extraRows;
+}
+
 void GradesMain::showGradesList()
 {
     ui->listWidget_Grades->clear();
     std::vector<Grade> grades = CurrentUser::getInstance()->getGrades();
     QString itemText = "";
+    QString currentSubject = "";
     for(Grade item : grades)
     {
+        if(currentSubject != item.getSubject().getName())
+        {
+            currentSubject = item.getSubject().getName();
+            ui->listWidget_Grades->addItem(item.getSubject().getName());
+            ui->listWidget_Grades->item(ui->listWidget_Grades->count() - 1)->setTextAlignment(Qt::AlignCenter);
+            ui->listWidget_Grades->item(ui->listWidget_Grades->count() - 1)->setForeground(Qt::blue);
+        }
         itemText += QString::number(item.getCurrentGrade()) + '/' + QString::number(item.getMaxGrade()) + ' ' + item.getSubject().getName() + '\n';
         if(item.getNote() != "")
         {
@@ -87,13 +109,13 @@ void GradesMain::on_listWidget_Grades_itemClicked(QListWidgetItem *item)
 
 void GradesMain::OpenEditingWindow()
 {
-    Grade grade = CurrentUser::getInstance()->getGrades()[ui->listWidget_Grades->currentRow()];
+    Grade grade = CurrentUser::getInstance()->getGrades()[getGradeIndex()];
     emit OpenGradeEditing(grade);
 }
 
 void GradesMain::editGrade(Grade grade)
 {
-    int index = ui->listWidget_Grades->currentRow();
+    int index = getGradeIndex();
     CurrentUser::getInstance()->getGrades()[index] = grade;
     sort(CurrentUser::getInstance()->getGrades().begin(), CurrentUser::getInstance()->getGrades().end());
     showGradesList();
@@ -104,7 +126,10 @@ void GradesMain::Delete()
     auto gradeIterator = CurrentUser::getInstance()->getGrades().begin();
     for(int i = 0; i < ui->listWidget_Grades->currentRow(); i++)
     {
-        ++gradeIterator;
+        if(ui->listWidget_Grades->item(i)->textAlignment() != Qt::AlignCenter)
+        {
+            ++gradeIterator;
+        }
     }
     CurrentUser::getInstance()->getGrades().erase(gradeIterator);
     showGradesList();

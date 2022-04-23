@@ -103,7 +103,9 @@ color:white;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(255, 255, 255)</string>
+     <string notr="true">background-color:rgb(255, 255, 255);
+font: 14pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_ClearSubjects">

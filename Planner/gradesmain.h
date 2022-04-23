@@ -19,6 +19,7 @@ public:
 
 private:
     void showGradesList();
+    int getGradeIndex();
 
 signals:
     void OpenOverview();
