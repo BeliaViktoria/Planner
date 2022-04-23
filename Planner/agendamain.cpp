@@ -19,16 +19,37 @@ void AgendaMain::showAgendaList()
 {
     ui->listWidget_Tasks->clear();
     std::vector<Task> agenda = CurrentUser::getInstance()->getAgenda();
-    QString currentDate = "";
+    QDate currentDate = QDate();
     int currentDateIndex = -1;
     QString itemText = "";
     QString status = "Finished";
     for(Task item : agenda)
     {
-        if(item.getDeadline().toString("dd.MM.yyyy") != currentDate)
+        if(item.getDeadline() != currentDate)
         {
-            currentDate = item.getDeadline().toString("dd.MM.yyyy");
-            ui->listWidget_Tasks->addItem(currentDate);
+            currentDate = item.getDeadline();
+            int daysToDeadline = QDate::currentDate().daysTo(currentDate);
+            switch(daysToDeadline)
+            {
+            case 0:
+                ui->listWidget_Tasks->addItem("today");
+                break;
+            case 1:
+                ui->listWidget_Tasks->addItem("tomorrow");
+                break;
+            case -1:
+                ui->listWidget_Tasks->addItem("yesterday");
+                break;
+            default:
+                if(daysToDeadline > 1)
+                {
+                    ui->listWidget_Tasks->addItem(QString::number(daysToDeadline) + " days");
+                }
+                else if(daysToDeadline < -1)
+                {
+                    ui->listWidget_Tasks->addItem(QString::number(daysToDeadline*(-1)) + " days ago");
+                }
+            }
             currentDateIndex = ui->listWidget_Tasks->count() - 1;
             ui->listWidget_Tasks->item(currentDateIndex)->setTextAlignment(Qt::AlignCenter);
             ui->listWidget_Tasks->item(currentDateIndex)->setForeground(Qt::blue);
