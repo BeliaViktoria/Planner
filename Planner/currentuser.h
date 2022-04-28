@@ -2,11 +2,15 @@
 #define CURRENTUSER_H
 
 #include <mutex>
-#include <vector>
 #include "teacher.h"
 #include "subject.h"
 #include "grade.h"
 #include "task.h"
+#include "plan.h"
+#include "settings.h"
+
+#define DAYSCOUNT 6
+#define LESSONSCOUNT 8
 
 class CurrentUser
 {
@@ -20,6 +24,10 @@ public:
     std::vector<Subject>& getSubjects();
     std::vector<Grade>& getGrades();
     std::vector<Task>& getAgenda();
+    std::multimap<std::pair<int, int>, Plan>& getTimetable();
+    Settings& getSettings();
+
+    void setSettings(Settings& settings);
 
 private:
     CurrentUser();
@@ -28,6 +36,8 @@ private:
     std::vector<Subject> subjects;
     std::vector<Grade> grades;
     std::vector<Task> agenda;
+    std::multimap<std::pair<int, int>, Plan> timetable;
+    Settings settings;
 
     static CurrentUser* instance;
     static std::mutex mtx;

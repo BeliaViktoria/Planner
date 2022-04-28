@@ -64,9 +64,9 @@ font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>79</y>
+      <y>93</y>
       <width>771</width>
-      <height>365</height>
+      <height>351</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -544,6 +544,57 @@ background-color:rgb(255, 255, 255)</string>
      <string>Nothing</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_ThisWeek">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 14pt &quot;Gentium Book Basic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>This week: numerator</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Denominator">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>60</y>
+      <width>151</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 14pt &quot;Gentium Book Basic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>denominator</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_Numerator">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>60</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: black;
+font: 14pt &quot;Gentium Book Basic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>numerator</string>
+    </property>
+   </widget>
    <zorder>label_Timetable</zorder>
    <zorder>tableWidget_Timetable</zorder>
    <zorder>tableWidget_Time_1</zorder>
@@ -553,6 +604,9 @@ background-color:rgb(255, 255, 255)</string>
    <zorder>label_Now</zorder>
    <zorder>label_Then</zorder>
    <zorder>label_WhatThen</zorder>
+   <zorder>label_ThisWeek</zorder>
+   <zorder>radioButton_Denominator</zorder>
+   <zorder>radioButton_Numerator</zorder>
   </widget>
   <widget class="QWidget" name="widget_Menu" native="true">
    <property name="geometry">

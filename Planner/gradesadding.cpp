@@ -40,12 +40,12 @@ bool GradesAdding::checkFields()
 {
     hideErrorLabels();
     bool status = true;
-    if(ui->lineEdit_YourGrade->text() == "")
+    if(ui->lineEdit_YourGrade->text() == "" || ui->lineEdit_YourGrade->text().toInt() > CurrentUser::getInstance()->getSettings().getMaxGrade())
     {
         ui->label_NessesaryField_1->show();
         status = false;
     }
-    if(ui->lineEdit_MaxGrade->text() == "")
+    if(ui->lineEdit_MaxGrade->text() == "" || ui->lineEdit_MaxGrade->text().toInt() > CurrentUser::getInstance()->getSettings().getMaxGrade())
     {
         ui->label_NessesaryField_2->show();
         status = false;

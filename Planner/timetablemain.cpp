@@ -1,5 +1,6 @@
 #include "timetablemain.h"
 #include "ui_timetablemain.h"
+#include "currentuser.h"
 
 TimetableMain::TimetableMain(QWidget *parent) :
     QWidget(parent),
@@ -16,7 +17,7 @@ TimetableMain::TimetableMain(QWidget *parent) :
     int rowsSize = ui->tableWidget_Timetable->rowCount();
     for(int i = 0; i < rowsSize; i++)
     {
-        ui->tableWidget_Timetable->setRowHeight(i, 41);
+        ui->tableWidget_Timetable->setRowHeight(i, 39);
     }
 
     columnsSize = ui->tableWidget_Time_1->columnCount();
@@ -31,6 +32,39 @@ TimetableMain::TimetableMain(QWidget *parent) :
     {
         ui->tableWidget_Time_1->setRowHeight(i, 36);
         ui->tableWidget_Time_2->setRowHeight(i, 36);
+    }
+
+    switch(CurrentUser::getInstance()->getSettings().getStartFrom())
+    {
+    case NUMERATOR:
+        if(QDate::currentDate().weekNumber() % 2 == CurrentUser::getInstance()->getSettings().getStartDate().weekNumber() % 2)
+        {
+            ui->label_ThisWeek->setText("This week: numerator");
+            ui->radioButton_Numerator->setChecked(true);
+        }
+        else
+        {
+            ui->label_ThisWeek->setText("This week: denominator");
+            ui->radioButton_Denominator->setChecked(true);
+        }
+        break;
+    case DENOMINATOR:
+        if(QDate::currentDate().weekNumber() % 2 == CurrentUser::getInstance()->getSettings().getStartDate().weekNumber() % 2)
+        {
+            ui->label_ThisWeek->setText("This week: denominator");
+            ui->radioButton_Denominator->setChecked(true);
+        }
+        else
+        {
+            ui->label_ThisWeek->setText("This week: numerator");
+            ui->radioButton_Numerator->setChecked(true);
+        }
+        break;
+    case NULLTYPE:
+        ui->label_ThisWeek->hide();
+        ui->radioButton_Numerator->hide();
+        ui->radioButton_Denominator->hide();
+        break;
     }
 }
 
@@ -80,7 +114,14 @@ void TimetableMain::on_pushButton_Overview_clicked()
 }
 void TimetableMain::on_tableWidget_Timetable_cellClicked(int row, int column)
 {
-    emit OpenPlanAdding();
+    if(ui->tableWidget_Timetable->item(row, column)->text() == "")
+    {
+        emit OpenPlanAdding(row, column);
+    }
+    else
+    {
+        emit OpenEditOrDelete();
+    }
 }
 
 void TimetableMain::on_tableWidget_Time_1_cellClicked(int row, int column)
@@ -91,5 +132,29 @@ void TimetableMain::on_tableWidget_Time_1_cellClicked(int row, int column)
 void TimetableMain::on_tableWidget_Time_2_cellClicked(int row, int column)
 {
     emit OpenClock();
+}
+
+void TimetableMain::OpenEditingWindow()
+{
+    int row = ui->tableWidget_Timetable->currentRow();
+    int column = ui->tableWidget_Timetable->currentColumn();
+    auto iterator = CurrentUser::getInstance()->getTimetable().find(std::make_pair(row, column));
+    // check whether it is numerator
+    emit OpenPlanEditing((*iterator).second);
+}
+
+void TimetableMain::editPlan(Plan plan)
+{
+
+}
+
+void TimetableMain::Delete()
+{
+
+}
+
+void TimetableMain::addPlan(Plan plan)
+{
+
 }
 

@@ -2,8 +2,8 @@
 #define TIMETABLEMAIN_H
 
 #include <QWidget>
-#include <set>
 #include <QListWidgetItem>
+#include "plan.h"
 
 namespace Ui {
 class TimetableMain;
@@ -26,8 +26,10 @@ signals:
     void OpenTeachers();
     void OpenGrades();
     void OpenSettings();
-    void OpenPlanAdding();
+    void OpenPlanAdding(int, int);
+    void OpenPlanEditing(Plan);
     void OpenClock();
+    void OpenEditOrDelete();
 
 private slots:
     void on_pushButton_Timetable_clicked();
@@ -41,10 +43,13 @@ private slots:
     void on_tableWidget_Timetable_cellClicked(int row, int column);
     void on_tableWidget_Time_1_cellClicked(int row, int column);
     void on_tableWidget_Time_2_cellClicked(int row, int column);
+    void OpenEditingWindow();
+    void editPlan(Plan plan);
+    void Delete();
+    void addPlan(Plan plan);
 
 private:
     Ui::TimetableMain *ui;
-    std::set<QListWidgetItem> teachers;
 };
 
 #endif // TIMETABLEMAIN_H

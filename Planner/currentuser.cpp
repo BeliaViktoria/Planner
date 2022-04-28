@@ -34,3 +34,18 @@ std::vector<Task>& CurrentUser::getAgenda()
 {
     return agenda;
 }
+
+std::multimap<std::pair<int, int>, Plan>& CurrentUser::getTimetable()
+{
+    return timetable;
+}
+
+Settings& CurrentUser::getSettings()
+{
+    return settings;
+}
+
+void CurrentUser::setSettings(Settings& settings)
+{
+    this->settings = settings;
+}
