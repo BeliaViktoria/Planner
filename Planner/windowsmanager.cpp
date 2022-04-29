@@ -87,16 +87,27 @@ void WindowsManager::open_TimetableMain()
 {
     close_MainWindow();
     mainWindow.reset(new TimetableMain());
-    connect(mainWindow.get(), SIGNAL(OpenPlanAdding()), this, SLOT(open_TimetableItemAdding()));
+    connect(mainWindow.get(), SIGNAL(OpenPlanAdding(int, int)), this, SLOT(open_TimetableItemAdding(int, int)));
     connect(mainWindow.get(), SIGNAL(OpenClock()), this, SLOT(open_Clock()));
+    connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
+    connect(mainWindow.get(), SIGNAL(OpenPlanEditing(Plan)), this, SLOT(open_TimetableItemEditing(Plan)));
     set_MenuConections();
     mainWindow->show();
 }
 
-void WindowsManager::open_TimetableItemAdding()
+void WindowsManager::open_TimetableItemAdding(int lesson, int day)
 {
-    minorWindow.reset(new TimetableItemsAdding());
+    minorWindow.reset(new TimetableItemsAdding(lesson, day));
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(Plan)), mainWindow.get(), SLOT(addPlan(Plan)));
+    minorWindow->show();
+}
+
+void WindowsManager::open_TimetableItemEditing(Plan plan)
+{
+    minorWindow.reset(new TimetableItemsAdding(plan));
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(Plan)), mainWindow.get(), SLOT(editPlan(Plan)));
     minorWindow->show();
 }
 

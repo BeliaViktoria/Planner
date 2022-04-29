@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QListWidgetItem>
 #include "plan.h"
+#include <QTableWidgetItem>
 
 namespace Ui {
 class TimetableMain;
@@ -16,6 +17,11 @@ class TimetableMain : public QWidget
 public:
     explicit TimetableMain(QWidget *parent = nullptr);
     ~TimetableMain();
+
+private:
+    void setTablesSize();
+    void showTimetable();
+    void setWeekType();
 
 signals:
     void OpenOverview();
@@ -47,9 +53,13 @@ private slots:
     void editPlan(Plan plan);
     void Delete();
     void addPlan(Plan plan);
+    void on_radioButton_Numerator_clicked();
+    void on_radioButton_Denominator_clicked();
 
 private:
     Ui::TimetableMain *ui;
+    WeekType currentWeekType;
+    std::map<std::pair<int, int>, QTableWidgetItem> timetable;
 };
 
 #endif // TIMETABLEMAIN_H

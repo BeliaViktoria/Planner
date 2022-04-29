@@ -6,6 +6,7 @@
 #include "subject.h"
 #include "grade.h"
 #include "task.h"
+#include "plan.h"
 
 class WindowsManager : public QObject
 {
@@ -26,7 +27,8 @@ private slots:
     void open_Welcome();
     void open_OverviewMain();
     void open_TimetableMain();
-    void open_TimetableItemAdding();
+    void open_TimetableItemAdding(int lesson, int day);
+    void open_TimetableItemEditing(Plan plan);
     void open_CalendarMain();
     void open_AgendaMain();
     void open_AgendaAdding();

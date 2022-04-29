@@ -1,11 +1,11 @@
 #include "plan.h"
 
-Plan::Plan() : day(-1), lesson(-1), subject(), room(0), teacher(), link(""), repeating(NULLTYPE)
+Plan::Plan() : day(-1), lesson(-1), subject(), room(""), teacher(), link(""), repeating(NULLTYPE)
 {
 
 }
 
-Plan::Plan(int day, int lesson, Subject subject, int room, Teacher teacher, QString link, WeekType repeating)
+Plan::Plan(int day, int lesson, Subject subject, QString room, Teacher teacher, QString link, WeekType repeating)
 {
     this->day = day;
     this->lesson = lesson;
@@ -31,7 +31,7 @@ Subject Plan::getSubject()
     return subject;
 }
 
-int Plan::getRoom()
+QString Plan::getRoom()
 {
     return room;
 }
@@ -66,7 +66,7 @@ void Plan::setSubject(Subject subject)
     this->subject = subject;
 }
 
-void Plan::setRoom(int room)
+void Plan::setRoom(QString room)
 {
     this->room = room;
 }

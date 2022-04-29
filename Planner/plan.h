@@ -9,12 +9,12 @@ class Plan
 {
 public:
     Plan();
-    Plan(int day, int lesson, Subject subject, int room, Teacher teacher, QString link, WeekType repeating);
+    Plan(int day, int lesson, Subject subject, QString room, Teacher teacher, QString link, WeekType repeating);
 
     int getDay();
     int getLesson();
     Subject getSubject();
-    int getRoom();
+    QString getRoom();
     Teacher getTeacher();
     QString getLlink();
     WeekType getRepeating();
@@ -22,7 +22,7 @@ public:
     void setDay(int day);
     void setLesson(int lesson);
     void setSubject(Subject subject);
-    void setRoom(int room);
+    void setRoom(QString room);
     void setTeacher(Teacher teacher);
     void setLink(QString link);
     void setRepeating(WeekType repeating);
@@ -36,7 +36,7 @@ private:
     int day;
     int lesson;
     Subject subject;
-    int room;
+    QString room;
     Teacher teacher;
     QString link;
     WeekType repeating;
