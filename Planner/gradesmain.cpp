@@ -118,6 +118,7 @@ void GradesMain::editGrade(Grade grade)
     int index = getGradeIndex();
     CurrentUser::getInstance()->getGrades()[index] = grade;
     sort(CurrentUser::getInstance()->getGrades().begin(), CurrentUser::getInstance()->getGrades().end());
+    updateSubjectStatistic(grade.getSubject().getName());
     showGradesList();
 }
 
@@ -131,7 +132,9 @@ void GradesMain::Delete()
             ++gradeIterator;
         }
     }
+    QString subjectName = gradeIterator->getSubject().getName();
     CurrentUser::getInstance()->getGrades().erase(gradeIterator);
+    updateSubjectStatistic(subjectName);
     showGradesList();
 }
 
@@ -139,5 +142,50 @@ void GradesMain::addGrade(Grade grade)
 {
     CurrentUser::getInstance()->getGrades().push_back(grade);
     sort(CurrentUser::getInstance()->getGrades().begin(), CurrentUser::getInstance()->getGrades().end());
+    updateSubjectStatistic(grade.getSubject().getName());
     showGradesList();
+}
+
+void GradesMain::updateSubjectStatistic(QString subjectName)
+{
+    for(Subject& subject : CurrentUser::getInstance()->getSubjects())
+    {
+        if(subject.getName() == subjectName)
+        {
+            int gradesSum = 0;
+            int gradesCount = 0;
+            for(Grade grade : CurrentUser::getInstance()->getGrades())
+            {
+                if(grade.getSubject().getName() == subjectName)
+                {
+                    gradesSum += grade.getCurrentGrade();
+                    gradesCount++;
+                }
+                if(gradesSum != 0 && grade.getSubject().getName() != subjectName)
+                {
+                    break;
+                }
+            }
+            if(CurrentUser::getInstance()->getSettings().getGradingSystem() == SUM)
+            {
+                subject.setStatistic(gradesSum);
+            }
+            else if(gradesCount != 0)
+            {
+                if((gradesSum % gradesCount) / (double)gradesCount >= 0.5)
+                {
+                    subject.setStatistic(gradesSum / gradesCount + 1);
+                }
+                else
+                {
+                    subject.setStatistic(gradesSum / gradesCount);
+                }
+            }
+            else
+            {
+                subject.setStatistic(0);
+            }
+            break;
+        }
+    }
 }

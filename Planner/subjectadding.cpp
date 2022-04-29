@@ -12,6 +12,7 @@ SubjectAdding::SubjectAdding() :
     hideErrorLabels();
     setValidation();
     showTeachersList();
+    subjectStatistic = 0;
 }
 
 SubjectAdding::SubjectAdding(Subject subject) :
@@ -37,6 +38,7 @@ SubjectAdding::SubjectAdding(Subject subject) :
     choosedColor = subject.getColor();
     setColor();
     showTeachersList();
+    subjectStatistic = subject.getStatistic();
 }
 
 SubjectAdding::~SubjectAdding()
@@ -141,7 +143,7 @@ void SubjectAdding::on_pushButton_Add_clicked()
                 }
             }
         }
-        Subject subject(ui->lineEdit_Name->text(), teachers, choosedColor);
+        Subject subject(ui->lineEdit_Name->text(), teachers, choosedColor, subjectStatistic);
 
         if(ui->label_AddingSubject->text() == "Adding subject")
         {

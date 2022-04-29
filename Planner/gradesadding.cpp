@@ -11,6 +11,10 @@ GradesAdding::GradesAdding() :
     setValidation();
     showSubjectsList();
     ui->pushButton_Date->setText(QDate::currentDate().toString("dd.MM.yyyy"));
+    if(CurrentUser::getInstance()->getSettings().getGradingSystem() == AVERAGE)
+    {
+        ui->lineEdit_MaxGrade->setText(QString::number(CurrentUser::getInstance()->getSettings().getMaxGrade()));
+    }
 }
 
 GradesAdding::GradesAdding(Grade grade) :

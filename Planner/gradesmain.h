@@ -20,6 +20,7 @@ public:
 private:
     void showGradesList();
     int getGradeIndex();
+    void updateSubjectStatistic(QString subjectName);
 
 signals:
     void OpenOverview();

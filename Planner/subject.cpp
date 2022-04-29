@@ -1,11 +1,11 @@
 #include "subject.h"
 
-Subject::Subject() : name(""), teachers{Teacher(), Teacher(), Teacher()}, color()
+Subject::Subject() : name(""), teachers{Teacher(), Teacher(), Teacher()}, color(), statistic(0)
 {
 
 }
 
-Subject::Subject(QString name, Teacher teachers[3], Color color)
+Subject::Subject(QString name, Teacher teachers[3], Color color, int statistic)
 {
     this->name = name;
     this->color = color;
@@ -13,6 +13,7 @@ Subject::Subject(QString name, Teacher teachers[3], Color color)
     {
         this->teachers[i] = teachers[i];
     }
+    this->statistic = statistic;
 }
 
 QString Subject::getName()
@@ -30,6 +31,11 @@ Color Subject::getColor()
     return color;
 }
 
+int Subject::getStatistic()
+{
+    return statistic;
+}
+
 void Subject::setName(QString name)
 {
     this->name = name;
@@ -45,6 +51,11 @@ void Subject::setTeachers(Teacher teachers[3])
 void Subject::setColor(Color color)
 {
     this->color = color;
+}
+
+void Subject::setStatistic(int statistic)
+{
+    this->statistic = statistic;
 }
 
 bool Subject::operator>(Subject anotherSubject)
@@ -82,4 +93,5 @@ void Subject::operator=(Subject anotherSubject)
     {
         this->teachers[i] = anotherSubject.teachers[i];
     }
+    this->statistic = anotherSubject.statistic;
 }

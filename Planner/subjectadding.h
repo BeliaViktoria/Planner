@@ -50,6 +50,7 @@ private:
     Ui::SubjectAdding *ui;
     QRegularExpressionValidator validatorName;
     Color choosedColor;
+    int subjectStatistic;
 };
 
 #endif // SUBJECTADDING_H

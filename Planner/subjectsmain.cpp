@@ -31,6 +31,7 @@ void SubjectsMain::showSubjectsList()
         {
             itemText += "\n                      " + item.getTeachers()[2].getFullname() + ";";
         }
+        itemText += "\n - Statistic: " + QString::number(item.getStatistic()) + '/' + QString::number(CurrentUser::getInstance()->getSettings().getMaxGrade());
         ui->listWidget_Subjects->addItem(itemText);
         itemText = "";
     }
