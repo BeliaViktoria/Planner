@@ -116,7 +116,10 @@ void TimetableItemsAdding::showTeachersList()
     ui->listWidget_Teachers->clear();
     for(int i = 0; i < 3; i++)
     {
-        ui->listWidget_Teachers->addItem(subject.getTeachers()[i].getFullname());
+        if(subject.getTeachers()[i].getFullname() != "")
+        {
+            ui->listWidget_Teachers->addItem(subject.getTeachers()[i].getFullname());
+        }
     }
     hideTeachers();
 }
