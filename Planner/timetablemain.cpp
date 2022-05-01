@@ -114,6 +114,7 @@ void TimetableMain::showTimetable()
     }
     QStringList headers {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
     ui->tableWidget_Timetable->setHorizontalHeaderLabels(headers);
+    setOverview();
 }
 
 void TimetableMain::showTime()
@@ -140,9 +141,58 @@ void TimetableMain::showTime()
             ui->tableWidget_Time_2->setItem(item.first.first - ui->tableWidget_Time_1->rowCount(), item.first.second, &item.second);
         }
     }
-    QStringList headers {"Start time", "End time"};
-    ui->tableWidget_Time_1->setHorizontalHeaderLabels(headers);
-    ui->tableWidget_Time_2->setHorizontalHeaderLabels(headers);
+    QStringList horizontalHeaders {"Start time", "End time"};
+    QStringList verticalHeaders {"5", "6", "7", "8"};
+    ui->tableWidget_Time_1->setHorizontalHeaderLabels(horizontalHeaders);
+    ui->tableWidget_Time_2->setHorizontalHeaderLabels(horizontalHeaders);
+    ui->tableWidget_Time_2->setVerticalHeaderLabels(verticalHeaders);
+    setOverview();
+}
+
+void TimetableMain::setOverview()
+{
+    QDate currentDate = QDate::currentDate();
+    QTime currentTime = QTime::currentTime();
+    int currentLesson = -1, nextLesson = -1;
+    int currentDay = currentDate.dayOfWeek();
+    if(currentDay >= ui->tableWidget_Timetable->rowCount())
+    {
+        ui->label_WhatNow->setText("Nothing");
+        ui->label_WhatThen->setText("Nothing");
+        return;
+    }
+    for(auto iterator = CurrentUser::getInstance()->getTimes().begin(); iterator != CurrentUser::getInstance()->getTimes().end(); ++iterator)
+    {
+        if(iterator->second > currentTime)
+        {
+            if(iterator->first.second == 1)
+            {
+                currentLesson = iterator->first.first;
+                nextLesson = currentLesson + 1;
+            }
+            else
+            {
+                nextLesson = iterator->first.first;
+            }
+            break;
+        }
+    }
+    if(currentLesson == -1 || !ui->tableWidget_Timetable->item(currentLesson, currentDay))
+    {
+        ui->label_WhatNow->setText("Nothing");
+    }
+    else
+    {
+        ui->label_WhatNow->setText(ui->tableWidget_Timetable->item(currentLesson, currentDay)->text());
+    }
+    if(nextLesson == -1 || nextLesson >= ui->tableWidget_Timetable->rowCount() || !ui->tableWidget_Timetable->item(nextLesson, currentDay))
+    {
+        ui->label_WhatThen->setText("Nothing");
+    }
+    else
+    {
+        ui->label_WhatThen->setText(ui->tableWidget_Timetable->item(nextLesson, currentDay)->text());
+    }
 }
 
 void TimetableMain::on_pushButton_Timetable_clicked()
@@ -327,5 +377,13 @@ void TimetableMain::setTime(QString time)
 void TimetableMain::Delete()
 {
     CurrentUser::getInstance()->getTimes().erase(CurrentUser::getInstance()->getTimes().find(timeIndex));
+    if(timeIndex.second == 1)
+    {
+        CurrentUser::getInstance()->getTimes().erase(CurrentUser::getInstance()->getTimes().find(std::make_pair(timeIndex.first, timeIndex.second - 1)));
+    }
+    else
+    {
+        CurrentUser::getInstance()->getTimes().erase(CurrentUser::getInstance()->getTimes().find(std::make_pair(timeIndex.first, timeIndex.second + 1)));
+    }
     showTime();
 }

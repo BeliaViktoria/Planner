@@ -24,6 +24,7 @@ private:
     void setWeekType();
     void showTime();
     Plan getPlan(int lesson, int day);
+    void setOverview();
 
 signals:
     void OpenOverview();
