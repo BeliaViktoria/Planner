@@ -57,7 +57,6 @@ TimetableItemsAdding::~TimetableItemsAdding()
 void TimetableItemsAdding::setWindowSettings()
 {
     hideErrorLabels();
-    setValidation();
     if(CurrentUser::getInstance()->getSettings().getStartFrom() == NULLTYPE)
     {
         ui->radioButton_Denominator->hide();
@@ -82,12 +81,6 @@ void TimetableItemsAdding::hideErrorLabels()
 {
     ui->label_NessesaryField_1->hide();
     ui->label_AlreadyTaken->hide();
-}
-
-void TimetableItemsAdding::setValidation()
-{
-    validatorRoom.setRegularExpression(QRegularExpression("[a-zA-Z0-9._-#/|]+"));
-    ui->lineEdit_Room->setValidator(&validatorRoom);
 }
 
 void TimetableItemsAdding::showSubjectsList()

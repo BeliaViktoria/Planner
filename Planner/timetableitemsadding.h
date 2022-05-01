@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include "plan.h"
-#include "QRegularExpressionValidator"
 #include <QListWidgetItem>
 
 namespace Ui {
@@ -32,7 +31,6 @@ private slots:
 private:
     bool checkFields();
     void hideErrorLabels();
-    void setValidation();
     void setWindowSettings();
     void showSubjectsList();
     void hideSubjects();
@@ -44,7 +42,6 @@ signals:
 
 private:
     Ui::TimetableItemsAdding *ui;
-    QRegularExpressionValidator validatorRoom;
     int lesson;
     int day;
     Subject subject;
