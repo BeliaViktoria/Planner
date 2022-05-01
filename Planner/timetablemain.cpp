@@ -3,19 +3,22 @@
 #include "currentuser.h"
 
 TimetableMain::TimetableMain(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::TimetableMain)
+    QWidget(parent), ui(new Ui::TimetableMain), timeIndex(std::make_pair(-1, -1))
 {
     ui->setupUi(this);
     setTablesSize();
     setWeekType();
     showTimetable();
+    showTime();
 }
 
 TimetableMain::~TimetableMain()
 {
     timetable.clear();
     ui->tableWidget_Timetable->clear();
+    times.clear();
+    ui->tableWidget_Time_1->clear();
+    ui->tableWidget_Time_2->clear();
     delete ui;
 }
 
@@ -101,7 +104,7 @@ void TimetableMain::showTimetable()
             tableItem = QTableWidgetItem(item.second.getSubject().getName());
             tableItem.setBackground(item.second.getSubject().getColor().getColor());
             tableItem.setTextAlignment(Qt::AlignCenter);
-            timetable.emplace(std::make_pair(item.first.first, item.first.second), tableItem);
+            timetable.emplace(item.first, tableItem);
         }
     }
 
@@ -109,6 +112,37 @@ void TimetableMain::showTimetable()
     {
         ui->tableWidget_Timetable->setItem(item.first.first, item.first.second, &item.second);
     }
+    QStringList headers {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+    ui->tableWidget_Timetable->setHorizontalHeaderLabels(headers);
+}
+
+void TimetableMain::showTime()
+{
+    times.clear();
+    ui->tableWidget_Time_1->clear();
+    ui->tableWidget_Time_2->clear();
+    QTableWidgetItem tableItem;
+    for(auto& item : CurrentUser::getInstance()->getTimes())
+    {
+        tableItem = QTableWidgetItem(item.second.toString("hh:mm"));
+        tableItem.setTextAlignment(Qt::AlignCenter);
+        times.emplace(item.first, tableItem);
+    }
+
+    for(auto& item : times)
+    {
+        if(item.first.first < ui->tableWidget_Time_1->rowCount())
+        {
+            ui->tableWidget_Time_1->setItem(item.first.first, item.first.second, &item.second);
+        }
+        else
+        {
+            ui->tableWidget_Time_2->setItem(item.first.first - ui->tableWidget_Time_1->rowCount(), item.first.second, &item.second);
+        }
+    }
+    QStringList headers {"Start time", "End time"};
+    ui->tableWidget_Time_1->setHorizontalHeaderLabels(headers);
+    ui->tableWidget_Time_2->setHorizontalHeaderLabels(headers);
 }
 
 void TimetableMain::on_pushButton_Timetable_clicked()
@@ -150,6 +184,17 @@ void TimetableMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+
+Plan TimetableMain::getPlan(int lesson, int day)
+{
+    auto iterator = CurrentUser::getInstance()->getTimetable().find(std::make_pair(lesson, day));
+    if(iterator->second.getRepeating() != currentWeekType)
+    {
+        ++iterator;
+    }
+    return iterator->second;
+}
+
 void TimetableMain::on_tableWidget_Timetable_cellClicked(int row, int column)
 {
     if(!ui->tableWidget_Timetable->item(row, column))
@@ -158,30 +203,41 @@ void TimetableMain::on_tableWidget_Timetable_cellClicked(int row, int column)
     }
     else
     {
-        emit OpenEditOrDelete();
+        emit OpenPlanInfo(getPlan(row, column));
     }
 }
 
 void TimetableMain::on_tableWidget_Time_1_cellClicked(int row, int column)
 {
-    emit OpenClock();
+    timeIndex = std::make_pair(row, column);
+    if(!ui->tableWidget_Time_1->item(row, column))
+    {
+        emit OpenClock();
+    }
+    else
+    {
+        emit OpenEditOrDelete();
+    }
 }
 
 void TimetableMain::on_tableWidget_Time_2_cellClicked(int row, int column)
 {
-    emit OpenClock();
+    timeIndex = std::make_pair(row + ui->tableWidget_Time_1->rowCount(), column);
+    if(!ui->tableWidget_Time_2->item(row, column))
+    {
+        emit OpenClock();
+    }
+    else
+    {
+        emit OpenEditOrDelete();
+    }
 }
 
-void TimetableMain::OpenEditingWindow()
+void TimetableMain::OpenPlanEditingWindow()
 {
     int row = ui->tableWidget_Timetable->currentRow();
     int column = ui->tableWidget_Timetable->currentColumn();
-    auto iterator = CurrentUser::getInstance()->getTimetable().find(std::make_pair(row, column));
-    if(iterator->second.getRepeating() != currentWeekType)
-    {
-        ++iterator;
-    }
-    emit OpenPlanEditing((*iterator).second);
+    emit OpenPlanEditing(getPlan(row, column));
 }
 
 void TimetableMain::editPlan(Plan plan)
@@ -192,7 +248,7 @@ void TimetableMain::editPlan(Plan plan)
     showTimetable();
 }
 
-void TimetableMain::Delete()
+void TimetableMain::DeletePlan()
 {
     int lesson = ui->tableWidget_Timetable->currentRow();
     int day = ui->tableWidget_Timetable->currentColumn();
@@ -218,3 +274,58 @@ void TimetableMain::on_radioButton_Denominator_clicked()
     showTimetable();
 }
 
+void TimetableMain::OpenEditingWindow()
+{
+    auto iterator = CurrentUser::getInstance()->getTimes().find(timeIndex);
+    emit OpenClock(iterator->second.toString("hh:mm"));
+}
+
+void TimetableMain::setTime(QString time)
+{
+    auto iterator = CurrentUser::getInstance()->getTimes().find(timeIndex);
+    if(iterator == CurrentUser::getInstance()->getTimes().end())
+    {
+        CurrentUser::getInstance()->getTimes().emplace(timeIndex, QTime::fromString(time));
+    }
+    else
+    {
+        iterator->second = QTime::fromString(time);
+    }
+
+    if(timeIndex.second == 0)
+    {
+        iterator = (CurrentUser::getInstance()->getTimes().find(std::make_pair(timeIndex.first, timeIndex.second + 1)));
+        if(iterator == CurrentUser::getInstance()->getTimes().end())
+        {
+            QTime nextTime = QTime(QTime::fromString(time).hour()+1, QTime::fromString(time).minute());
+            CurrentUser::getInstance()->getTimes().emplace(std::make_pair(timeIndex.first, timeIndex.second + 1), nextTime);
+        }
+        else if(iterator->second < QTime::fromString(time))
+        {
+            QTime nextTime = QTime(QTime::fromString(time).hour()+1, QTime::fromString(time).minute());
+            iterator->second = nextTime;
+        }
+    }
+    else
+    {
+        iterator = (CurrentUser::getInstance()->getTimes().find(std::make_pair(timeIndex.first, timeIndex.second - 1)));
+        if(iterator == CurrentUser::getInstance()->getTimes().end())
+        {
+            QTime nextTime = QTime(QTime::fromString(time).hour()-1, QTime::fromString(time).minute());
+            CurrentUser::getInstance()->getTimes().emplace(std::make_pair(timeIndex.first, timeIndex.second - 1), nextTime);
+        }
+        else if(iterator->second > QTime::fromString(time))
+        {
+            QTime nextTime = QTime(QTime::fromString(time).hour()-1, QTime::fromString(time).minute());
+            iterator->second = nextTime;
+        }
+    }
+
+    showTime();
+}
+
+void TimetableMain::Delete()
+{
+    CurrentUser::getInstance()->getTimes().erase(CurrentUser::getInstance()->getTimes().find(timeIndex));
+    showTime();
+}

@@ -1,11 +1,12 @@
 #include "areyousure.h"
 #include "ui_areyousure.h"
 
-AreYouSure::AreYouSure(QWidget *parent) :
-    QWidget(parent),
+AreYouSure::AreYouSure(bool isForPlan) :
+    QWidget(nullptr),
     ui(new Ui::AreYouSure)
 {
     ui->setupUi(this);
+    this->isForPlan = isForPlan;
 }
 
 AreYouSure::~AreYouSure()
@@ -15,7 +16,15 @@ AreYouSure::~AreYouSure()
 
 void AreYouSure::on_pushButton_Yes_clicked()
 {
-    emit Yes();
+    emit CloseMinorWindow();
+    if(isForPlan)
+    {
+        emit YesForPlan();
+    }
+    else
+    {
+        emit Yes();
+    }
     this->close();
 }
 

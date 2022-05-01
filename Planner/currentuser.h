@@ -25,6 +25,7 @@ public:
     std::vector<Grade>& getGrades();
     std::vector<Task>& getAgenda();
     std::multimap<std::pair<int, int>, Plan>& getTimetable();
+    std::map<std::pair<int, int>, QTime>& getTimes();
     Settings& getSettings();
 
     void setSettings(Settings& settings);
@@ -37,6 +38,7 @@ private:
     std::vector<Grade> grades;
     std::vector<Task> agenda;
     std::multimap<std::pair<int, int>, Plan> timetable;
+    std::map<std::pair<int, int>, QTime> times;
     Settings settings;
 
     static CurrentUser* instance;

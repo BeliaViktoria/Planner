@@ -29,6 +29,7 @@ private slots:
     void open_TimetableMain();
     void open_TimetableItemAdding(int lesson, int day);
     void open_TimetableItemEditing(Plan plan);
+    void open_PlanInfo(Plan plan);
     void open_CalendarMain();
     void open_AgendaMain();
     void open_AgendaAdding();
@@ -45,10 +46,11 @@ private slots:
     void open_SettingsMain();
     void open_Calendar();
     void open_Clock();
+    void open_Clock(QString time);
 
     void open_EditOrDelete();
     void open_EditDeleteOrMarkAsDone(bool taskStatus);
-    void open_AreYouSure();
+    void open_AreYouSure(bool isForPlan = false);
 
 private:
     std::unique_ptr<QWidget> mainWindow;

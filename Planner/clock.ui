@@ -116,7 +116,7 @@ color:black;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>180</y>
+      <y>250</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -138,7 +138,7 @@ color:black;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>210</y>
+      <y>280</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -396,6 +396,28 @@ color:black;</string>
     </property>
     <property name="text">
      <string>23</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Time">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>190</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);
+border-radius:15px;
+border-style: solid;
+border-width: 1px;
+border-color: rgb(18, 46, 79);
+font: 18pt &quot;Gentium Book Basic&quot;;
+color:black;</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

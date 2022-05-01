@@ -25,6 +25,7 @@ SOURCES += \
     main.cpp \
     overviewmain.cpp \
     plan.cpp \
+    planinfodialog.cpp \
     settings.cpp \
     settingsmain.cpp \
     subject.cpp \
@@ -56,6 +57,7 @@ HEADERS += \
     gradesmain.h \
     overviewmain.h \
     plan.h \
+    planinfodialog.h \
     settings.h \
     settingsmain.h \
     subject.h \
@@ -83,6 +85,7 @@ FORMS += \
     gradesadding.ui \
     gradesmain.ui \
     overviewmain.ui \
+    planinfodialog.ui \
     settingsmain.ui \
     subjectadding.ui \
     subjectsmain.ui \

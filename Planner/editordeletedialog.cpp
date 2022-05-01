@@ -16,11 +16,13 @@ EditOrDeleteDialog::~EditOrDeleteDialog()
 void EditOrDeleteDialog::on_pushButton_Edit_clicked()
 {
     emit Edit();
+    this->close();
 }
 
 
 void EditOrDeleteDialog::on_pushButton_Delete_clicked()
 {
     emit Delete();
+    this->close();
 }
 

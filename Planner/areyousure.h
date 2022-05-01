@@ -12,7 +12,7 @@ class AreYouSure : public QWidget
     Q_OBJECT
 
 public:
-    explicit AreYouSure(QWidget *parent = nullptr);
+    explicit AreYouSure(bool isForPlan);
     ~AreYouSure();
 
 private slots:
@@ -21,9 +21,12 @@ private slots:
 
 signals:
     void Yes();
+    void CloseMinorWindow();
+    void YesForPlan();
 
 private:
     Ui::AreYouSure *ui;
+    bool isForPlan;
 };
 
 #endif // AREYOUSURE_H

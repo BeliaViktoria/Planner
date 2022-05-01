@@ -24,11 +24,13 @@ EditDeleteMarkAsDomeDialog::~EditDeleteMarkAsDomeDialog()
 void EditDeleteMarkAsDomeDialog::on_pushButton_Edit_clicked()
 {
     emit Edit();
+    this->close();
 }
 
 void EditDeleteMarkAsDomeDialog::on_pushButton_Delete_clicked()
 {
     emit Delete();
+    this->close();
 }
 
 void EditDeleteMarkAsDomeDialog::on_pushButton_MarkAsDone_clicked()

@@ -22,6 +22,8 @@ private:
     void setTablesSize();
     void showTimetable();
     void setWeekType();
+    void showTime();
+    Plan getPlan(int lesson, int day);
 
 signals:
     void OpenOverview();
@@ -35,6 +37,8 @@ signals:
     void OpenPlanAdding(int, int);
     void OpenPlanEditing(Plan);
     void OpenClock();
+    void OpenClock(QString);
+    void OpenPlanInfo(Plan);
     void OpenEditOrDelete();
 
 private slots:
@@ -49,17 +53,22 @@ private slots:
     void on_tableWidget_Timetable_cellClicked(int row, int column);
     void on_tableWidget_Time_1_cellClicked(int row, int column);
     void on_tableWidget_Time_2_cellClicked(int row, int column);
-    void OpenEditingWindow();
+    void OpenPlanEditingWindow();
     void editPlan(Plan plan);
-    void Delete();
+    void DeletePlan();
     void addPlan(Plan plan);
     void on_radioButton_Numerator_clicked();
     void on_radioButton_Denominator_clicked();
+    void OpenEditingWindow();
+    void setTime(QString);
+    void Delete();
 
 private:
     Ui::TimetableMain *ui;
     WeekType currentWeekType;
     std::map<std::pair<int, int>, QTableWidgetItem> timetable;
+    std::map<std::pair<int, int>, QTableWidgetItem> times;
+    std::pair<int,int> timeIndex;
 };
 
 #endif // TIMETABLEMAIN_H

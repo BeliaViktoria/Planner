@@ -3,6 +3,7 @@
 #include "overviewmain.h"
 #include "timetablemain.h"
 #include "timetableitemsadding.h"
+#include "planinfodialog.h"
 #include "calendarmain.h"
 #include "agendamain.h"
 #include "agendaadding.h"
@@ -87,10 +88,12 @@ void WindowsManager::open_TimetableMain()
 {
     close_MainWindow();
     mainWindow.reset(new TimetableMain());
-    connect(mainWindow.get(), SIGNAL(OpenPlanAdding(int, int)), this, SLOT(open_TimetableItemAdding(int, int)));
+    connect(mainWindow.get(), SIGNAL(OpenPlanAdding(int,int)), this, SLOT(open_TimetableItemAdding(int,int)));
     connect(mainWindow.get(), SIGNAL(OpenClock()), this, SLOT(open_Clock()));
+    connect(mainWindow.get(), SIGNAL(OpenClock(QString)), this, SLOT(open_Clock(QString)));
     connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
     connect(mainWindow.get(), SIGNAL(OpenPlanEditing(Plan)), this, SLOT(open_TimetableItemEditing(Plan)));
+    connect(mainWindow.get(), SIGNAL(OpenPlanInfo(Plan)), this, SLOT(open_PlanInfo(Plan)));
     set_MenuConections();
     mainWindow->show();
 }
@@ -108,6 +111,15 @@ void WindowsManager::open_TimetableItemEditing(Plan plan)
     minorWindow.reset(new TimetableItemsAdding(plan));
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Plan)), mainWindow.get(), SLOT(editPlan(Plan)));
+    minorWindow->show();
+}
+
+void WindowsManager::open_PlanInfo(Plan plan)
+{
+    minorWindow.reset(new PlanInfoDialog(plan));
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenPlanEditingWindow()));
+    connect(minorWindow.get(), SIGNAL(Delete(bool)), this, SLOT(open_AreYouSure(bool)));
     minorWindow->show();
 }
 
@@ -252,6 +264,15 @@ void WindowsManager::open_Clock()
 {
     dialogWindow.reset(new Clock());
     dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(dialogWindow.get(), SIGNAL(Save(QString)), mainWindow.get(), SLOT(setTime(QString)));
+    dialogWindow->show();
+}
+
+void WindowsManager::open_Clock(QString time)
+{
+    dialogWindow.reset(new Clock(time));
+    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(dialogWindow.get(), SIGNAL(Save(QString)), mainWindow.get(), SLOT(setTime(QString)));
     dialogWindow->show();
 }
 
@@ -274,11 +295,16 @@ void WindowsManager::open_EditDeleteOrMarkAsDone(bool taskStatus)
     minorWindow->show();
 }
 
-void WindowsManager::open_AreYouSure()
+void WindowsManager::open_AreYouSure(bool isForPlan)
 {
-    minorWindow.reset(new AreYouSure());
-    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    connect(minorWindow.get(), SIGNAL(Yes()), mainWindow.get(), SLOT(Delete()));
-    minorWindow->show();
+    dialogWindow.reset(new AreYouSure(isForPlan));
+    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(dialogWindow.get(), SIGNAL(CloseMinorWindow()), this, SLOT(close_MinorWindow()));
+    connect(dialogWindow.get(), SIGNAL(Yes()), mainWindow.get(), SLOT(Delete()));
+    if(dynamic_cast<TimetableMain*>(mainWindow.get()))
+    {
+        connect(dialogWindow.get(), SIGNAL(YesForPlan()), mainWindow.get(), SLOT(DeletePlan()));
+    }
+    dialogWindow->show();
 }
 

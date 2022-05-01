@@ -277,7 +277,7 @@ border-color:rgb(64, 115, 175);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
 color: black;
 background-color: rgb(255, 255, 255);
 border-radius: 15px;
@@ -371,7 +371,7 @@ border-color:rgb(64, 115, 175);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 11pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
 color: black;
 background-color: rgb(255, 255, 255);
 border-radius: 15px;
