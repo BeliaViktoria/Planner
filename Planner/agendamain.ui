@@ -76,7 +76,7 @@ background-color: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <item>
      <property name="text">
@@ -171,7 +171,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Overview</string>
@@ -193,7 +193,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Timetable</string>
@@ -215,7 +215,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Subjects</string>
@@ -237,7 +237,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Teachers</string>
@@ -259,7 +259,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Grades</string>
@@ -281,7 +281,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Settings</string>
@@ -303,7 +303,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Calendar</string>
@@ -325,7 +325,7 @@ background: rgb(218, 226, 241);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Agenda</string>

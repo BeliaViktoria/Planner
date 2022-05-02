@@ -64,7 +64,7 @@ border-color: rgb(18, 46, 79);</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 75 20pt &quot;Gentium Book Basic&quot;;
 color:white;</string>
     </property>
@@ -86,7 +86,7 @@ color:white;</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 14pt &quot;Gentium Book Basic&quot;;
 color:black;</string>
     </property>
@@ -105,7 +105,7 @@ color:black;</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 12pt &quot;Gentium Book Basic&quot;;
 color:black;
 </string>
@@ -128,7 +128,7 @@ color:black;
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 12pt &quot;Gentium Book Basic&quot;;
 color:black;
 </string>
@@ -151,7 +151,7 @@ color:black;
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 12pt &quot;Gentium Book Basic&quot;;
 color:black;
 </string>
@@ -267,7 +267,7 @@ background-color:rgb(219, 226, 239);</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 14pt &quot;Gentium Book Basic&quot;;
 color:black;</string>
    </property>
@@ -322,7 +322,7 @@ background-color:rgb(219, 226, 239);</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 14pt &quot;Gentium Book Basic&quot;;
 color:black;</string>
    </property>
@@ -380,7 +380,7 @@ background-color:rgb(219, 226, 239);</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 14pt &quot;Gentium Book Basic&quot;;
 color:black;</string>
    </property>
@@ -402,7 +402,7 @@ color:black;</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 14pt &quot;Gentium Book Basic&quot;;
 color:black;</string>
    </property>
@@ -424,7 +424,7 @@ color:black;</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 14pt &quot;Gentium Book Basic&quot;;
 color:black;</string>
    </property>

@@ -30,7 +30,7 @@
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
    </property>
    <widget class="QPushButton" name="pushButton_Yes">
     <property name="geometry">
@@ -48,7 +48,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Yes</string>
@@ -70,7 +70,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>No</string>

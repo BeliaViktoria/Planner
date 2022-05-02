@@ -48,8 +48,7 @@
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);
-</string>
+border-color:rgb(0, 0, 0);</string>
    </property>
    <widget class="QPushButton" name="pushButton_Save">
     <property name="geometry">
@@ -65,7 +64,7 @@ border-color:rgb(18, 46, 79);
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);
+border-color:rgb(0, 0, 0);
 font: 75 20pt &quot;Gentium Book Basic&quot;;
 color:white;</string>
     </property>
@@ -334,7 +333,7 @@ background:rgb(219, 226, 239);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_MaxGrade">
@@ -439,7 +438,7 @@ background:rgb(219, 226, 239);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
    </widget>
    <widget class="QDateEdit" name="dateEdit_EndDate">
@@ -458,7 +457,7 @@ background:rgb(219, 226, 239);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_SmallEndDate_1">

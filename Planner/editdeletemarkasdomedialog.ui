@@ -66,7 +66,7 @@ background-color:rgb(219, 226, 239);</string>
 border-radius:15px;
 border-style: solid;
 border-width: 1px;
-border-color: rgb(18, 46, 79);</string>
+border-color: rgb(0, 0, 0);</string>
    </property>
    <widget class="QPushButton" name="pushButton_Edit">
     <property name="geometry">
@@ -84,7 +84,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Edit</string>
@@ -106,7 +106,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Delete</string>
@@ -128,7 +128,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color: rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Mark as done</string>

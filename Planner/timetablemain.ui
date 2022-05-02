@@ -76,7 +76,7 @@ background-color: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="iconSize">
      <size>
@@ -91,7 +91,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -103,7 +102,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -115,7 +113,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -127,7 +124,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -139,7 +135,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -151,7 +146,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -163,7 +157,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -175,7 +168,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -187,7 +179,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -199,7 +190,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -211,7 +201,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -223,7 +212,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -235,7 +223,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -247,7 +234,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -283,7 +269,7 @@ background-color: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <attribute name="horizontalHeaderCascadingSectionResizes">
      <bool>false</bool>
@@ -295,7 +281,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -307,7 +292,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -319,7 +303,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -331,7 +314,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -343,7 +325,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -355,7 +336,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -377,7 +357,7 @@ background-color: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <attribute name="horizontalHeaderCascadingSectionResizes">
      <bool>false</bool>
@@ -389,7 +369,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -401,7 +380,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -413,7 +391,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -425,7 +402,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -437,7 +413,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -449,7 +424,6 @@ border-color:rgb(64, 115, 175);</string>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -469,7 +443,7 @@ border-color:rgb(64, 115, 175);</string>
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_Now">
@@ -653,7 +627,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Overview</string>
@@ -675,7 +649,7 @@ background: rgb(219, 226, 239);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Timetable</string>
@@ -697,7 +671,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Subjects</string>
@@ -719,7 +693,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Teachers</string>
@@ -741,7 +715,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Grades</string>
@@ -763,7 +737,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Settings</string>
@@ -785,7 +759,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Calendar</string>
@@ -807,7 +781,7 @@ background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Agenda</string>
