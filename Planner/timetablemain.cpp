@@ -152,6 +152,12 @@ void TimetableMain::showTime()
 void TimetableMain::setOverview()
 {
     QDate currentDate = QDate::currentDate();
+    if(currentDate < CurrentUser::getInstance()->getSettings().getStartDate() || currentDate > CurrentUser::getInstance()->getSettings().getEndDate())
+    {
+        ui->label_WhatNow->setText("Nothing");
+        ui->label_WhatThen->setText("Nothing");
+        return;
+    }
     QTime currentTime = QTime::currentTime();
     int currentLesson = -1, nextLesson = -1;
     int currentDay = currentDate.dayOfWeek();

@@ -47,6 +47,7 @@ private slots:
     void open_Calendar();
     void open_Clock();
     void open_Clock(QString time);
+    void open_WhatToSave();
 
     void open_EditOrDelete();
     void open_EditDeleteOrMarkAsDone(bool taskStatus);

@@ -1,11 +1,13 @@
 #include "calendarmain.h"
 #include "ui_calendarmain.h"
+#include "currentuser.h"
 
 CalendarMain::CalendarMain(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CalendarMain)
 {
     ui->setupUi(this);
+    on_calendarWidget_clicked(QDate::currentDate());
 }
 
 CalendarMain::~CalendarMain()
@@ -52,3 +54,79 @@ void CalendarMain::on_pushButton_Overview_clicked()
 {
     emit OpenOverview();
 }
+
+void CalendarMain::setTimetable(QDate date)
+{
+    ui->listWidget_Timetable->clear();
+    int currentDay = date.dayOfWeek() - 1;
+    if(date < CurrentUser::getInstance()->getSettings().getStartDate() || date > CurrentUser::getInstance()->getSettings().getEndDate() || currentDay >= 6)
+    {
+        return;
+    }
+    QString startTime;
+    QString endTime;
+    QString subject;
+    for(auto iterator = CurrentUser::getInstance()->getTimetable().begin(); iterator != CurrentUser::getInstance()->getTimetable().end(); ++iterator)
+    {
+        if(iterator->first.second == currentDay)
+        {
+            subject = iterator->second.getSubject().getName();
+            if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+            {
+                ui->listWidget_Timetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+            }
+            else
+            {
+                startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
+                endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
+                ui->listWidget_Timetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
+            }
+        }
+        if(iterator->first.second > currentDay)
+        {
+            break;
+        }
+    }
+}
+
+void CalendarMain::setAgenda(QDate date)
+{
+    ui->listWidget_Agenda->clear();
+    QString subject = "";
+    QString status = "Finished";
+    QString taskName;;
+    for(auto iterator = CurrentUser::getInstance()->getAgenda().begin(); iterator != CurrentUser::getInstance()->getAgenda().end(); ++iterator)
+    {
+        if(iterator->getDeadline() == date)
+        {
+            if(subject != iterator->getSubject().getName())
+            {
+                subject = iterator->getSubject().getName();
+                ui->listWidget_Agenda->addItem(subject);
+                int currentIndex = ui->listWidget_Agenda->count() - 1;
+                ui->listWidget_Agenda->item(currentIndex)->setForeground(iterator->getSubject().getColor().getColor());
+                ui->listWidget_Agenda->item(currentIndex)->setTextAlignment(Qt::AlignCenter);
+            }
+            taskName = iterator->getName();
+            if(iterator->isFinished())
+            {
+                 ui->listWidget_Agenda->addItem(taskName + "\n                                                  " + status);
+            }
+            else
+            {
+                 ui->listWidget_Agenda->addItem(taskName);
+            }
+        }
+        if(iterator->getDeadline() > date)
+        {
+            break;
+        }
+    }
+}
+
+void CalendarMain::on_calendarWidget_clicked(const QDate &date)
+{
+    setTimetable(date);
+    setAgenda(date);
+}
+

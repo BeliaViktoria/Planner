@@ -22,7 +22,10 @@ void Calendar::on_calendarWidget_clicked(const QDate &date)
 
 void Calendar::on_pushButton_Add_clicked()
 {
-    emit SetDate(ui->label_YourChoice->text());
+    if(ui->label_YourChoice->text() != "")
+    {
+        emit SetDate(ui->label_YourChoice->text());
+    }
     this->close();
 }
 

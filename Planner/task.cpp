@@ -61,9 +61,16 @@ bool Task::operator>(Task anotherTask)
     }
     else if(this->deadline == anotherTask.deadline)
     {
-        if(this->name > anotherTask.name)
+        if(this->subject.getName() > subject.getName())
         {
             return true;
+        }
+        else if(this->subject.getName() == anotherTask.subject.getName())
+        {
+            if(this->name > anotherTask.name)
+            {
+                return true;
+            }
         }
     }
     return false;
@@ -76,10 +83,17 @@ bool Task::operator<(Task anotherTask)
         return true;
     }
     else if(this->deadline == anotherTask.deadline)
-    {
-        if(this->name < anotherTask.name)
+    {   
+        if(this->subject.getName() < subject.getName())
         {
             return true;
+        }
+        else if(this->subject.getName() == anotherTask.subject.getName())
+        {
+            if(this->name < anotherTask.name)
+            {
+                return true;
+            }
         }
     }
     return false;

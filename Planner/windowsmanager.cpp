@@ -19,6 +19,7 @@
 #include "editordeletedialog.h"
 #include "editdeletemarkasdomedialog.h"
 #include "areyousure.h"
+#include "whattosave.h"
 
 WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr), dialogWindow(nullptr)
 {
@@ -248,7 +249,7 @@ void WindowsManager::open_SettingsMain()
     close_MainWindow();
     mainWindow.reset(new SettingsMain());
     set_MenuConections();
-    connect(mainWindow.get(), SIGNAL(OpenWelcome()), this, SLOT(open_Welcome()));
+    connect(mainWindow.get(), SIGNAL(OpenWhatToSave()), this, SLOT(open_WhatToSave()));
     mainWindow->show();
 }
 
@@ -306,5 +307,13 @@ void WindowsManager::open_AreYouSure(bool isForPlan)
         connect(dialogWindow.get(), SIGNAL(YesForPlan()), mainWindow.get(), SLOT(DeletePlan()));
     }
     dialogWindow->show();
+}
+
+void WindowsManager::open_WhatToSave()
+{
+    minorWindow.reset(new WhatToSave());
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(OpenWelcome()), this, SLOT(open_Welcome()));
+    minorWindow->show();
 }
 

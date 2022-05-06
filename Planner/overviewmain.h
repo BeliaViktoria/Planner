@@ -15,6 +15,15 @@ public:
     explicit OverviewMain(QWidget *parent = nullptr);
     ~OverviewMain();
 
+private:
+    void setTodayTimetable();
+    void setTodayAgenda();
+    void setTomorrowTimetable();
+    void setTomorrowAgenda();
+    void setAfterTomorrowTimetable();
+    void setAfterTomorrowAgenda();
+    void setOverview();
+
 signals:
     void OpenOverview();
     void OpenTimetable();

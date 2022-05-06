@@ -34,7 +34,6 @@ private slots:
     void on_radioButton_Sum_clicked();
     void on_radioButton_Numerator_clicked();
     void on_radioButton_Denominator_clicked();
-
     void on_radioButton_FullWeeks_clicked();
 
 private:

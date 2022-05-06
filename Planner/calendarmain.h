@@ -15,6 +15,10 @@ public:
     explicit CalendarMain(QWidget *parent = nullptr);
     ~CalendarMain();
 
+private:
+    void setTimetable(QDate date);
+    void setAgenda(QDate date);
+
 signals:
     void OpenOverview();
     void OpenTimetable();
@@ -34,6 +38,7 @@ private slots:
     void on_pushButton_Grades_clicked();
     void on_pushButton_Settings_clicked();
     void on_pushButton_Overview_clicked();
+    void on_calendarWidget_clicked(const QDate &date);
 
 private:
     Ui::CalendarMain *ui;
