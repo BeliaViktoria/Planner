@@ -44,7 +44,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;Gentium Book Basic&quot;;
+    <string notr="true">font: 16pt &quot;Times New Roman&quot;;
 color: black;
 background-color: rgb(255, 255, 255);
 border-radius: 15px;
@@ -76,7 +76,8 @@ border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: black;
-font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
+font: 75 28pt &quot;Times New Roman&quot;;
+</string>
     </property>
     <property name="text">
      <string>Teachers</string>
@@ -130,7 +131,7 @@ border-width: 1px;
     </property>
     <property name="styleSheet">
      <string notr="true">color: black;
-font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
+font: 75 28pt &quot;Times New Roman&quot;;</string>
     </property>
     <property name="text">
      <string>Menu</string>
@@ -146,7 +147,7 @@ font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
@@ -168,7 +169,7 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
@@ -190,7 +191,7 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
@@ -212,7 +213,7 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background:rgb(219, 226, 239);
 border-radius: 15px;
@@ -234,7 +235,7 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
@@ -256,7 +257,7 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
@@ -278,7 +279,7 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
@@ -300,7 +301,7 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;

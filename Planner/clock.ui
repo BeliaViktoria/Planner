@@ -45,7 +45,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">background-color:rgb(255, 255, 255);
-font: 75 12pt &quot;Gentium Book Basic&quot;;
+font: 75 12pt &quot;Times New Roman&quot;;
 color:black;</string>
    </property>
    <property name="text">
@@ -105,7 +105,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -127,7 +127,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color: rgb(0, 0, 0);
-font: 75 12pt &quot;Gentium Book Basic&quot;;
+font: 75 12pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -149,7 +149,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color: rgb(0, 0, 0);
-font: 75 12pt &quot;Gentium Book Basic&quot;;
+font: 75 12pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -171,7 +171,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -193,7 +193,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -215,7 +215,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -237,7 +237,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -259,7 +259,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -281,7 +281,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -303,7 +303,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -325,7 +325,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -347,7 +347,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -369,7 +369,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -391,7 +391,7 @@ border-radius:20px;
 border-style: solid;
 border-width: 1px;
 border-color:rgb(0, 0, 0);
-font: 75 16pt &quot;Gentium Book Basic&quot;;
+font: 75 16pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -413,7 +413,7 @@ border-radius:15px;
 border-style: solid;
 border-width: 1px;
 border-color: rgb(0, 0, 0);
-font: 18pt &quot;Gentium Book Basic&quot;;
+font: 18pt &quot;Times New Roman&quot;;
 color:black;</string>
     </property>
     <property name="text">
@@ -432,7 +432,7 @@ color:black;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background-color:rgb(255, 255, 255);
-font: 75 12pt &quot;Gentium Book Basic&quot;;
+font: 75 12pt &quot;Times New Roman&quot;;
 color:black;</string>
    </property>
    <property name="text">
