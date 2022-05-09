@@ -12,6 +12,7 @@ SOURCES += \
     agendaadding.cpp \
     agendamain.cpp \
     areyousure.cpp \
+    cache.cpp \
     calendar.cpp \
     calendarmain.cpp \
     clock.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     agendaadding.h \
     agendamain.h \
     areyousure.h \
+    cache.h \
     calendar.h \
     calendarmain.h \
     clock.h \
