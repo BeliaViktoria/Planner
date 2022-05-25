@@ -159,7 +159,7 @@ border-width:0px;
       </property>
       <property name="styleSheet">
        <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
+font: 75 18pt &quot;Times New Roman&quot;;
 background-color: rgb(255, 255, 255);
 text-decoration: underline;</string>
       </property>
@@ -178,7 +178,7 @@ text-decoration: underline;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
+font: 75 18pt &quot;Times New Roman&quot;;
 background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
@@ -196,7 +196,7 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
+font: 75 18pt &quot;Times New Roman&quot;;
 background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
@@ -213,7 +213,7 @@ background-color: rgb(255, 255, 255);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 18pt &quot;Gentium Book Basic&quot;;
+       <string notr="true">font: 18pt &quot;Times New Roman&quot;;
 color: black;
 background:rgb(219, 226, 239);
 border-radius: 15px;
@@ -233,7 +233,7 @@ border-color:rgb(0, 0, 0);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: black;
-font: 75 18pt &quot;Gentium Book Basic&quot;;
+font: 75 18pt &quot;Times New Roman&quot;;
 background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
@@ -395,9 +395,9 @@ border-color:rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
+     <string notr="true">background:rgb(219, 226, 239);
+font: 14pt &quot;Times New Roman&quot;;
 color: black;
-background:rgb(219, 226, 239);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
@@ -614,108 +614,12 @@ background-color: rgb(255, 255, 255);</string>
      <string>Denominator</string>
     </property>
    </widget>
-<<<<<<< Updated upstream
    <widget class="QRadioButton" name="radioButton_FullWeeks">
     <property name="geometry">
      <rect>
       <x>260</x>
       <y>50</y>
       <width>191</width>
-=======
-  </widget>
-  <widget class="QWidget" name="widget_GradingSystem" native="true">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>170</y>
-     <width>741</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:white;</string>
-   </property>
-   <widget class="QLabel" name="label_GradingSystem_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>211</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);
-text-decoration: underline;</string>
-    </property>
-    <property name="text">
-     <string>Grading system:</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_Average_2">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>10</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Average</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_Sum_2">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>10</y>
-      <width>81</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Sum</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_MaxGrade_2">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>80</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 18pt &quot;Times New Roman&quot;;
-color: black;
-background:rgb(219, 226, 239);
-border-radius: 15px;
-border-style: solid;
-border-width: 1px;
-border-color:rgb(0, 0, 0);</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_MaxGrade_2">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>80</y>
-      <width>151</width>
->>>>>>> Stashed changes
       <height>41</height>
      </rect>
     </property>
@@ -789,7 +693,7 @@ background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
+font: 75 18pt&quot;Times New Roman&quot;;
 background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
@@ -806,7 +710,7 @@ background-color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 18pt &quot;Times New Roman&quot;;
+     <string notr="true">font: 18pt&quot;Times New Roman&quot;;
 color: black;
 background:rgb(219, 226, 239);
 border-radius: 15px;
@@ -845,7 +749,7 @@ border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-width:0px;
-font: 12pt &quot;Gentium Book Basic&quot;;
+font: 12pt &quot;Times New Roman&quot;;
 color:red;</string>
     </property>
     <property name="text">
@@ -869,7 +773,7 @@ color:red;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-width:0px;
-font: 12pt &quot;Gentium Book Basic&quot;;
+font: 12pt &quot;Times New Roman&quot;;
 color:red;</string>
     </property>
     <property name="text">
