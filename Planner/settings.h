@@ -43,6 +43,9 @@ public:
     void setEndDate(QDate endDate);
     void setStartFrom(WeekType startFrom);
 
+    friend std::ostream& operator<<(std::ostream& out, const Settings& settings);
+    friend std::istream& operator>>(std::istream& in, Settings& settings);
+
 private:
     ColorTheme colorTheme;
     GradingSystem gradingSystem;

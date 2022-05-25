@@ -1,6 +1,7 @@
 #include "welcomemain.h"
 #include "ui_welcomemain.h"
 #include "currentuser.h"
+#include "cache.h"
 
 WelcomeMain::WelcomeMain(QWidget *parent) :
     QWidget(parent),
@@ -64,6 +65,7 @@ void WelcomeMain::on_pushButton_Save_clicked()
         Settings settings = Settings(colorTheme, gradingSystem, ui->lineEdit_MaxGrade->text().toInt(),
                                      ui->dateEdit_StartDate->date(), ui->dateEdit_EndDate->date(), startFrom);
         CurrentUser::getInstance()->setSettings(settings);
+        Cache::writeSettings(settings);
         emit OpenOverview();
     }
 }

@@ -84,7 +84,7 @@ void TeacherAdding::on_pushButton_Add_clicked()
                         ui->lineEdit_Fathername->text(), ui->lineEdit_Phone->text(), ui->lineEdit_EmailAddress->text());
         if(ui->label_AddingTeacher->text() == "Adding teacher")
         {
-            for(Teacher item:CurrentUser::getInstance()->getTeachers())
+            for(Teacher &item:CurrentUser::getInstance()->getTeachers())
             {
                 if (teacher == item)
                 {

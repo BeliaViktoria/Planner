@@ -74,3 +74,21 @@ void Settings::setStartFrom(WeekType startFrom)
 {
     this->startFrom = startFrom;
 }
+
+std::ostream& operator<<(std::ostream& out, const Settings& settings)
+{
+    out << settings.gradingSystem << " " << settings.maxGrade << " " << settings.startDate.toString("dd.MM.yyyy").toStdString() << " " << settings.endDate.toString("dd.MM.yyyy").toStdString() << " " << settings.startFrom;
+    return out;
+}
+
+std::istream& operator>>(std::istream& in,Settings& settings)
+{
+    int gradingSystem, startFrom;
+    std::string startDate, endDate;
+    in >> gradingSystem >> settings.maxGrade >> startDate >> endDate >> startFrom;
+    settings.setGradingSystem(GradingSystem(gradingSystem));
+    settings.setStartFrom(WeekType(startFrom));
+    settings.setStartDate(QDate::fromString(QString::fromStdString(startDate), "dd.MM.yyyy"));
+    settings.setEndDate(QDate::fromString(QString::fromStdString(endDate), "dd.MM.yyyy"));
+    return in;
+}

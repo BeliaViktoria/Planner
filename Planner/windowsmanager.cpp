@@ -20,10 +20,19 @@
 #include "editdeletemarkasdomedialog.h"
 #include "areyousure.h"
 #include "whattosave.h"
+#include "cache.h"
 
 WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr), dialogWindow(nullptr)
 {
-    open_Welcome();
+    if(Cache::exist())
+    {
+        Cache::readSettings();
+        open_OverviewMain();
+    }
+    else
+    {
+        open_Welcome();
+    }
 }
 
 WindowsManager::~WindowsManager()

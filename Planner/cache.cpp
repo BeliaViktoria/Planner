@@ -1,4 +1,9 @@
 #include "cache.h"
+#include "currentuser.h"
+#include <fstream>
+#include <iostream>
+
+#define SETTINGS_CACHE "cache\\settings.txt"
 
 Cache::Cache()
 {
@@ -7,7 +12,13 @@ Cache::Cache()
 
 bool Cache::exist()
 {
-
+    std::ifstream file(SETTINGS_CACHE);
+    if (file.is_open())
+    {
+        file.close();
+        return true;
+    }
+    return false;
 }
 
 std::vector<Teacher> Cache::readTeachers()
@@ -97,12 +108,22 @@ void Cache::writeTimes(std::map<std::pair<int, int>, QTime> times)
 
 Settings Cache::readSettings()
 {
-
+    std::ifstream file(SETTINGS_CACHE);
+    if (file.is_open())
+    {
+        file >> CurrentUser::getInstance()->getSettings();
+        file.close();
+    }
 }
 
 void Cache::writeSettings(Settings settings)
 {
-
+    std::ofstream file(SETTINGS_CACHE);
+    if (file.is_open())
+    {
+        file << settings;
+        file.close();
+    }
 }
 
 void Cache::deleteSettings()

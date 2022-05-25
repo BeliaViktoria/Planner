@@ -1,14 +1,6 @@
 #ifndef CACHE_H
 #define CACHE_H
 
-#define FOLDER_PATH ""
-#define TEACHERS_PATH ""
-#define SUBJECTS_PATH ""
-#define AGENDA_PATH ""
-#define GRADES_PATH ""
-#define TIMETABLE_PATH ""
-#define SETTINGS_PATH ""
-
 #include "teacher.h"
 #include "subject.h"
 #include "grade.h"
