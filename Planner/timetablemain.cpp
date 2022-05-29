@@ -1,6 +1,7 @@
 #include "timetablemain.h"
 #include "ui_timetablemain.h"
 #include "currentuser.h"
+#include "cache.h"
 
 TimetableMain::TimetableMain(QWidget *parent) :
     QWidget(parent), ui(new Ui::TimetableMain), timeIndex(std::make_pair(-1, -1))
@@ -19,6 +20,8 @@ TimetableMain::~TimetableMain()
     times.clear();
     ui->tableWidget_Time_1->clear();
     ui->tableWidget_Time_2->clear();
+    Cache::writeTimes(CurrentUser::getInstance()->getTimes());
+    Cache::writeTimetable(CurrentUser::getInstance()->getTimetable());
     delete ui;
 }
 
@@ -160,7 +163,7 @@ void TimetableMain::setOverview()
     }
     QTime currentTime = QTime::currentTime();
     int currentLesson = -1, nextLesson = -1;
-    int currentDay = currentDate.dayOfWeek();
+    int currentDay = currentDate.dayOfWeek() - 1;
     if(currentDay >= ui->tableWidget_Timetable->rowCount())
     {
         ui->label_WhatNow->setText("Nothing");
@@ -173,12 +176,12 @@ void TimetableMain::setOverview()
         {
             if(iterator->first.second == 1)
             {
-                currentLesson = iterator->first.first;
+                currentLesson = iterator->first.first; // if exist
                 nextLesson = currentLesson + 1;
             }
             else
             {
-                nextLesson = iterator->first.first;
+                nextLesson = iterator->first.first; // if exist
             }
             break;
         }
@@ -244,7 +247,7 @@ void TimetableMain::on_pushButton_Overview_clicked()
 Plan TimetableMain::getPlan(int lesson, int day)
 {
     auto iterator = CurrentUser::getInstance()->getTimetable().find(std::make_pair(lesson, day));
-    if(iterator->second.getRepeating() != currentWeekType)
+    if(iterator->second.getRepeating() != currentWeekType && iterator->second.getRepeating() != WeekType::NULLTYPE)
     {
         ++iterator;
     }

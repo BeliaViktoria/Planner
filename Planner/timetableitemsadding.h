@@ -47,6 +47,8 @@ private:
     Subject subject;
     Teacher teacher;
     WeekType repeating;
+    QRegularExpressionValidator validatorRoom;
+    QRegularExpressionValidator validatorLink;
 };
 
 #endif // TIMETABLEITEMSADDING_H

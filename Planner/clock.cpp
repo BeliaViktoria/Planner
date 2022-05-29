@@ -194,7 +194,7 @@ void Clock::on_pushButton_6_clicked()
 {
     if(isHours)
     {
-        hours = ui->pushButton_0->text().toInt();
+        hours = ui->pushButton_6->text().toInt();
     }
     else
     {

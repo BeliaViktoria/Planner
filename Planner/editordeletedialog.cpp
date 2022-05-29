@@ -16,7 +16,7 @@ EditOrDeleteDialog::~EditOrDeleteDialog()
 void EditOrDeleteDialog::on_pushButton_Edit_clicked()
 {
     emit Edit();
-    //this->close();
+    //this->hide();
 }
 
 

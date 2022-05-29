@@ -29,9 +29,18 @@ TimetableItemsAdding::TimetableItemsAdding(Plan plan) :
     ui->label_AddingPlan->setText("Editing plan");
 
     ui->label_SubjectName->setText(plan.getSubject().getName());
-    ui->label_TeacherName->setText(plan.getTeacher().getFullname());
-    ui->lineEdit_Room->setText(plan.getRoom());
-    ui->lineEdit_Link->setText(plan.getLlink());
+    if(plan.getTeacher().getFullname() != "- - -")
+    {
+        ui->label_TeacherName->setText(plan.getTeacher().getFullname());
+    }
+    if(plan.getRoom() != "-")
+    {
+        ui->lineEdit_Room->setText(plan.getRoom());
+    }
+    if(plan.getLlink() != "-")
+    {
+        ui->lineEdit_Link->setText(plan.getLlink());
+    }
     showSubjectsList();
     showTeachersList();
 
@@ -63,6 +72,10 @@ void TimetableItemsAdding::setWindowSettings()
         ui->radioButton_Numerator->hide();
         ui->radioButton_FullWeek->hide();
     }
+    validatorRoom.setRegularExpression(QRegularExpression("[a-zA-Z0-9._#/|-]+"));
+    ui->lineEdit_Room->setValidator(&validatorRoom);
+    validatorLink.setRegularExpression(QRegularExpression("^\\S*$"));
+    ui->lineEdit_Link->setValidator(&validatorLink);
 }
 
 bool TimetableItemsAdding::checkFields()
@@ -109,7 +122,7 @@ void TimetableItemsAdding::showTeachersList()
     ui->listWidget_Teachers->clear();
     for(int i = 0; i < 3; i++)
     {
-        if(subject.getTeachers()[i].getFullname() != "")
+        if(subject.getTeachers()[i].getFullname() != "- - -")
         {
             ui->listWidget_Teachers->addItem(subject.getTeachers()[i].getFullname());
         }
@@ -184,7 +197,6 @@ void TimetableItemsAdding::on_pushButton_Add_clicked()
     if(checkFields())
     {
         Plan plan(day, lesson, subject, ui->lineEdit_Room->text(), teacher, ui->lineEdit_Link->text(), repeating);
-
         if(ui->label_AddingPlan->text() == "Adding plan")
         {
             auto iterator = CurrentUser::getInstance()->getTimetable().find(std::make_pair(lesson, day));

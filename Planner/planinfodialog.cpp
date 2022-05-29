@@ -17,9 +17,18 @@ PlanInfoDialog::~PlanInfoDialog()
 void PlanInfoDialog::showData(Plan plan)
 {
     ui->label_SubjectName->setText(plan.getSubject().getName());
-    ui->label_RoonNumber->setText(plan.getRoom());
-    ui->label_TeacherName->setText(plan.getTeacher().getFullname());
-    ui->label_LinkName->setText(plan.getLlink());
+    if(plan.getRoom() != "-")
+    {
+        ui->label_RoonNumber->setText(plan.getRoom());
+    }
+    if(plan.getTeacher().getFullname() != "- - -")
+    {
+        ui->label_TeacherName->setText(plan.getTeacher().getFullname());
+    }
+    if(plan.getLlink() != "-")
+    {
+        ui->label_LinkName->setText(plan.getLlink());
+    }
     switch(plan.getRepeating())
     {
     case NULLTYPE:

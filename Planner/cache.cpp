@@ -8,6 +8,8 @@
 #define SUBJECTS_CACHE "cache\\subjects.txt"
 #define AGENDA_CACHE "cache\\agenda.txt"
 #define GRADES_CACHE "cache\\grades.txt"
+#define TIMES_CACHE "cache\\times.txt"
+#define TIMETABLE_CACHE "cache\\timetable.txt"
 
 Cache::Cache()
 {
@@ -49,7 +51,7 @@ void Cache::writeTeachers(std::vector<Teacher> teachers)
     std::ofstream file(TEACHERS_CACHE);
     if (file.is_open())
     {
-        for(Teacher teacher : teachers)
+        for(Teacher& teacher : teachers)
         {
             file << teacher << '\n';
         }
@@ -86,7 +88,7 @@ void Cache::writeSubjects(std::vector<Subject> subjects)
     std::ofstream file(SUBJECTS_CACHE);
     if (file.is_open())
     {
-        for(Subject subject : subjects)
+        for(Subject& subject : subjects)
         {
             file << subject << '\n';
         }
@@ -123,7 +125,7 @@ void Cache::writeAgenda(std::vector<Task> agenda)
     std::ofstream file(AGENDA_CACHE);
     if (file.is_open())
     {
-        for(Task task : agenda)
+        for(Task& task : agenda)
         {
             file << task << '\n';
         }
@@ -160,7 +162,7 @@ void Cache::writeGrades(std::vector<Grade> grades)
     std::ofstream file(GRADES_CACHE);
     if (file.is_open())
     {
-        for(Grade grade : grades)
+        for(Grade& grade : grades)
         {
             file << grade << '\n';
         }
@@ -175,12 +177,34 @@ void Cache::deleteGrades()
 
 std::multimap<std::pair<int, int>, Plan> Cache::readTimetable()
 {
-
+    std::multimap<std::pair<int, int>, Plan> timetable;
+    std::ifstream file(TIMETABLE_CACHE);
+    if(file.is_open())
+    {
+        Plan plan;
+        while (file)
+        {
+            file >> plan;
+            if(plan.getSubject().getName() != "")
+            {
+                timetable.emplace(std::make_pair(plan.getLesson(), plan.getDay()), plan);
+            }
+        }
+    }
+    return timetable;
 }
 
 void Cache::writeTimetable(std::multimap<std::pair<int, int>, Plan> timetable)
 {
-
+    std::ofstream file(TIMETABLE_CACHE);
+    if (file.is_open())
+    {
+        for(auto& plan : timetable)
+        {
+            file << plan.second << '\n';
+        }
+        file.close();
+    }
 }
 
 void Cache::deleteTimetable()
@@ -190,12 +214,35 @@ void Cache::deleteTimetable()
 
 std::map<std::pair<int, int>, QTime> Cache::readTimes()
 {
-
+    std::map<std::pair<int, int>, QTime> times;
+    std::ifstream file(TIMES_CACHE);
+    if(file.is_open())
+    {
+        int row, column;
+        std::string time;
+        while (file)
+        {
+            file >> row >> column >> time;
+            if(time != "")
+            {
+                times.emplace(std::make_pair(row, column), QTime::fromString(QString::fromStdString(time), "hh:mm"));
+            }
+        }
+    }
+    return times;
 }
 
 void Cache::writeTimes(std::map<std::pair<int, int>, QTime> times)
 {
-
+    std::ofstream file(TIMES_CACHE);
+    if (file.is_open())
+    {
+        for(auto& time : times)
+        {
+            file << time.first.first << " " << time.first.second << " " << time.second.toString("hh:mm").toStdString() << '\n';
+        }
+        file.close();
+    }
 }
 
 Settings Cache::readSettings()

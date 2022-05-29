@@ -26,11 +26,11 @@ SubjectAdding::SubjectAdding(Subject subject) :
     ui->label_AddingSubject->setText("Editing subject");
     ui->lineEdit_Name->setText(subject.getName());
     QString teachersNames = subject.getTeachers()[0].getFullname() + "; ";
-    if(subject.getTeachers()[1] != "")
+    if(subject.getTeachers()[1] != "- - -")
     {
         teachersNames += subject.getTeachers()[1].getFullname() + "; ";
     }
-    if(subject.getTeachers()[2] != "")
+    if(subject.getTeachers()[2] != "- - -")
     {
         teachersNames += subject.getTeachers()[2].getFullname() + "; ";
     }

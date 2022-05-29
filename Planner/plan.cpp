@@ -1,6 +1,6 @@
 #include "plan.h"
 
-Plan::Plan() : day(-1), lesson(-1), subject(), room(""), teacher(), link(""), repeating(NULLTYPE)
+Plan::Plan() : day(-1), lesson(-1), subject(), room("-"), teacher(), link("-"), repeating(NULLTYPE)
 {
 
 }
@@ -10,9 +10,23 @@ Plan::Plan(int day, int lesson, Subject subject, QString room, Teacher teacher, 
     this->day = day;
     this->lesson = lesson;
     this->subject = subject;
-    this->room = room;
+    if(room == "")
+    {
+        this->room = "-";
+    }
+    else
+    {
+        this->room = room;
+    }
     this->teacher = teacher;
-    this->link = link;
+    if(link == "")
+    {
+        this->link = "-";
+    }
+    else
+    {
+        this->link = link;
+    }
     this->repeating = repeating;
 }
 
