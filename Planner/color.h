@@ -21,6 +21,9 @@ public:
 
     bool operator==(Color anotherColor);
     void operator=(Color anotherColor);
+
+    friend std::ostream& operator<<(std::ostream& out, const Color& color);
+    friend std::istream& operator>>(std::istream& in, Color& color);
 };
 
 #endif // COLOR_H

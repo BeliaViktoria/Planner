@@ -81,7 +81,7 @@ std::ostream& operator<<(std::ostream& out, const Settings& settings)
     return out;
 }
 
-std::istream& operator>>(std::istream& in,Settings& settings)
+std::istream& operator>>(std::istream& in, Settings& settings)
 {
     int gradingSystem, startFrom;
     std::string startDate, endDate;

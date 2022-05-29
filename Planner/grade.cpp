@@ -113,3 +113,18 @@ void Grade::operator=(Grade anotherGrade)
     this->date = anotherGrade.date;
     this->note = anotherGrade.note;
 }
+
+std::ostream& operator<<(std::ostream& out, const Grade& grade)
+{
+    out << grade.currentGrade << " " << grade.maxGrade << " " << grade.subject << " " << grade.date.toString("dd.MM.yyyy").toStdString() << " " << grade.note.toStdString();
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Grade& grade)
+{
+    std::string date, note;
+    in >> grade.currentGrade >> grade.maxGrade >> grade.subject >> date >> note;
+    grade.setDate(QDate::fromString(QString::fromStdString(date), "dd.MM.yyyy"));
+    grade.setNote(QString::fromStdString(note));
+    return in;
+}

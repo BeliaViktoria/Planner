@@ -28,7 +28,7 @@ public:
     std::map<std::pair<int, int>, QTime>& getTimes();
     Settings& getSettings();
 
-    void setSettings(Settings& settings);
+    void setSettings(Settings settings);
 
 private:
     CurrentUser();

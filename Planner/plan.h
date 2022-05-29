@@ -32,6 +32,9 @@ public:
     bool operator==(Plan anotherPlan);
     void operator=(Plan anotherPlan);
 
+    friend std::ostream& operator<<(std::ostream& out, const Plan& plan);
+    friend std::istream& operator>>(std::istream& in, Plan& plan);
+
 private:
     int day;
     int lesson;

@@ -137,3 +137,20 @@ void Plan::operator=(Plan anotherPlan)
     this->link = anotherPlan.link;
     this->repeating = anotherPlan.repeating;
 }
+
+std::ostream& operator<<(std::ostream& out, const Plan& plan)
+{
+    out << plan.lesson << " " << plan.day << " " << plan.subject << " " << plan.room.toStdString() << " " << plan.teacher << " " << plan.link.toStdString() << " " << plan.repeating;
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Plan& plan)
+{
+    std::string room, link;
+    int repeating;
+    in >> plan.lesson >> plan.day >> plan.subject >> room >> plan.teacher >> link >> repeating;
+    plan.setRepeating(WeekType(repeating));
+    plan.setRoom(QString::fromStdString(room));
+    plan.setLink(QString::fromStdString(link));
+    return in;
+}

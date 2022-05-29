@@ -25,8 +25,14 @@ TeacherAdding::TeacherAdding(Teacher teacher) :
     ui->lineEdit_Name->setText(teacher.getFullname().split(' ')[1]);
     ui->lineEdit_Surname->setText(teacher.getFullname().split(' ')[0]);
     ui->lineEdit_Fathername->setText(teacher.getFullname().split(' ')[2]);
-    ui->lineEdit_EmailAddress->setText(teacher.getEmail());
-    ui->lineEdit_Phone->setText(teacher.getPhone());
+    if(teacher.getEmail() != "-")
+    {
+        ui->lineEdit_EmailAddress->setText(teacher.getEmail());
+    }
+    if(teacher.getPhone() != "-")
+    {
+        ui->lineEdit_Phone->setText(teacher.getPhone());
+    }
 }
 
 TeacherAdding::~TeacherAdding()
@@ -81,7 +87,15 @@ void TeacherAdding::on_pushButton_Add_clicked()
     if(checkFields())
     {
         Teacher teacher(ui->lineEdit_Surname->text(), ui->lineEdit_Name->text(),
-                        ui->lineEdit_Fathername->text(), ui->lineEdit_Phone->text(), ui->lineEdit_EmailAddress->text());
+                        ui->lineEdit_Fathername->text(), "-", "-");
+        if(ui->lineEdit_Phone->text() != "")
+        {
+            teacher.setPhone(ui->lineEdit_Phone->text());
+        }
+        if(ui->lineEdit_EmailAddress->text() != "")
+        {
+            teacher.setEmail(ui->lineEdit_EmailAddress->text());
+        }
         if(ui->label_AddingTeacher->text() == "Adding teacher")
         {
             for(Teacher &item:CurrentUser::getInstance()->getTeachers())

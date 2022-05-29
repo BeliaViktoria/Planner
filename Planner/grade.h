@@ -26,6 +26,9 @@ public:
     bool operator<(Grade anotherGrade);
     bool operator==(Grade anotherGrade);
     void operator=(Grade anotherGrade);
+
+    friend std::ostream& operator<<(std::ostream& out, const Grade& grade);
+    friend std::istream& operator>>(std::istream& in, Grade& grade);
     
 private:
     int currentGrade;

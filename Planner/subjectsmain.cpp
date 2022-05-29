@@ -1,6 +1,7 @@
 #include "subjectsmain.h"
 #include "ui_subjectsmain.h"
 #include "currentuser.h"
+#include "cache.h"
 
 SubjectsMain::SubjectsMain(QWidget *parent) :
     QWidget(parent),
@@ -12,6 +13,7 @@ SubjectsMain::SubjectsMain(QWidget *parent) :
 
 SubjectsMain::~SubjectsMain()
 {
+    Cache::writeSubjects(CurrentUser::getInstance()->getSubjects());
     delete ui;
 }
 
@@ -23,11 +25,11 @@ void SubjectsMain::showSubjectsList()
     for(Subject item : subjects)
     {
         itemText += item.getName() + "\n - Teachers: " + item.getTeachers()[0].getFullname() + ";";
-        if(item.getTeachers()[1].getFullname() != "")
+        if(item.getTeachers()[1].getFullname() != "- - -")
         {
             itemText += "\n                      " + item.getTeachers()[1].getFullname() + ";";
         }
-        if(item.getTeachers()[2].getFullname() != "")
+        if(item.getTeachers()[2].getFullname() != "- - -")
         {
             itemText += "\n                      " + item.getTeachers()[2].getFullname() + ";";
         }

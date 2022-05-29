@@ -26,6 +26,8 @@ public:
     bool operator==(Subject anotherSubject);
     void operator=(Subject anotherSubject);
 
+    friend std::ostream& operator<<(std::ostream& out, const Subject& subject);
+    friend std::istream& operator>>(std::istream& in, Subject& subject);
 
 private:
     QString name;

@@ -95,3 +95,22 @@ void Subject::operator=(Subject anotherSubject)
     }
     this->statistic = anotherSubject.statistic;
 }
+
+std::ostream& operator<<(std::ostream& out, const Subject& subject)
+{
+    out << subject.name.toStdString() << " \n" << subject.color << " " << subject.teachers[0] << " " << subject.teachers[1] << " " << subject.teachers[2] << " " << subject.statistic;
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Subject& subject)
+{
+    std::string name;
+    std::getline(in, name);
+    if(name == "")
+    {
+        in >> name;
+    }
+    in >> subject.color >> subject.teachers[0] >> subject.teachers[1] >> subject.teachers[2] >> subject.statistic;
+    subject.setName(QString::fromStdString(name));
+    return in;
+}

@@ -1,6 +1,6 @@
 #include "teacher.h"
 
-Teacher::Teacher() : fullname(""), email(""), phone("")
+Teacher::Teacher() : fullname("- - -"), email("-"), phone("-")
 {
 
 }
@@ -92,4 +92,20 @@ void Teacher::operator=(Teacher anotherTeacher)
     this->fullname = anotherTeacher.fullname;
     this->phone = anotherTeacher.phone;
     this->email = anotherTeacher.email;
+}
+
+std::ostream& operator<<(std::ostream& out, const Teacher& teacher)
+{
+    out << teacher.fullname.toStdString() << " " << teacher.phone.toStdString() << " " << teacher.email.toStdString();
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Teacher& teacher)
+{
+    std::string name, surname, fathername, phone, email;
+    in >> surname >> name >> fathername >> phone >> email;
+    teacher.setFullname(QString::fromStdString(surname), QString::fromStdString(name), QString::fromStdString(fathername));
+    teacher.setPhone(QString::fromStdString(phone));
+    teacher.setEmail(QString::fromStdString(email));
+    return in;
 }

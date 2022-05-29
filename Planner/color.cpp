@@ -45,3 +45,19 @@ void Color::operator=(Color anotherColor)
     this->color = anotherColor.color;
     this->colorName = anotherColor.colorName;
 }
+
+std::ostream& operator<<(std::ostream& out, const Color& color)
+{
+    out << color.colorName.toStdString() << " " << color.color.red() << " " << color.color.green() << " " << color.color.blue();
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Color& color)
+{
+    int red, green, blue;
+    std::string name;
+    in >> name >> red >> green >> blue;
+    color.setColorName(QString::fromStdString(name));
+    color.setColor(QColor(red, green, blue));
+    return in;
+}

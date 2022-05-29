@@ -50,7 +50,7 @@ std::map<std::pair<int, int>, QTime>& CurrentUser::getTimes()
     return times;
 }
 
-void CurrentUser::setSettings(Settings& settings)
+void CurrentUser::setSettings(Settings settings)
 {
     this->settings = settings;
 }

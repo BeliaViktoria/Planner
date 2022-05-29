@@ -21,18 +21,21 @@
 #include "areyousure.h"
 #include "whattosave.h"
 #include "cache.h"
+#include "currentuser.h"
 
 WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr), dialogWindow(nullptr)
 {
     if(Cache::exist())
     {
-        Cache::readSettings();
+        CurrentUser::getInstance()->setSettings(Cache::readSettings());
         open_OverviewMain();
     }
     else
     {
         open_Welcome();
     }
+    CurrentUser::getInstance()->getTeachers() = Cache::readTeachers();
+    CurrentUser::getInstance()->getSubjects() = Cache::readSubjects();
 }
 
 WindowsManager::~WindowsManager()

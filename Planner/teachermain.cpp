@@ -1,6 +1,7 @@
 #include "teachermain.h"
 #include "ui_teachermain.h"
 #include "currentuser.h"
+#include "cache.h"
 #include <algorithm>
 
 TeacherMain::TeacherMain(QWidget *parent)
@@ -19,11 +20,11 @@ void TeacherMain::showTeacherList()
     for(Teacher item : teachers)
     {
         itemText += item.getFullname();
-        if(item.getEmail() != "")
+        if(item.getEmail() != "-")
         {
             itemText += "\n - " + item.getEmail();
         }
-        if(item.getPhone() != "")
+        if(item.getPhone() != "-")
         {
             itemText += "\n - " + item.getPhone();
         }
@@ -34,6 +35,7 @@ void TeacherMain::showTeacherList()
 
 TeacherMain::~TeacherMain()
 {
+    Cache::writeTeachers(CurrentUser::getInstance()->getTeachers());
     delete ui;
 }
 

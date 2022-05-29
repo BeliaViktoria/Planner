@@ -26,6 +26,9 @@ public:
     bool operator==(Task anotherTask);
     void operator=(Task anotherTask);
 
+    friend std::ostream& operator<<(std::ostream& out, const Task& task);
+    friend std::istream& operator>>(std::istream& in, Task& task);
+
 private:
     QString name;
     Subject subject;

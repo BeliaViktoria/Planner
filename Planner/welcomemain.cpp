@@ -22,6 +22,7 @@ WelcomeMain::WelcomeMain(QWidget *parent) :
 
 WelcomeMain::~WelcomeMain()
 {
+    Cache::writeSettings(CurrentUser::getInstance()->getSettings());
     delete ui;
 }
 
@@ -65,7 +66,6 @@ void WelcomeMain::on_pushButton_Save_clicked()
         Settings settings = Settings(colorTheme, gradingSystem, ui->lineEdit_MaxGrade->text().toInt(),
                                      ui->dateEdit_StartDate->date(), ui->dateEdit_EndDate->date(), startFrom);
         CurrentUser::getInstance()->setSettings(settings);
-        Cache::writeSettings(settings);
         emit OpenOverview();
     }
 }

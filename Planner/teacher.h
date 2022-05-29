@@ -23,6 +23,9 @@ public:
     bool operator!=(QString anotherTeacherName);
     void operator=(Teacher anotherTeacher);
 
+    friend std::ostream& operator<<(std::ostream& out, const Teacher& teacher);
+    friend std::istream& operator>>(std::istream& in, Teacher& teacher);
+
 private:
     QString fullname;
     QString email;
