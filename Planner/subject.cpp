@@ -108,9 +108,13 @@ std::istream& operator>>(std::istream& in, Subject& subject)
     std::getline(in, name);
     if(name == "")
     {
-        in >> name;
+        std::getline(in, name);
     }
     in >> subject.color >> subject.teachers[0] >> subject.teachers[1] >> subject.teachers[2] >> subject.statistic;
+    if(name[0] == ' ')
+    {
+        name.erase(name.begin());
+    }
     subject.setName(QString::fromStdString(name));
     return in;
 }

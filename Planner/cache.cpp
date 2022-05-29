@@ -101,7 +101,21 @@ void Cache::deleteSubjects()
 
 std::vector<Task> Cache::readAgenda()
 {
-
+    std::vector<Task> agenda;
+    std::ifstream file(AGENDA_CACHE);
+    if(file.is_open())
+    {
+        Task task;
+        while (file)
+        {
+            file >> task;
+            if(task.getName() != "")
+            {
+                agenda.push_back(task);
+            }
+        }
+    }
+    return agenda;
 }
 
 void Cache::writeAgenda(std::vector<Task> agenda)
@@ -124,7 +138,21 @@ void Cache::deleteAgenda()
 
 std::vector<Grade> Cache::readGrades()
 {
-
+    std::vector<Grade> grades;
+    std::ifstream file(GRADES_CACHE);
+    if(file.is_open())
+    {
+        Grade grade;
+        while (file)
+        {
+            file >> grade;
+            if(grade.getSubject().getName() != "")
+            {
+                grades.push_back(grade);
+            }
+        }
+    }
+    return grades;
 }
 
 void Cache::writeGrades(std::vector<Grade> grades)

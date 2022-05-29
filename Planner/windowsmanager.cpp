@@ -36,6 +36,8 @@ WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nu
     }
     CurrentUser::getInstance()->getTeachers() = Cache::readTeachers();
     CurrentUser::getInstance()->getSubjects() = Cache::readSubjects();
+    CurrentUser::getInstance()->getGrades() = Cache::readGrades();
+    CurrentUser::getInstance()->getAgenda() = Cache::readAgenda();
 }
 
 WindowsManager::~WindowsManager()

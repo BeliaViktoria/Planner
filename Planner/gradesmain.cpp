@@ -1,6 +1,8 @@
 #include "gradesmain.h"
 #include "ui_gradesmain.h"
 #include "currentuser.h"
+#include "cache.h"
+
 #define MAX_GRADE_LENGTH 3
 #define MAX_SUBJECT_LENGTH 98
 
@@ -14,6 +16,8 @@ GradesMain::GradesMain(QWidget *parent) :
 
 GradesMain::~GradesMain()
 {
+    Cache::writeSubjects(CurrentUser::getInstance()->getSubjects());
+    Cache::writeGrades(CurrentUser::getInstance()->getGrades());
     delete ui;
 }
 
@@ -104,7 +108,10 @@ void GradesMain::on_pushButton_AddGrade_clicked()
 
 void GradesMain::on_listWidget_Grades_itemClicked(QListWidgetItem *item)
 {
-    emit OpenEditOrDelete();
+    if(item->foreground().color() != Qt::blue)
+    {
+        emit OpenEditOrDelete();
+    }
 }
 
 void GradesMain::OpenEditingWindow()

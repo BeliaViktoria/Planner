@@ -1,6 +1,7 @@
 #include "agendamain.h"
 #include "ui_agendamain.h"
 #include "currentuser.h"
+#include "cache.h"
 
 AgendaMain::AgendaMain(QWidget *parent) :
     QWidget(parent),
@@ -12,6 +13,7 @@ AgendaMain::AgendaMain(QWidget *parent) :
 
 AgendaMain::~AgendaMain()
 {
+    Cache::writeAgenda(CurrentUser::getInstance()->getAgenda());
     delete ui;
 }
 

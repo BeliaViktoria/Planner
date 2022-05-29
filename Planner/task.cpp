@@ -113,18 +113,24 @@ void Task::operator=(Task anotherTask)
     this->name = anotherTask.name;
     this->subject = anotherTask.subject;
     this->deadline = anotherTask.deadline;
+    this->finished = anotherTask.finished;
 }
 
 std::ostream& operator<<(std::ostream& out, const Task& task)
 {
-    out << task.name.toStdString() << " " << task.subject << " " << task.deadline.toString("dd.MM.yyyy").toStdString();
+    out << task.name.toStdString() << "\n" << task.subject << " " << task.deadline.toString("dd.MM.yyyy").toStdString() << " " << task.finished;
     return out;
 }
 
 std::istream& operator>>(std::istream& in, Task& task)
 {
     std::string name, deadline;
-    in >> name >> task.subject >> deadline;
+    std::getline(in, name);
+    if(name == "")
+    {
+        std::getline(in, name);
+    }
+    in >> task.subject >> deadline >> task.finished;
     task.setName(QString::fromStdString(name));
     task.setDeadline(QDate::fromString(QString::fromStdString(deadline), "dd.MM.yyyy"));
     return in;
