@@ -1,6 +1,7 @@
 #include "settingsmain.h"
 #include "ui_settingsmain.h"
 #include "currentuser.h"
+#include "cache.h"
 
 SettingsMain::SettingsMain(QWidget *parent) :
     QWidget(parent),
@@ -14,6 +15,7 @@ SettingsMain::SettingsMain(QWidget *parent) :
 
 SettingsMain::~SettingsMain()
 {
+    Cache::writeSettings(CurrentUser::getInstance()->getSettings());
     delete ui;
 }
 

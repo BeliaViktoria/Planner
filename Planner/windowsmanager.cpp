@@ -295,11 +295,12 @@ void WindowsManager::open_Clock(QString time)
 
 void WindowsManager::open_EditOrDelete()
 {
-    minorWindow.reset(new EditOrDeleteDialog());
-    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    connect(minorWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
-    connect(minorWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
-    minorWindow->show();
+    dialogWindow.reset(new EditOrDeleteDialog());
+    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(dialogWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
+    connect(dialogWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
+    //connect(minorWindow.get(), SIGNAL(), this SLOT())
+    dialogWindow->show();
 }
 
 void WindowsManager::open_EditDeleteOrMarkAsDone(bool taskStatus)

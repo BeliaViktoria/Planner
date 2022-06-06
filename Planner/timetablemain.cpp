@@ -356,12 +356,12 @@ void TimetableMain::setTime(QString time)
         iterator = (CurrentUser::getInstance()->getTimes().find(std::make_pair(timeIndex.first, timeIndex.second + 1)));
         if(iterator == CurrentUser::getInstance()->getTimes().end())
         {
-            QTime nextTime = QTime(QTime::fromString(time).hour()+1, QTime::fromString(time).minute());
+            QTime nextTime = QTime((QTime::fromString(time).hour() + 1) % 24, QTime::fromString(time).minute());
             CurrentUser::getInstance()->getTimes().emplace(std::make_pair(timeIndex.first, timeIndex.second + 1), nextTime);
         }
         else if(iterator->second < QTime::fromString(time))
         {
-            QTime nextTime = QTime(QTime::fromString(time).hour()+1, QTime::fromString(time).minute());
+            QTime nextTime = QTime((QTime::fromString(time).hour() + 1) % 24, QTime::fromString(time).minute());
             iterator->second = nextTime;
         }
     }
@@ -370,12 +370,12 @@ void TimetableMain::setTime(QString time)
         iterator = (CurrentUser::getInstance()->getTimes().find(std::make_pair(timeIndex.first, timeIndex.second - 1)));
         if(iterator == CurrentUser::getInstance()->getTimes().end())
         {
-            QTime nextTime = QTime(QTime::fromString(time).hour()-1, QTime::fromString(time).minute());
+            QTime nextTime = QTime((QTime::fromString(time).hour() + 23) % 24, QTime::fromString(time).minute());
             CurrentUser::getInstance()->getTimes().emplace(std::make_pair(timeIndex.first, timeIndex.second - 1), nextTime);
         }
         else if(iterator->second > QTime::fromString(time))
         {
-            QTime nextTime = QTime(QTime::fromString(time).hour()-1, QTime::fromString(time).minute());
+            QTime nextTime = QTime((QTime::fromString(time).hour() + 23) % 24, QTime::fromString(time).minute());
             iterator->second = nextTime;
         }
     }
