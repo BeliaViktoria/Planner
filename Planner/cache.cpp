@@ -2,6 +2,7 @@
 #include "currentuser.h"
 #include <fstream>
 #include <iostream>
+#include<cstdio>
 
 #define SETTINGS_CACHE "cache\\settings.txt"
 #define TEACHERS_CACHE "cache\\teachers.txt"
@@ -61,7 +62,7 @@ void Cache::writeTeachers(std::vector<Teacher> teachers)
 
 void Cache::deleteTeachers()
 {
-
+    remove(TEACHERS_CACHE);
 }
 
 std::vector<Subject> Cache::readSubjects()
@@ -98,7 +99,7 @@ void Cache::writeSubjects(std::vector<Subject> subjects)
 
 void Cache::deleteSubjects()
 {
-
+    remove(SUBJECTS_CACHE);
 }
 
 std::vector<Task> Cache::readAgenda()
@@ -135,7 +136,7 @@ void Cache::writeAgenda(std::vector<Task> agenda)
 
 void Cache::deleteAgenda()
 {
-
+    remove(AGENDA_CACHE);
 }
 
 std::vector<Grade> Cache::readGrades()
@@ -172,7 +173,7 @@ void Cache::writeGrades(std::vector<Grade> grades)
 
 void Cache::deleteGrades()
 {
-
+    remove(GRADES_CACHE);
 }
 
 std::multimap<std::pair<int, int>, Plan> Cache::readTimetable()
@@ -209,7 +210,7 @@ void Cache::writeTimetable(std::multimap<std::pair<int, int>, Plan> timetable)
 
 void Cache::deleteTimetable()
 {
-
+    remove(TIMETABLE_CACHE);
 }
 
 std::map<std::pair<int, int>, QTime> Cache::readTimes()
@@ -265,9 +266,4 @@ void Cache::writeSettings(Settings settings)
         file << settings;
         file.close();
     }
-}
-
-void Cache::deleteSettings()
-{
-
 }

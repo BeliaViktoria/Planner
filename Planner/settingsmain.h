@@ -22,7 +22,6 @@ private:
     void hideErrorLabels();
     void setValidation();
     void setCurrentSettings();
-    void setColorTheme();
 
 signals:
     void OpenOverview();
@@ -46,9 +45,6 @@ private slots:
     void on_pushButton_Overview_clicked();
     void on_pushButton_StartNewTerm_clicked();
 
-    void on_radioButton_Blue_clicked();
-    void on_radioButton_Red_clicked();
-    void on_radioButton_Green_clicked();
     void on_radioButton_Average_clicked();
     void on_radioButton_Sum_clicked();
     void on_radioButton_Numerator_clicked();

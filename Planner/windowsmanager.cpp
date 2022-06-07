@@ -25,9 +25,9 @@
 
 WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr), dialogWindow(nullptr)
 {
-    if(Cache::exist())
+    CurrentUser::getInstance()->setSettings(Cache::readSettings());
+    if(CurrentUser::getInstance()->getSettings().getIsActual())
     {
-        CurrentUser::getInstance()->setSettings(Cache::readSettings());
         open_OverviewMain();
     }
     else
@@ -299,7 +299,6 @@ void WindowsManager::open_EditOrDelete()
     dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(dialogWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
     connect(dialogWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
-    //connect(minorWindow.get(), SIGNAL(), this SLOT())
     dialogWindow->show();
 }
 

@@ -2,22 +2,22 @@
 
 Settings::Settings()
 {
-
+    gradingSystem = AVERAGE;
+    isActual = false;
+    startFrom = NULLTYPE;
+    maxGrade = 0;
+    startDate = QDate::currentDate();
+    endDate = QDate::currentDate();
 }
 
-Settings::Settings(ColorTheme colorTheme, GradingSystem gradingSystem, int maxGrade, QDate startDate, QDate endDate, WeekType startFrom)
+Settings::Settings(GradingSystem gradingSystem, int maxGrade, QDate startDate, QDate endDate, WeekType startFrom, bool isActual)
 {
-    this->colorTheme = colorTheme;
     this->gradingSystem = gradingSystem;
     this->maxGrade = maxGrade;
     this->startDate = startDate;
     this->endDate = endDate;
     this->startFrom = startFrom;
-}
-
-ColorTheme Settings::getColorTheme()
-{
-    return colorTheme;
+    this->isActual = isActual;
 }
 
 GradingSystem Settings::getGradingSystem()
@@ -45,9 +45,9 @@ WeekType Settings::getStartFrom()
     return startFrom;
 }
 
-void Settings::setColorTheme(ColorTheme colorTheme)
+bool Settings::getIsActual()
 {
-    this->colorTheme = colorTheme;
+    return isActual;
 }
 
 void Settings::setGradingSystem(GradingSystem gradingSystem)
@@ -75,9 +75,14 @@ void Settings::setStartFrom(WeekType startFrom)
     this->startFrom = startFrom;
 }
 
+void Settings::setIsActual(bool isActual)
+{
+    this->isActual = isActual;
+}
+
 std::ostream& operator<<(std::ostream& out, const Settings& settings)
 {
-    out << settings.gradingSystem << " " << settings.maxGrade << " " << settings.startDate.toString("dd.MM.yyyy").toStdString() << " " << settings.endDate.toString("dd.MM.yyyy").toStdString() << " " << settings.startFrom;
+    out << settings.isActual << " " << settings.gradingSystem << " " << settings.maxGrade << " " << settings.startDate.toString("dd.MM.yyyy").toStdString() << " " << settings.endDate.toString("dd.MM.yyyy").toStdString() << " " << settings.startFrom;
     return out;
 }
 
@@ -85,7 +90,7 @@ std::istream& operator>>(std::istream& in, Settings& settings)
 {
     int gradingSystem, startFrom;
     std::string startDate, endDate;
-    in >> gradingSystem >> settings.maxGrade >> startDate >> endDate >> startFrom;
+    in >> settings.isActual >> gradingSystem >> settings.maxGrade >> startDate >> endDate >> startFrom;
     settings.setGradingSystem(GradingSystem(gradingSystem));
     settings.setStartFrom(WeekType(startFrom));
     settings.setStartDate(QDate::fromString(QString::fromStdString(startDate), "dd.MM.yyyy"));

@@ -3,13 +3,6 @@
 
 #include <QDate>
 
-enum ColorTheme
-{
-    BLUE,
-    GREEN,
-    RED
-};
-
 enum GradingSystem
 {
     AVERAGE,
@@ -27,27 +20,27 @@ class Settings
 {
 public:
     Settings();
-    Settings(ColorTheme colorTheme, GradingSystem gradingSystem, int maxGrade, QDate startDate, QDate endDate, WeekType startFrom);
+    Settings(GradingSystem gradingSystem, int maxGrade, QDate startDate, QDate endDate, WeekType startFrom, bool isActual);
 
-    ColorTheme getColorTheme();
     GradingSystem getGradingSystem();
     int getMaxGrade();
     QDate getStartDate();
     QDate getEndDate();
     WeekType getStartFrom();
+    bool getIsActual();
 
-    void setColorTheme(ColorTheme colorTheme);
     void setGradingSystem(GradingSystem gradingSystem);
     void setMaxGrade(int maxGrade);
     void setStartDate(QDate startDate);
     void setEndDate(QDate endDate);
     void setStartFrom(WeekType startFrom);
+    void setIsActual(bool isActual);
 
     friend std::ostream& operator<<(std::ostream& out, const Settings& settings);
     friend std::istream& operator>>(std::istream& in, Settings& settings);
 
 private:
-    ColorTheme colorTheme;
+    bool isActual;
     GradingSystem gradingSystem;
     int maxGrade;
     QDate startDate;

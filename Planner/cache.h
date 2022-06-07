@@ -33,7 +33,6 @@ public:
     void static writeTimes(std::map<std::pair<int, int>, QTime> times);
     Settings static readSettings();
     void static writeSettings(Settings settings);
-    void static deleteSettings();
 };
 
 #endif // CACHE_H

@@ -10,14 +10,38 @@ WelcomeMain::WelcomeMain(QWidget *parent) :
     ui->setupUi(this);
     hideErrorLabels();
     setValidation();
-    ui->radioButton_Blue->setChecked(true);
-    colorTheme = BLUE;
-    ui->radioButton_Average->setChecked(true);
-    gradingSystem = AVERAGE;
-    ui->radioButton_FullWeeks->setChecked(true);
-    startFrom = NULLTYPE;
-    ui->dateEdit_StartDate->setDate(QDate::currentDate());
-    ui->dateEdit_EndDate->setDate(QDate::currentDate());
+    switch(CurrentUser::getInstance()->getSettings().getGradingSystem())
+    {
+    case AVERAGE:
+        ui->radioButton_Average->setChecked(true);
+        gradingSystem = AVERAGE;
+        break;
+    case SUM:
+        ui->radioButton_Sum->setChecked(true);
+        gradingSystem = SUM;
+        break;
+    }
+    switch(CurrentUser::getInstance()->getSettings().getStartFrom())
+    {
+    case NULLTYPE:
+        ui->radioButton_FullWeeks->setChecked(true);
+        startFrom = NULLTYPE;
+        break;
+    case NUMERATOR:
+        ui->radioButton_Numerator->setChecked(true);
+        startFrom = NUMERATOR;
+        break;
+    case DENOMINATOR:
+        ui->radioButton_Denominator->setChecked(true);
+        startFrom = DENOMINATOR;
+        break;
+    }
+    if(CurrentUser::getInstance()->getSettings().getMaxGrade() != 0)
+    {
+        ui->lineEdit_MaxGrade->setText(QString::number(CurrentUser::getInstance()->getSettings().getMaxGrade()));
+    }
+    ui->dateEdit_StartDate->setDate(CurrentUser::getInstance()->getSettings().getStartDate());
+    ui->dateEdit_EndDate->setDate(CurrentUser::getInstance()->getSettings().getEndDate());
 }
 
 WelcomeMain::~WelcomeMain()
@@ -63,26 +87,11 @@ void WelcomeMain::on_pushButton_Save_clicked()
 {
     if(checkFields())
     {
-        Settings settings = Settings(colorTheme, gradingSystem, ui->lineEdit_MaxGrade->text().toInt(),
-                                     ui->dateEdit_StartDate->date(), ui->dateEdit_EndDate->date(), startFrom);
+        Settings settings = Settings(gradingSystem, ui->lineEdit_MaxGrade->text().toInt(),
+                                     ui->dateEdit_StartDate->date(), ui->dateEdit_EndDate->date(), startFrom, true);
         CurrentUser::getInstance()->setSettings(settings);
         emit OpenOverview();
     }
-}
-
-void WelcomeMain::on_radioButton_Blue_clicked()
-{
-    colorTheme = BLUE;
-}
-
-void WelcomeMain::on_radioButton_Red_clicked()
-{
-    colorTheme = RED;
-}
-
-void WelcomeMain::on_radioButton_Green_clicked()
-{
-    colorTheme = GREEN;
 }
 
 void WelcomeMain::on_radioButton_Average_clicked()

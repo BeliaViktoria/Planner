@@ -8,7 +8,6 @@ SettingsMain::SettingsMain(QWidget *parent) :
     ui(new Ui::SettingsMain)
 {
     ui->setupUi(this);
-    setColorTheme();
     setValidation();
     setCurrentSettings();
 }
@@ -17,22 +16,6 @@ SettingsMain::~SettingsMain()
 {
     Cache::writeSettings(CurrentUser::getInstance()->getSettings());
     delete ui;
-}
-
-void SettingsMain::setColorTheme()
-{
-    switch(CurrentUser::getInstance()->getSettings().getColorTheme())
-    {
-    case BLUE:
-        ui->radioButton_Blue->setChecked(true);
-        break;
-    case RED:
-        ui->radioButton_Red->setChecked(true);
-        break;
-    case GREEN:
-        ui->radioButton_Green->setChecked(true);
-        break;
-    }
 }
 
 void SettingsMain::setCurrentSettings()
@@ -151,21 +134,6 @@ void SettingsMain::on_pushButton_Overview_clicked()
 void SettingsMain::on_pushButton_StartNewTerm_clicked()
 {
     emit OpenWhatToSave();
-}
-
-void SettingsMain::on_radioButton_Blue_clicked()
-{
-    CurrentUser::getInstance()->getSettings().setColorTheme(BLUE);
-}
-
-void SettingsMain::on_radioButton_Red_clicked()
-{
-    CurrentUser::getInstance()->getSettings().setColorTheme(RED);
-}
-
-void SettingsMain::on_radioButton_Green_clicked()
-{
-    CurrentUser::getInstance()->getSettings().setColorTheme(GREEN);
 }
 
 void SettingsMain::on_radioButton_Average_clicked()

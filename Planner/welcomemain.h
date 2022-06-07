@@ -27,9 +27,6 @@ signals:
 
 private slots:
     void on_pushButton_Save_clicked();
-    void on_radioButton_Blue_clicked();
-    void on_radioButton_Red_clicked();
-    void on_radioButton_Green_clicked();
     void on_radioButton_Average_clicked();
     void on_radioButton_Sum_clicked();
     void on_radioButton_Numerator_clicked();
@@ -39,7 +36,6 @@ private slots:
 private:
     Ui::WelcomeMain *ui;
     QRegularExpressionValidator validatorGrade;
-    ColorTheme colorTheme;
     GradingSystem gradingSystem;
     WeekType startFrom;
 };
