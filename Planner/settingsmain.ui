@@ -102,7 +102,7 @@ border-color:rgb(0, 0, 0);</string>
      <property name="geometry">
       <rect>
        <x>5</x>
-       <y>90</y>
+       <y>40</y>
        <width>16</width>
        <height>31</height>
       </rect>
@@ -120,7 +120,7 @@ color:red;</string>
      <property name="geometry">
       <rect>
        <x>5</x>
-       <y>240</y>
+       <y>190</y>
        <width>16</width>
        <height>31</height>
       </rect>
@@ -138,8 +138,8 @@ color:red;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>70</y>
-       <width>731</width>
+       <y>20</y>
+       <width>721</width>
        <height>121</height>
       </rect>
      </property>
@@ -461,99 +461,13 @@ border-color:rgb(0, 0, 0);</string>
    <zorder>pushButton_Calendar</zorder>
    <zorder>pushButton_Agenda</zorder>
   </widget>
-  <widget class="QWidget" name="widget_ColorTheme" native="true">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>85</y>
-     <width>731</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:white;</string>
-   </property>
-   <widget class="QLabel" name="label_ColorTheme">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>171</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);
-text-decoration: underline;</string>
-    </property>
-    <property name="text">
-     <string>Color theme:</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_Blue">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>10</y>
-      <width>97</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Blue</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_Red">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>10</y>
-      <width>81</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Red</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_Green">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>10</y>
-      <width>101</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: black;
-font: 75 18pt &quot;Times New Roman&quot;;
-background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Green</string>
-    </property>
-   </widget>
-  </widget>
   <widget class="QWidget" name="widget_StartWith" native="true">
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>470</y>
-     <width>731</width>
-     <height>91</height>
+     <y>440</y>
+     <width>721</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -563,7 +477,7 @@ background-color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>10</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -582,7 +496,7 @@ text-decoration: underline;</string>
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>0</y>
+      <y>10</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -600,7 +514,7 @@ background-color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>0</y>
+      <y>10</y>
       <width>191</width>
       <height>41</height>
      </rect>
@@ -618,7 +532,7 @@ background-color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>50</y>
+      <y>60</y>
       <width>191</width>
       <height>41</height>
      </rect>
@@ -637,8 +551,8 @@ background-color: rgb(255, 255, 255);</string>
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>290</y>
-     <width>731</width>
+     <y>250</y>
+     <width>721</width>
      <height>161</height>
     </rect>
    </property>
