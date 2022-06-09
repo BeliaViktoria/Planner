@@ -9,6 +9,7 @@ Clock::Clock() :
     ui->setupUi(this);
     on_radioButton_AM_clicked();
     ui->label_Time->setAlignment(Qt::AlignCenter);
+    ui->pushButton_Next->hide();
 }
 
 Clock::Clock(QString time) :
@@ -122,6 +123,7 @@ void Clock::on_pushButton_0_clicked()
     {
         minutes = ui->pushButton_0->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -135,6 +137,7 @@ void Clock::on_pushButton_1_clicked()
     {
         minutes = ui->pushButton_1->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -148,6 +151,7 @@ void Clock::on_pushButton_2_clicked()
     {
         minutes = ui->pushButton_2->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -161,6 +165,7 @@ void Clock::on_pushButton_3_clicked()
     {
         minutes = ui->pushButton_3->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -174,6 +179,7 @@ void Clock::on_pushButton_4_clicked()
     {
         minutes = ui->pushButton_4->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -187,6 +193,7 @@ void Clock::on_pushButton_5_clicked()
     {
         minutes = ui->pushButton_5->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -200,6 +207,7 @@ void Clock::on_pushButton_6_clicked()
     {
         minutes = ui->pushButton_6->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -213,6 +221,7 @@ void Clock::on_pushButton_7_clicked()
     {
         minutes = ui->pushButton_7->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -226,6 +235,7 @@ void Clock::on_pushButton_8_clicked()
     {
         minutes = ui->pushButton_8->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -239,6 +249,7 @@ void Clock::on_pushButton_9_clicked()
     {
         minutes = ui->pushButton_9->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -252,6 +263,7 @@ void Clock::on_pushButton_10_clicked()
     {
         minutes = ui->pushButton_10->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
@@ -265,6 +277,7 @@ void Clock::on_pushButton_11_clicked()
     {
         minutes = ui->pushButton_11->text().toInt();
     }
+    ui->pushButton_Next->show();
     setTime();
 }
 
