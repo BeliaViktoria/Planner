@@ -55,6 +55,38 @@ void CalendarMain::on_pushButton_Overview_clicked()
     emit OpenOverview();
 }
 
+WeekType CalendarMain::getWeekType(QDate date)
+{
+    WeekType currentWeekType;
+    switch(CurrentUser::getInstance()->getSettings().getStartFrom())
+    {
+    case NUMERATOR:
+        if(date.weekNumber() % 2 == CurrentUser::getInstance()->getSettings().getStartDate().weekNumber() % 2)
+        {
+            currentWeekType = NUMERATOR;
+        }
+        else
+        {
+            currentWeekType = DENOMINATOR;
+        }
+        break;
+    case DENOMINATOR:
+        if(date.weekNumber() % 2 == CurrentUser::getInstance()->getSettings().getStartDate().weekNumber() % 2)
+        {
+            currentWeekType = DENOMINATOR;
+        }
+        else
+        {
+            currentWeekType = NUMERATOR;
+        }
+        break;
+    case NULLTYPE:
+        currentWeekType = NULLTYPE;
+        break;
+    }
+    return currentWeekType;
+}
+
 void CalendarMain::setTimetable(QDate date)
 {
     ui->listWidget_Timetable->clear();
@@ -70,21 +102,20 @@ void CalendarMain::setTimetable(QDate date)
     {
         if(iterator->first.second == currentDay)
         {
-            subject = iterator->second.getSubject().getName();
-            if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+            if(iterator->second.getRepeating() == WeekType::NULLTYPE || iterator->second.getRepeating() == getWeekType(date))
             {
-                ui->listWidget_Timetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                subject = iterator->second.getSubject().getName();
+                if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+                {
+                    ui->listWidget_Timetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                }
+                else
+                {
+                    startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
+                    endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
+                    ui->listWidget_Timetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
+                }
             }
-            else
-            {
-                startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
-                endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
-                ui->listWidget_Timetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
-            }
-        }
-        if(iterator->first.second > currentDay)
-        {
-            break;
         }
     }
 }
@@ -116,10 +147,6 @@ void CalendarMain::setAgenda(QDate date)
             {
                  ui->listWidget_Agenda->addItem(taskName);
             }
-        }
-        if(iterator->getDeadline() > date)
-        {
-            break;
         }
     }
 }

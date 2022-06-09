@@ -12,13 +12,35 @@ TeacherMain::TeacherMain(QWidget *parent)
     showTeacherList();
 }
 
+int TeacherMain::getTeachersIndex()
+{
+    int index = ui->listWidget_Teachers->currentRow();
+    int extraRows = 0;
+    for(int i = 0; i < index; i++)
+    {
+        if(ui->listWidget_Teachers->item(i)->textAlignment() == Qt::AlignCenter)
+        {
+            extraRows++;
+        }
+    }
+    return index - extraRows;
+}
+
 void TeacherMain::showTeacherList()
 {
     ui->listWidget_Teachers->clear();
     std::vector<Teacher> teachers = CurrentUser::getInstance()->getTeachers();
     QString itemText = "";
+    QChar currentLetter = ' ';
     for(Teacher item : teachers)
     {
+        if(currentLetter != item.getFullname().at(0))
+        {
+            currentLetter = item.getFullname().at(0);
+            ui->listWidget_Teachers->addItem(item.getFullname().at(0));
+            ui->listWidget_Teachers->item(ui->listWidget_Teachers->count() - 1)->setTextAlignment(Qt::AlignCenter);
+            ui->listWidget_Teachers->item(ui->listWidget_Teachers->count() - 1)->setForeground(Qt::blue);
+        }
         itemText += item.getFullname();
         if(item.getEmail() != "-")
         {
@@ -86,19 +108,21 @@ void TeacherMain::on_pushButton_AddTeacher_clicked()
 
 void TeacherMain::on_listWidget_Teachers_itemClicked(QListWidgetItem *item)
 {
-    emit OpenEditOrDelete();
+    if(item->textAlignment() != Qt::AlignCenter)
+    {
+        emit OpenEditOrDelete();
+    }
 }
 
 void TeacherMain::OpenEditingWindow()
 {
-    Teacher teacher = CurrentUser::getInstance()->getTeachers()[ui->listWidget_Teachers->currentRow()];
+    Teacher teacher = CurrentUser::getInstance()->getTeachers()[getTeachersIndex()];
     emit OpenTeacherEditing(teacher);
 }
 
 void TeacherMain::editTeacher(Teacher teacher)
 {
-    int index = ui->listWidget_Teachers->currentRow();
-    CurrentUser::getInstance()->getTeachers()[index] = teacher;
+    CurrentUser::getInstance()->getTeachers()[getTeachersIndex()] = teacher;
     sort(CurrentUser::getInstance()->getTeachers().begin(), CurrentUser::getInstance()->getTeachers().end());
     showTeacherList();
 }
@@ -106,7 +130,7 @@ void TeacherMain::editTeacher(Teacher teacher)
 void TeacherMain::Delete()
 {
     auto teacherIterator = CurrentUser::getInstance()->getTeachers().begin();
-    for(int i = 0; i < ui->listWidget_Teachers->currentRow(); i++)
+    for(int i = 0; i < getTeachersIndex(); i++)
     {
         ++teacherIterator;
     }

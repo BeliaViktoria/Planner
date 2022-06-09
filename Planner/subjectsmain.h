@@ -19,6 +19,7 @@ public:
 
 private:
     void showSubjectsList();
+    int getSubjectsIndex();
 
 signals:
     void OpenOverview();

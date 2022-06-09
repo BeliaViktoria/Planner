@@ -2,6 +2,7 @@
 #define OVERVIEWMAIN_H
 
 #include <QWidget>
+#include "settings.h"
 
 namespace Ui {
 class OverviewMain;
@@ -23,6 +24,7 @@ private:
     void setAfterTomorrowTimetable();
     void setAfterTomorrowAgenda();
     void setOverview();
+    WeekType getWeekType(QDate date);
 
 signals:
     void OpenOverview();

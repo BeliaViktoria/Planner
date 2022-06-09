@@ -2,6 +2,7 @@
 #define CALENDARMAIN_H
 
 #include <QWidget>
+#include "settings.h"
 
 namespace Ui {
 class CalendarMain;
@@ -18,6 +19,7 @@ public:
 private:
     void setTimetable(QDate date);
     void setAgenda(QDate date);
+    WeekType getWeekType(QDate date);
 
 signals:
     void OpenOverview();

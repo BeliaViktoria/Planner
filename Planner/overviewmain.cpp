@@ -55,15 +55,47 @@ void OverviewMain::on_pushButton_Overview_clicked()
     emit OpenOverview();
 }
 
+WeekType OverviewMain::getWeekType(QDate date)
+{
+    WeekType currentWeekType;
+    switch(CurrentUser::getInstance()->getSettings().getStartFrom())
+    {
+    case NUMERATOR:
+        if(date.weekNumber() % 2 == CurrentUser::getInstance()->getSettings().getStartDate().weekNumber() % 2)
+        {
+            currentWeekType = NUMERATOR;
+        }
+        else
+        {
+            currentWeekType = DENOMINATOR;
+        }
+        break;
+    case DENOMINATOR:
+        if(date.weekNumber() % 2 == CurrentUser::getInstance()->getSettings().getStartDate().weekNumber() % 2)
+        {
+            currentWeekType = DENOMINATOR;
+        }
+        else
+        {
+            currentWeekType = NUMERATOR;
+        }
+        break;
+    case NULLTYPE:
+        currentWeekType = NULLTYPE;
+        break;
+    }
+    return currentWeekType;
+}
+
 void OverviewMain::setTodayTimetable()
 {
-    QDate date = QDate::currentDate();
     ui->listWidget_TodayTimetable->clear();
-    int currentDay = date.dayOfWeek() - 1;
-    if(date < CurrentUser::getInstance()->getSettings().getStartDate() || date > CurrentUser::getInstance()->getSettings().getEndDate() || currentDay >= 6)
+    QDate currentDate = QDate::currentDate();
+    if(currentDate < CurrentUser::getInstance()->getSettings().getStartDate() || currentDate > CurrentUser::getInstance()->getSettings().getEndDate())
     {
         return;
     }
+    int currentDay = currentDate.dayOfWeek() - 1;
     QString startTime;
     QString endTime;
     QString subject;
@@ -71,32 +103,31 @@ void OverviewMain::setTodayTimetable()
     {
         if(iterator->first.second == currentDay)
         {
-            subject = iterator->second.getSubject().getName();
-            if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+            if(iterator->second.getRepeating() == WeekType::NULLTYPE || iterator->second.getRepeating() == getWeekType(currentDate))
             {
-                ui->listWidget_TodayTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                subject = iterator->second.getSubject().getName();
+                if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+                {
+                    ui->listWidget_TodayTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                }
+                else
+                {
+                    startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
+                    endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
+                    ui->listWidget_TodayTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
+                }
             }
-            else
-            {
-                startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
-                endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
-                ui->listWidget_TodayTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
-            }
-        }
-        if(iterator->first.second > currentDay)
-        {
-            break;
         }
     }
 }
 
 void OverviewMain::setTodayAgenda()
 {
-    QDate date = QDate::currentDate();
     ui->listWidget_TodayAgenda->clear();
+    QDate date = QDate::currentDate();
     QString subject = "";
     QString status = "Finished";
-    QString taskName;;
+    QString taskName;
     for(auto iterator = CurrentUser::getInstance()->getAgenda().begin(); iterator != CurrentUser::getInstance()->getAgenda().end(); ++iterator)
     {
         if(iterator->getDeadline() == date)
@@ -119,22 +150,18 @@ void OverviewMain::setTodayAgenda()
                  ui->listWidget_TodayAgenda->addItem(taskName);
             }
         }
-        if(iterator->getDeadline() > date)
-        {
-            break;
-        }
     }
 }
 
 void OverviewMain::setTomorrowTimetable()
 {
-    QDate date = QDate::currentDate().addDays(1);
     ui->listWidget_TomorrowTimetable->clear();
-    int currentDay = date.dayOfWeek() - 1;
-    if(date < CurrentUser::getInstance()->getSettings().getStartDate() || date > CurrentUser::getInstance()->getSettings().getEndDate() || currentDay >= 6)
+    QDate currentDate = QDate::currentDate();
+    if(currentDate < CurrentUser::getInstance()->getSettings().getStartDate() || currentDate > CurrentUser::getInstance()->getSettings().getEndDate())
     {
         return;
     }
+    int currentDay = currentDate.dayOfWeek();
     QString startTime;
     QString endTime;
     QString subject;
@@ -142,32 +169,31 @@ void OverviewMain::setTomorrowTimetable()
     {
         if(iterator->first.second == currentDay)
         {
-            subject = iterator->second.getSubject().getName();
-            if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+            if(iterator->second.getRepeating() == WeekType::NULLTYPE || iterator->second.getRepeating() == getWeekType(currentDate))
             {
-                ui->listWidget_TomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                subject = iterator->second.getSubject().getName();
+                if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+                {
+                    ui->listWidget_TomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                }
+                else
+                {
+                    startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
+                    endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
+                    ui->listWidget_TomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
+                }
             }
-            else
-            {
-                startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
-                endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
-                ui->listWidget_TomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
-            }
-        }
-        if(iterator->first.second > currentDay)
-        {
-            break;
         }
     }
 }
 
 void OverviewMain::setTomorrowAgenda()
 {
-    QDate date = QDate::currentDate().addDays(1);
     ui->listWidget_TomorrowAgenda->clear();
+    QDate date = QDate::currentDate().addDays(1);
     QString subject = "";
     QString status = "Finished";
-    QString taskName;;
+    QString taskName;
     for(auto iterator = CurrentUser::getInstance()->getAgenda().begin(); iterator != CurrentUser::getInstance()->getAgenda().end(); ++iterator)
     {
         if(iterator->getDeadline() == date)
@@ -190,52 +216,47 @@ void OverviewMain::setTomorrowAgenda()
                  ui->listWidget_TomorrowAgenda->addItem(taskName);
             }
         }
-        if(iterator->getDeadline() > date)
-        {
-            break;
-        }
     }
 }
 
 void OverviewMain::setAfterTomorrowTimetable()
 {
-    QDate date = QDate::currentDate().addDays(2);
     ui->listWidget_AfterTomorrowTimetable->clear();
-    int currentDay = date.dayOfWeek() - 1;
-    if(date < CurrentUser::getInstance()->getSettings().getStartDate() || date > CurrentUser::getInstance()->getSettings().getEndDate() || currentDay >= 6)
+    QDate currentDate = QDate::currentDate();
+    if(currentDate < CurrentUser::getInstance()->getSettings().getStartDate() || currentDate > CurrentUser::getInstance()->getSettings().getEndDate())
     {
         return;
     }
+    int currentDay = currentDate.dayOfWeek() + 1;
     QString startTime;
     QString endTime;
     QString subject;
     for(auto iterator = CurrentUser::getInstance()->getTimetable().begin(); iterator != CurrentUser::getInstance()->getTimetable().end(); ++iterator)
     {
-        if(iterator->first.second == currentDay)
+        if(iterator->first.second == currentDay && iterator->second.getRepeating() == getWeekType(currentDate))
         {
-            subject = iterator->second.getSubject().getName();
-            if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+            if(iterator->second.getRepeating() == WeekType::NULLTYPE || iterator->second.getRepeating() == getWeekType(currentDate))
             {
-                ui->listWidget_AfterTomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                subject = iterator->second.getSubject().getName();
+                if(CurrentUser::getInstance()->getTimes().find(std::make_pair(iterator->first.first, 0)) == CurrentUser::getInstance()->getTimes().end())
+                {
+                    ui->listWidget_AfterTomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + subject);
+                }
+                else
+                {
+                    startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
+                    endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
+                    ui->listWidget_AfterTomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
+                }
             }
-            else
-            {
-                startTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 0)].toString("hh:mm");
-                endTime = CurrentUser::getInstance()->getTimes()[std::make_pair(iterator->first.first, 1)].toString("hh:mm");
-                ui->listWidget_AfterTomorrowTimetable->addItem(QString::number(iterator->first.first + 1) + ". " + startTime + " - " + endTime + " " + subject);
-            }
-        }
-        if(iterator->first.second > currentDay)
-        {
-            break;
         }
     }
 }
 
 void OverviewMain::setAfterTomorrowAgenda()
 {
-    QDate date = QDate::currentDate().addDays(2);
     ui->listWidget_AfterTomorrowAgenda->clear();
+    QDate date = QDate::currentDate().addDays(2);
     QString subject = "";
     QString status = "Finished";
     QString taskName;
@@ -260,10 +281,6 @@ void OverviewMain::setAfterTomorrowAgenda()
             {
                  ui->listWidget_AfterTomorrowAgenda->addItem(taskName);
             }
-        }
-        if(iterator->getDeadline() > date)
-        {
-            break;
         }
     }
 }

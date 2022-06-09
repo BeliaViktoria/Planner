@@ -19,6 +19,7 @@ public:
 
 private:
     void showTeacherList();
+    int getTeachersIndex();
 
 signals:
     void OpenOverview();

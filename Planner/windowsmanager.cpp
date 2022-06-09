@@ -25,6 +25,12 @@
 
 WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nullptr), minorWindow(nullptr), dialogWindow(nullptr)
 {
+    CurrentUser::getInstance()->getTeachers() = Cache::readTeachers();
+    CurrentUser::getInstance()->getSubjects() = Cache::readSubjects();
+    CurrentUser::getInstance()->getGrades() = Cache::readGrades();
+    CurrentUser::getInstance()->getAgenda() = Cache::readAgenda();
+    CurrentUser::getInstance()->getTimes() = Cache::readTimes();
+    CurrentUser::getInstance()->getTimetable() = Cache::readTimetable();
     CurrentUser::getInstance()->setSettings(Cache::readSettings());
     if(CurrentUser::getInstance()->getSettings().getIsActual())
     {
@@ -34,12 +40,6 @@ WindowsManager::WindowsManager(QObject *parent) : QObject(parent), mainWindow(nu
     {
         open_Welcome();
     }
-    CurrentUser::getInstance()->getTeachers() = Cache::readTeachers();
-    CurrentUser::getInstance()->getSubjects() = Cache::readSubjects();
-    CurrentUser::getInstance()->getGrades() = Cache::readGrades();
-    CurrentUser::getInstance()->getAgenda() = Cache::readAgenda();
-    CurrentUser::getInstance()->getTimes() = Cache::readTimes();
-    CurrentUser::getInstance()->getTimetable() = Cache::readTimetable();
 }
 
 WindowsManager::~WindowsManager()
@@ -90,6 +90,8 @@ void WindowsManager::open_Welcome()
     close_MainWindow();
     mainWindow.reset(new WelcomeMain());
     connect(mainWindow.get(), SIGNAL(OpenOverview()), this, SLOT(open_OverviewMain()));
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -98,6 +100,8 @@ void WindowsManager::open_OverviewMain()
     close_MainWindow();
     mainWindow.reset(new OverviewMain());
     set_MenuConections();
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -112,6 +116,8 @@ void WindowsManager::open_TimetableMain()
     connect(mainWindow.get(), SIGNAL(OpenPlanEditing(Plan)), this, SLOT(open_TimetableItemEditing(Plan)));
     connect(mainWindow.get(), SIGNAL(OpenPlanInfo(Plan)), this, SLOT(open_PlanInfo(Plan)));
     set_MenuConections();
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -120,6 +126,8 @@ void WindowsManager::open_TimetableItemAdding(int lesson, int day)
     minorWindow.reset(new TimetableItemsAdding(lesson, day));
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Plan)), mainWindow.get(), SLOT(addPlan(Plan)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -128,6 +136,8 @@ void WindowsManager::open_TimetableItemEditing(Plan plan)
     minorWindow.reset(new TimetableItemsAdding(plan));
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Plan)), mainWindow.get(), SLOT(editPlan(Plan)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -137,6 +147,8 @@ void WindowsManager::open_PlanInfo(Plan plan)
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenPlanEditingWindow()));
     connect(minorWindow.get(), SIGNAL(Delete(bool)), this, SLOT(open_AreYouSure(bool)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -145,6 +157,8 @@ void WindowsManager::open_CalendarMain()
     close_MainWindow();
     mainWindow.reset(new CalendarMain());
     set_MenuConections();
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -156,6 +170,8 @@ void WindowsManager::open_AgendaMain()
     connect(mainWindow.get(), SIGNAL(OpenAgendaAdding()), this, SLOT(open_AgendaAdding()));
     connect(mainWindow.get(), SIGNAL(OpenEditDeleteOrMarkAsDone(bool)), this, SLOT(open_EditDeleteOrMarkAsDone(bool)));
     connect(mainWindow.get(), SIGNAL(OpenTaskEditing(Task)), this, SLOT(open_AgendaEditing(Task)));
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -165,6 +181,8 @@ void WindowsManager::open_AgendaAdding()
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
     connect(minorWindow.get(), SIGNAL(Save(Task)), mainWindow.get(), SLOT(addTask(Task)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -174,6 +192,8 @@ void WindowsManager::open_AgendaEditing(Task task)
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
     connect(minorWindow.get(), SIGNAL(Save(Task)), mainWindow.get(), SLOT(editTask(Task)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -185,6 +205,8 @@ void WindowsManager::open_SubjectsMain()
     connect(mainWindow.get(), SIGNAL(OpenSubjectAdding()), this, SLOT(open_SubjectAdding()));
     connect(mainWindow.get(), SIGNAL(OpenSubjectEditing(Subject)), this, SLOT(open_SubjectEditing(Subject)));
     connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -193,6 +215,8 @@ void WindowsManager::open_SubjectAdding()
     minorWindow.reset(new SubjectAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Subject)), mainWindow.get(), SLOT(addSubject(Subject)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -201,6 +225,8 @@ void WindowsManager::open_SubjectEditing(Subject subject)
     minorWindow.reset(new SubjectAdding(subject));
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Subject)), mainWindow.get(), SLOT(editSubject(Subject)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -212,6 +238,8 @@ void WindowsManager::open_TeachersMain()
     connect(mainWindow.get(), SIGNAL(OpenTeacherAdding()), this, SLOT(open_TeacherAdding()));
     connect(mainWindow.get(), SIGNAL(OpenTeacherEditing(Teacher)), this, SLOT(open_TeacherEditing(Teacher)));
     connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -220,6 +248,8 @@ void WindowsManager::open_TeacherAdding()
     minorWindow.reset(new TeacherAdding());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Teacher)), mainWindow.get(), SLOT(addTeacher(Teacher)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -228,6 +258,8 @@ void WindowsManager::open_TeacherEditing(Teacher teacher)
     minorWindow.reset(new TeacherAdding(teacher));
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Teacher)), mainWindow.get(), SLOT(editTeacher(Teacher)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -239,6 +271,8 @@ void WindowsManager::open_GradesMain()
     connect(mainWindow.get(), SIGNAL(OpenGradeAdding()), this, SLOT(open_GradeAdding()));
     connect(mainWindow.get(), SIGNAL(OpenGradeEditing(Grade)), this, SLOT(open_GradeEditing(Grade)));
     connect(mainWindow.get(), SIGNAL(OpenEditOrDelete()), this, SLOT(open_EditOrDelete()));
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -248,6 +282,8 @@ void WindowsManager::open_GradeAdding()
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
     connect(minorWindow.get(), SIGNAL(Save(Grade)), mainWindow.get(), SLOT(addGrade(Grade)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -257,6 +293,8 @@ void WindowsManager::open_GradeEditing(Grade grade)
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(Save(Grade)), mainWindow.get(), SLOT(editGrade(Grade)));
     connect(minorWindow.get(), SIGNAL(OpenPickUpDate()), this, SLOT(open_Calendar()));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -266,6 +304,8 @@ void WindowsManager::open_SettingsMain()
     mainWindow.reset(new SettingsMain());
     set_MenuConections();
     connect(mainWindow.get(), SIGNAL(OpenWhatToSave()), this, SLOT(open_WhatToSave()));
+    mainWindow->setWindowTitle("Simple day");
+    mainWindow->setWindowIcon(QIcon("planner.ico"));
     mainWindow->show();
 }
 
@@ -274,32 +314,40 @@ void WindowsManager::open_Calendar()
     dialogWindow.reset(new Calendar());
     dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(dialogWindow.get(), SIGNAL(SetDate(QString)), minorWindow.get(), SLOT(setDate(QString)));
+    dialogWindow->setWindowTitle("Simple day");
+    dialogWindow->setWindowIcon(QIcon("planner.ico"));
     dialogWindow->show();
 }
 
 void WindowsManager::open_Clock()
 {
-    dialogWindow.reset(new Clock());
-    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    connect(dialogWindow.get(), SIGNAL(Save(QString)), mainWindow.get(), SLOT(setTime(QString)));
-    dialogWindow->show();
+    minorWindow.reset(new Clock());
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(QString)), mainWindow.get(), SLOT(setTime(QString)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
+    minorWindow->show();
 }
 
 void WindowsManager::open_Clock(QString time)
 {
-    dialogWindow.reset(new Clock(time));
-    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    connect(dialogWindow.get(), SIGNAL(Save(QString)), mainWindow.get(), SLOT(setTime(QString)));
-    dialogWindow->show();
+    minorWindow.reset(new Clock(time));
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Save(QString)), mainWindow.get(), SLOT(setTime(QString)));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
+    minorWindow->show();
 }
 
 void WindowsManager::open_EditOrDelete()
 {
-    dialogWindow.reset(new EditOrDeleteDialog());
-    dialogWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
-    connect(dialogWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
-    connect(dialogWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
-    dialogWindow->show();
+    minorWindow.reset(new EditOrDeleteDialog());
+    minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
+    connect(minorWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
+    connect(minorWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
+    minorWindow->show();
 }
 
 void WindowsManager::open_EditDeleteOrMarkAsDone(bool taskStatus)
@@ -309,6 +357,8 @@ void WindowsManager::open_EditDeleteOrMarkAsDone(bool taskStatus)
     connect(minorWindow.get(), SIGNAL(Edit()), mainWindow.get(), SLOT(OpenEditingWindow()));
     connect(minorWindow.get(), SIGNAL(Delete()), this, SLOT(open_AreYouSure()));
     connect(minorWindow.get(), SIGNAL(ChangeTaskStatus()), mainWindow.get(), SLOT(changeTaskStatus()));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
@@ -322,6 +372,8 @@ void WindowsManager::open_AreYouSure(bool isForPlan)
     {
         connect(dialogWindow.get(), SIGNAL(YesForPlan()), mainWindow.get(), SLOT(DeletePlan()));
     }
+    dialogWindow->setWindowTitle("Simple day");
+    dialogWindow->setWindowIcon(QIcon("planner.ico"));
     dialogWindow->show();
 }
 
@@ -330,6 +382,8 @@ void WindowsManager::open_WhatToSave()
     minorWindow.reset(new WhatToSave());
     minorWindow->setWindowModality(Qt::WindowModality::ApplicationModal);
     connect(minorWindow.get(), SIGNAL(OpenWelcome()), this, SLOT(open_Welcome()));
+    minorWindow->setWindowTitle("Simple day");
+    minorWindow->setWindowIcon(QIcon("planner.ico"));
     minorWindow->show();
 }
 
