@@ -44,19 +44,14 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 16pt &quot;Gentium Book Basic&quot;;
+    <string notr="true">font: 16pt &quot;Times New Roman&quot;;
 color: black;
 background-color: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(64, 115, 175);</string>
+border-color:rgb(0, 0, 0);</string>
    </property>
-   <item>
-    <property name="text">
-     <string>Belia Viktoriia Oleksiivna</string>
-    </property>
-   </item>
   </widget>
   <widget class="QWidget" name="widget_Teachers" native="true">
    <property name="geometry">
@@ -81,7 +76,8 @@ border-color:rgb(64, 115, 175);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: black;
-font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
+font: 75 28pt &quot;Times New Roman&quot;;
+</string>
     </property>
     <property name="text">
      <string>Teachers</string>
@@ -135,7 +131,7 @@ border-width: 1px;
     </property>
     <property name="styleSheet">
      <string notr="true">color: black;
-font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
+font: 75 28pt &quot;Times New Roman&quot;;</string>
     </property>
     <property name="text">
      <string>Menu</string>
@@ -151,13 +147,13 @@ font: 75 28pt &quot;Gentium Book Basic&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Overview</string>
@@ -173,13 +169,13 @@ border-color:rgb(18, 46, 79);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Timetable</string>
@@ -189,19 +185,19 @@ border-color:rgb(18, 46, 79);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>290</y>
+      <y>360</y>
       <width>145</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Subjects</string>
@@ -211,19 +207,19 @@ border-color:rgb(18, 46, 79);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>360</y>
+      <y>430</y>
       <width>145</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
-background: rgb(255, 255, 255);
+background:rgb(219, 226, 239);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Teachers</string>
@@ -233,19 +229,19 @@ border-color:rgb(18, 46, 79);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>430</y>
+      <y>500</y>
       <width>145</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Grades</string>
@@ -261,13 +257,13 @@ border-color:rgb(18, 46, 79);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Settings</string>
@@ -283,16 +279,38 @@ border-color:rgb(18, 46, 79);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Gentium Book Basic&quot;;
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
 color: black;
 background: rgb(255, 255, 255);
 border-radius: 15px;
 border-style: solid;
 border-width: 1px;
-border-color:rgb(18, 46, 79);</string>
+border-color:rgb(0, 0, 0);</string>
     </property>
     <property name="text">
      <string>Calendar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Agenda">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>145</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
+color: black;
+background: rgb(255, 255, 255);
+border-radius: 15px;
+border-style: solid;
+border-width: 1px;
+border-color:rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string>Agenda</string>
     </property>
    </widget>
    <zorder>pushButton_Overview</zorder>
@@ -303,6 +321,7 @@ border-color:rgb(18, 46, 79);</string>
    <zorder>pushButton_Settings</zorder>
    <zorder>label_Menu</zorder>
    <zorder>pushButton_Calendar</zorder>
+   <zorder>pushButton_Agenda</zorder>
   </widget>
   <zorder>widget_Teachers</zorder>
   <zorder>listWidget_Teachers</zorder>

@@ -1,11 +1,9 @@
-#include "gradesadding.h"
-
+#include "windowsmanager.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    GradesAdding w;
-    w.show();
+    WindowsManager w;
     return a.exec();
 }

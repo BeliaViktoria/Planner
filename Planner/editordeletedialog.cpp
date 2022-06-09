@@ -12,3 +12,16 @@ EditOrDeleteDialog::~EditOrDeleteDialog()
 {
     delete ui;
 }
+
+void EditOrDeleteDialog::on_pushButton_Edit_clicked()
+{
+    emit Edit();
+}
+
+
+void EditOrDeleteDialog::on_pushButton_Delete_clicked()
+{
+    emit Delete();
+    this->close();
+}
+
